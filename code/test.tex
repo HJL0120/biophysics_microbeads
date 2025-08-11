@@ -1,0 +1,65 @@
+\RequirePackage[abspath]{currfile}
+\documentclass[12pt]{article}
+\usepackage[a4paper, margin=1in]{geometry}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{hyperref}
+
+\title{Measuring the Horizontal Displacement of a Microbead with Nanometer Resolution}
+\author{}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section*{Abstract}
+Single-molecule mechanical manipulation involves applying mechanical forces to biomolecules and measuring their conformational changes with high resolution. Magnetic tweezers, a widely used technology in this field, allow forces in the piconewton (pN) range to be applied to a molecule tethered between a glass surface and a superparamagnetic microbead. This project focuses on the use of transverse magnetic tweezers to measure microbead displacements in the imaging plane with nanometer resolution. Achieving such precision in real-time measurements is crucial for understanding force-induced molecular conformations relevant to physiological processes. This proposal outlines the objectives, significance, and methodologies to address this challenge.
+
+\section*{Objective and Significance}
+The primary objective of this project is to develop a python computational code capable of detecting the horizontal displacement of a superparamagnetic microbead with nanometer resolution in real-time. This capability is critical for:
+\begin{itemize}
+    \item Advancing single-molecule biophysics studies by enabling high-resolution tracking of molecular conformational changes.
+    \item Providing insights into the mechanics of biomolecules under physiologically relevant forces.
+    \item Enhancing the accuracy and reliability of transverse magnetic tweezers as a tool for studying mechanotransduction and related processes.
+\end{itemize}
+
+\section*{Background}
+Single-molecule mechanical manipulation has become an indispensable tool for studying the behavior of biomolecules under applied forces. Magnetic tweezers provide a non-invasive method to exert forces in the piconewton range, with extensions measured from nanometers to micrometers. There are two main configurations:
+\begin{enumerate}
+    \item \textbf{Vertical Magnetic Tweezers:} Stretch molecules perpendicular to the imaging plane.
+    \item \textbf{Transverse Magnetic Tweezers:} Stretch molecules within the imaging plane.
+\end{enumerate}
+In the transverse configuration, the conformational changes of the molecule translate to horizontal displacement of the microbead. Detecting these displacements with nanometer precision is challenging due to limitations in optical resolution, noise, and computational efficiency in real-time analysis.
+
+\section*{Methods}
+To achieve the objectives, the following methodologies will be implemented:
+
+\subsection*{Optical Imaging and Calibration}
+\begin{itemize}
+    \item Use a high-resolution optical microscope to image the microbead tethered to the biomolecule.
+    \item Perform precise calibration of the imaging system to minimize optical aberrations and enhance resolution.
+\end{itemize}
+
+\subsection*{Real-Time Image Analysis}
+\begin{itemize}
+    \item Develop algorithms for tracking microbead position with sub-pixel accuracy, leveraging techniques such as Gaussian fitting or centroid analysis.
+    \item Employ advanced noise reduction methods to enhance signal quality and enable real-time processing.
+\end{itemize}
+
+\subsection*{Force Application and Displacement Measurement}
+\begin{itemize}
+    \item Utilize transverse magnetic tweezers to apply controlled forces to the microbead.
+    \item Measure displacements in the imaging plane with nanometer resolution and correlate them to molecular conformational changes.
+\end{itemize}
+
+\subsection*{Validation and Testing}
+\begin{itemize}
+    \item Test the system using known biomolecular tethers to validate the accuracy and resolution of displacement measurements.
+    \item Compare results with theoretical models to ensure consistency and reliability.
+\end{itemize}
+
+\section*{Conclusion}
+This project aims to develop a robust and precise method for detecting the horizontal displacement of a microbead with nanometer resolution in real-time. By addressing the challenges associated with noise and optical limitations, the proposed approach will contribute significantly to the field of single-molecule biophysics and expand the capabilities of transverse magnetic tweezers.
+
+\end{document}
