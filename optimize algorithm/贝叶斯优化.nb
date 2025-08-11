@@ -1,0 +1,3188 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 14.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[    163277,       3180]
+NotebookOptionsPosition[    161755,       3149]
+NotebookOutlinePosition[    162186,       3167]
+CellTagsIndexPosition[    162143,       3164]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{"Clear", "[", "\"\<Global`*\>\"", "]"}]], "Input",
+ CellChangeTimes->{{3.925522917398569*^9, 3.925522924544531*^9}},
+ CellLabel->"In[1]:=",ExpressionUUID->"8d0ad2f5-b965-f94f-8e09-8f90ffc90803"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"dataneed", "=", 
+   RowBox[{"Part", "[", 
+    RowBox[{
+     RowBox[{
+     "Import", "@", 
+      "\"\<C:\\\\Users\\\\PC\\\\Desktop\\\\\:7535\:5de5\:676f\\\\\:8d5b\:9898\
+\:4ee5\:53ca\:6570\:636eA\\\\\:9644\:4ef61\:ff1a\:5404\:56ed\:533a\:5178\:578b\
+\:65e5\:8d1f\:8377\:6570\:636e.csv\>\""}], ",", 
+     RowBox[{"2", ";;"}]}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"(*", "A\:5730\:8d1f\:8377", "*)"}], 
+  RowBox[{
+   RowBox[{"dataAneed", "=", 
+    RowBox[{"1.5", "*", 
+     RowBox[{"Drop", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"#2", "&"}], "@@@", "dataneed"}], ",", 
+       RowBox[{"-", "2"}]}], "]"}]}]}], ";"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"(*", "B\:5730\:8d1f\:8377", "*)"}], 
+  RowBox[{
+   RowBox[{"dataBneed", "=", 
+    RowBox[{"1.5", "*", 
+     RowBox[{"Drop", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"#3", "&"}], "@@@", "dataneed"}], ",", 
+       RowBox[{"-", "2"}]}], "]"}]}]}], ";"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"(*", "C\:5730\:8d1f\:8377", "*)"}], 
+  RowBox[{
+   RowBox[{"dataCneed", "=", 
+    RowBox[{"1.5", "*", 
+     RowBox[{"Drop", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"#4", "&"}], "@@@", "dataneed"}], ",", 
+       RowBox[{"-", "2"}]}], "]"}]}]}], ";"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"dataproduce", "=", 
+   RowBox[{"Part", "[", 
+    RowBox[{
+     RowBox[{
+     "Import", "@", 
+      "\"\<C:\\\\Users\\\\PC\\\\Desktop\\\\\:7535\:5de5\:676f\\\\\:8d5b\:9898\
+\:4ee5\:53ca\:6570\:636eA\\\\\:9644\:4ef62\:ff1a\:5404\:56ed\:533a\:5178\:578b\
+\:65e5\:98ce\:5149\:53d1\:7535\:6570\:636e.csv\>\""}], ",", 
+     RowBox[{"4", ";;"}]}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"(*", "A\:5730\:53d1\:7535\:91cf", "*)"}], 
+  RowBox[{
+   RowBox[{"dataAproduce", "=", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"750", "*", "#2"}], "&"}], "@@@", "dataproduce"}]}], 
+   ";"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"(*", "B\:5730\:53d1\:7535\:91cf", "*)"}], 
+  RowBox[{
+   RowBox[{"dataBproduce", "=", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"1000", "*", "#3"}], "&"}], "@@@", "dataproduce"}]}], 
+   ";"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"(*", "C\:5730\:5149\:80fd\:53d1\:7535\:91cf", "*)"}], 
+  RowBox[{
+   RowBox[{"dataCproducelight", "=", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"600", "*", "#4"}], "&"}], "@@@", "dataproduce"}]}], 
+   ";"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"(*", "C\:5730\:98ce\:80fd\:53d1\:7535\:91cf", "*)"}], 
+  RowBox[{
+   RowBox[{"dataCproducewind", "=", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"500", "*", "#5"}], "&"}], "@@@", "dataproduce"}]}], 
+   ";"}]}]}], "Input",
+ CellChangeTimes->{{3.925500640418431*^9, 3.925500687883127*^9}, {
+   3.9255007200110836`*^9, 3.9255007324855556`*^9}, {3.92550080687702*^9, 
+   3.925500921772743*^9}, {3.9255009651834984`*^9, 3.925500973093704*^9}, {
+   3.925501077828671*^9, 3.925501341734343*^9}, {3.925501406292801*^9, 
+   3.925501413729858*^9}, {3.925501592276985*^9, 3.925501596439934*^9}, {
+   3.925522771523419*^9, 3.925522775184379*^9}, {3.9255228988146152`*^9, 
+   3.925522900913463*^9}, 3.925522948651696*^9, {3.925525287721756*^9, 
+   3.925525360071596*^9}, {3.925527367749527*^9, 3.925527413176628*^9}, 
+   3.925532306356339*^9, 3.925542487855831*^9, 3.9255893951316223`*^9, {
+   3.925698484389843*^9, 3.925698533555786*^9}, {3.925700681814081*^9, 
+   3.925700685362477*^9}, {3.925797852133198*^9, 3.92579785380249*^9}, {
+   3.925798110194067*^9, 3.92579811052841*^9}, {3.925799215443903*^9, 
+   3.925799222317217*^9}},
+ CellLabel->"In[2]:=",ExpressionUUID->"4c03d91e-d48d-9d44-a5d2-502eede01d14"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"moneyA", "=", 
+   RowBox[{"ebuynetA", "=", 
+    RowBox[{"ebuywindA", "=", 
+     RowBox[{"ebuylightA", "=", 
+      RowBox[{"wasteA", "=", 
+       RowBox[{"Table", "[", 
+        RowBox[{"i", ",", 
+         RowBox[{"{", 
+          RowBox[{"i", ",", "24"}], "}"}]}], "]"}]}]}]}]}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"daypriceA", "=", 
+   RowBox[{"Table", "[", 
+    RowBox[{"i", ",", 
+     RowBox[{"{", 
+      RowBox[{"i", ",", "1825"}], "}"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"saveA", "=", 
+   RowBox[{"Table", "[", 
+    RowBox[{"i", ",", 
+     RowBox[{"{", 
+      RowBox[{"i", ",", "25"}], "}"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"findminA", "[", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"power_", "?", "NumericQ"}], ",", 
+     RowBox[{"energy_", "?", "NumericQ"}], ",", 
+     RowBox[{"pv_", "?", "NumericQ"}]}], "}"}], "]"}], ":=", 
+  "\[IndentingNewLine]", 
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", "sumpriceA", "}"}], ",", "\[IndentingNewLine]", 
+    RowBox[{"(*", "A\:5730\:53d1\:7535\:91cf", "*)"}], 
+    RowBox[{
+     RowBox[{"dataAproduce", "=", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"pv", "*", "#2"}], "&"}], "@@@", "dataproduce"}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"saveA", "[", 
+       RowBox[{"[", "1", "]"}], "]"}], "=", 
+      RowBox[{"energy", "*", "0.1"}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"Do", "[", "\n", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"Do", "[", "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"If", "[", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"dataAneed", "[", 
+               RowBox[{"[", "hour", "]"}], "]"}], "<", 
+              RowBox[{"dataAproduce", "[", 
+               RowBox[{"[", "hour", "]"}], "]"}]}], ",", 
+             "\[IndentingNewLine]", 
+             RowBox[{
+              RowBox[{
+               RowBox[{"ebuylightA", "[", 
+                RowBox[{"[", "hour", "]"}], "]"}], "=", 
+               RowBox[{"dataAneed", "[", 
+                RowBox[{"[", "hour", "]"}], "]"}]}], ";", 
+              "\[IndentingNewLine]", 
+              RowBox[{
+               RowBox[{"ebuynetA", "[", 
+                RowBox[{"[", "hour", "]"}], "]"}], "=", "0"}], ";", 
+              "\[IndentingNewLine]", 
+              RowBox[{
+               RowBox[{"wasteA", "[", 
+                RowBox[{"[", "hour", "]"}], "]"}], "=", 
+               RowBox[{
+                RowBox[{"dataAproduce", "[", 
+                 RowBox[{"[", "hour", "]"}], "]"}], "-", 
+                RowBox[{"dataAneed", "[", 
+                 RowBox[{"[", "hour", "]"}], "]"}], "-", 
+                RowBox[{"Min", "[", 
+                 RowBox[{"{", 
+                  RowBox[{
+                   RowBox[{
+                    RowBox[{"dataAproduce", "[", 
+                    RowBox[{"[", "hour", "]"}], "]"}], "-", 
+                    RowBox[{"dataAneed", "[", 
+                    RowBox[{"[", "hour", "]"}], "]"}]}], ",", "power"}], 
+                  "}"}], "]"}]}]}], ";", "\[IndentingNewLine]", 
+              RowBox[{
+               RowBox[{"moneyA", "[", 
+                RowBox[{"[", "hour", "]"}], "]"}], "=", 
+               RowBox[{
+                RowBox[{"0.4", "*", 
+                 RowBox[{"ebuylightA", "[", 
+                  RowBox[{"[", "hour", "]"}], "]"}]}], "+", 
+                RowBox[{"1", "*", 
+                 RowBox[{"ebuynetA", "[", 
+                  RowBox[{"[", "hour", "]"}], "]"}]}]}]}], ";", 
+              "\[IndentingNewLine]", 
+              RowBox[{
+               RowBox[{"saveA", "[", 
+                RowBox[{"[", 
+                 RowBox[{"hour", "+", "1"}], "]"}], "]"}], "=", 
+               RowBox[{
+                RowBox[{"saveA", "[", 
+                 RowBox[{"[", "hour", "]"}], "]"}], "+", 
+                RowBox[{"Min", "[", 
+                 RowBox[{"{", 
+                  RowBox[{
+                   RowBox[{
+                    RowBox[{"dataAproduce", "[", 
+                    RowBox[{"[", "hour", "]"}], "]"}], "-", 
+                    RowBox[{"dataAneed", "[", 
+                    RowBox[{"[", "hour", "]"}], "]"}]}], ",", "power"}], 
+                  "}"}], "]"}]}]}]}]}], "]"}], ";", "\[IndentingNewLine]", 
+           RowBox[{"If", "[", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"dataAproduce", "[", 
+               RowBox[{"[", "hour", "]"}], "]"}], "<=", 
+              RowBox[{"dataAneed", "[", 
+               RowBox[{"[", "hour", "]"}], "]"}], "<", 
+              RowBox[{
+               RowBox[{"dataAproduce", "[", 
+                RowBox[{"[", "hour", "]"}], "]"}], "+", 
+               RowBox[{
+                RowBox[{"(", 
+                 RowBox[{
+                  RowBox[{"saveA", "[", 
+                   RowBox[{"[", "hour", "]"}], "]"}], "-", 
+                  RowBox[{"energy", "*", "0.1"}]}], ")"}], "*", "0.95"}]}]}], 
+             ",", "\[IndentingNewLine]", 
+             RowBox[{
+              RowBox[{
+               RowBox[{"ebuylightA", "[", 
+                RowBox[{"[", "hour", "]"}], "]"}], "=", 
+               RowBox[{"dataAproduce", "[", 
+                RowBox[{"[", "hour", "]"}], "]"}]}], ";", 
+              "\[IndentingNewLine]", 
+              RowBox[{
+               RowBox[{"ebuynetA", "[", 
+                RowBox[{"[", "hour", "]"}], "]"}], "=", "0"}], ";", 
+              "\[IndentingNewLine]", 
+              RowBox[{
+               RowBox[{"wasteA", "[", 
+                RowBox[{"[", "hour", "]"}], "]"}], "=", "0"}], ";", 
+              "\[IndentingNewLine]", 
+              RowBox[{
+               RowBox[{"moneyA", "[", 
+                RowBox[{"[", "hour", "]"}], "]"}], "=", 
+               RowBox[{
+                RowBox[{"0.4", "*", 
+                 RowBox[{"ebuylightA", "[", 
+                  RowBox[{"[", "hour", "]"}], "]"}]}], "+", 
+                RowBox[{"1", "*", 
+                 RowBox[{"ebuynetA", "[", 
+                  RowBox[{"[", "hour", "]"}], "]"}]}]}]}], ";", 
+              "\[IndentingNewLine]", 
+              RowBox[{
+               RowBox[{"saveA", "[", 
+                RowBox[{"[", 
+                 RowBox[{"hour", "+", "1"}], "]"}], "]"}], "=", 
+               RowBox[{
+                RowBox[{"saveA", "[", 
+                 RowBox[{"[", "hour", "]"}], "]"}], "-", 
+                RowBox[{
+                 RowBox[{"(", 
+                  RowBox[{
+                   RowBox[{"dataAneed", "[", 
+                    RowBox[{"[", "hour", "]"}], "]"}], "-", 
+                   RowBox[{"dataAproduce", "[", 
+                    RowBox[{"[", "hour", "]"}], "]"}]}], ")"}], "/", 
+                 "0.95"}]}]}]}]}], "]"}], ";", "\[IndentingNewLine]", 
+           RowBox[{"If", "[", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"dataAneed", "[", 
+               RowBox[{"[", "hour", "]"}], "]"}], ">=", 
+              RowBox[{
+               RowBox[{"dataAproduce", "[", 
+                RowBox[{"[", "hour", "]"}], "]"}], "+", 
+               RowBox[{
+                RowBox[{"(", 
+                 RowBox[{
+                  RowBox[{"saveA", "[", 
+                   RowBox[{"[", "hour", "]"}], "]"}], "-", 
+                  RowBox[{"energy", "*", "0.1"}]}], ")"}], "*", "0.95"}]}]}], 
+             ",", "\[IndentingNewLine]", 
+             RowBox[{
+              RowBox[{
+               RowBox[{"ebuylightA", "[", 
+                RowBox[{"[", "hour", "]"}], "]"}], "=", 
+               RowBox[{"dataAproduce", "[", 
+                RowBox[{"[", "hour", "]"}], "]"}]}], ";", 
+              "\[IndentingNewLine]", 
+              RowBox[{
+               RowBox[{"ebuynetA", "[", 
+                RowBox[{"[", "hour", "]"}], "]"}], "=", 
+               RowBox[{
+                RowBox[{"dataAneed", "[", 
+                 RowBox[{"[", "hour", "]"}], "]"}], "-", 
+                RowBox[{"dataAproduce", "[", 
+                 RowBox[{"[", "hour", "]"}], "]"}], "-", 
+                RowBox[{
+                 RowBox[{"(", 
+                  RowBox[{
+                   RowBox[{"saveA", "[", 
+                    RowBox[{"[", "hour", "]"}], "]"}], "-", 
+                   RowBox[{"energy", "*", "0.1"}]}], ")"}], "*", "0.95"}]}]}],
+               ";", "\[IndentingNewLine]", 
+              RowBox[{
+               RowBox[{"wasteA", "[", 
+                RowBox[{"[", "hour", "]"}], "]"}], "=", "0"}], ";", 
+              "\[IndentingNewLine]", 
+              RowBox[{
+               RowBox[{"moneyA", "[", 
+                RowBox[{"[", "hour", "]"}], "]"}], "=", 
+               RowBox[{
+                RowBox[{"0.4", "*", 
+                 RowBox[{"ebuylightA", "[", 
+                  RowBox[{"[", "hour", "]"}], "]"}]}], "+", 
+                RowBox[{"1", "*", 
+                 RowBox[{"ebuynetA", "[", 
+                  RowBox[{"[", "hour", "]"}], "]"}]}]}]}], ";", 
+              "\[IndentingNewLine]", 
+              RowBox[{
+               RowBox[{"saveA", "[", 
+                RowBox[{"[", 
+                 RowBox[{"hour", "+", "1"}], "]"}], "]"}], "=", 
+               RowBox[{"energy", "*", "0.1"}]}]}]}], "]"}], ";", 
+           "\[IndentingNewLine]", 
+           RowBox[{"If", "[", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"saveA", "[", 
+               RowBox[{"[", 
+                RowBox[{"hour", "+", "1"}], "]"}], "]"}], ">", 
+              RowBox[{"energy", "*", "0.9"}]}], ",", 
+             RowBox[{
+              RowBox[{"saveA", "[", 
+               RowBox[{"[", 
+                RowBox[{"hour", "+", "1"}], "]"}], "]"}], "=", 
+              RowBox[{"energy", "*", "0.9"}]}]}], "]"}], ";"}], 
+          "\[IndentingNewLine]", ",", 
+          RowBox[{"{", 
+           RowBox[{"hour", ",", "1", ",", "24"}], "}"}]}], "]"}], ";", 
+        "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"daypriceA", "[", 
+          RowBox[{"[", "day", "]"}], "]"}], "=", 
+         RowBox[{"Sum", "[", 
+          RowBox[{
+           RowBox[{"moneyA", "[", 
+            RowBox[{"[", "hour", "]"}], "]"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"hour", ",", "1", ",", "24"}], "}"}]}], "]"}]}], ";", 
+        "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"saveA", "[", 
+          RowBox[{"[", "1", "]"}], "]"}], "=", 
+         RowBox[{"saveA", "[", 
+          RowBox[{"[", "25", "]"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+       ",", 
+       RowBox[{"{", 
+        RowBox[{"day", ",", "1", ",", "1825"}], "}"}]}], "]"}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{
+     "(*", "A\:5730\:4e94\:5e74\:8d2d\:7535\:603b\:6210\:672c", "*)"}], 
+     RowBox[{"sumpriceA", "=", 
+      RowBox[{
+       RowBox[{"Sum", "[", 
+        RowBox[{
+         RowBox[{"daypriceA", "[", 
+          RowBox[{"[", "day", "]"}], "]"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"day", ",", "1", ",", "1825"}], "}"}]}], "]"}], "+", 
+       RowBox[{"800", "*", "power"}], "+", 
+       RowBox[{"1800", "*", "energy"}], "+", 
+       RowBox[{"2500", "*", "pv"}]}]}]}]}], "]"}]}]}], "Input",
+ CellChangeTimes->{{3.925546379626629*^9, 3.925546424274025*^9}, {
+   3.925546462474537*^9, 3.925546523886749*^9}, {3.925547021264038*^9, 
+   3.925547022499193*^9}, {3.925547231194631*^9, 3.9255472319746113`*^9}, {
+   3.9255479662407303`*^9, 3.9255479682428226`*^9}, {3.925548316825964*^9, 
+   3.925548317476185*^9}, {3.925548496248872*^9, 3.925548500463852*^9}, {
+   3.925548749353708*^9, 3.925548752472151*^9}, {3.925548846596615*^9, 
+   3.925548848862692*^9}, {3.9255490265239964`*^9, 3.9255490340279827`*^9}, {
+   3.9255514314566536`*^9, 3.9255514740045757`*^9}, {3.925551506336798*^9, 
+   3.925551510869419*^9}, {3.925553501245318*^9, 3.925553531353609*^9}, {
+   3.92555366317468*^9, 3.9255536644352264`*^9}, {3.925553709618667*^9, 
+   3.925553762566099*^9}, {3.925587776885589*^9, 3.925587821806982*^9}, {
+   3.9255879714630604`*^9, 3.925588012940111*^9}, {3.9255882077484856`*^9, 
+   3.925588226253872*^9}, {3.925588626866129*^9, 3.925588629937187*^9}, {
+   3.925588673503374*^9, 3.925588747673834*^9}, {3.9255887844621353`*^9, 
+   3.92558881197394*^9}, {3.925588971526539*^9, 3.92558898478972*^9}, {
+   3.9255891494894753`*^9, 3.9255891561439705`*^9}, {3.925589187000307*^9, 
+   3.925589215114744*^9}, {3.925589246333565*^9, 3.925589274961743*^9}, {
+   3.925589432758335*^9, 3.925589437695618*^9}, {3.925593180516838*^9, 
+   3.9255931925761604`*^9}, {3.925593396538807*^9, 3.925593516978497*^9}, {
+   3.92559354784939*^9, 3.925593623631483*^9}, {3.925602901901428*^9, 
+   3.9256029518559704`*^9}, 3.925605885463186*^9, {3.92560607403446*^9, 
+   3.925606081529394*^9}, {3.925606838814069*^9, 3.9256069121322823`*^9}, {
+   3.925606958300333*^9, 3.92560702184671*^9}, {3.925607643657057*^9, 
+   3.92560765025992*^9}, {3.925702600498754*^9, 3.925702601153206*^9}, {
+   3.925702729972557*^9, 3.9257029568929996`*^9}, 3.9257033123161755`*^9, {
+   3.925712686594145*^9, 3.9257128691918526`*^9}, 3.925762824616316*^9, {
+   3.9257628805104065`*^9, 3.925762993136322*^9}, {3.92576348043351*^9, 
+   3.925763497697283*^9}, {3.92576401496322*^9, 3.925764016919407*^9}, {
+   3.925764526713701*^9, 3.925764544634814*^9}, {3.925765215537537*^9, 
+   3.9257652158927135`*^9}, {3.9257664768465557`*^9, 3.925766488504684*^9}, {
+   3.925797865777399*^9, 3.92579786735772*^9}, {3.925797987920326*^9, 
+   3.925798002225159*^9}, {3.925798052632915*^9, 3.925798058661808*^9}, {
+   3.925799387164585*^9, 3.925799409620537*^9}, {3.925801034229519*^9, 
+   3.925801034846342*^9}, 3.925801161103189*^9, {3.928104908444809*^9, 
+   3.928104954558885*^9}},
+ CellLabel->"In[11]:=",ExpressionUUID->"2340816a-a1aa-bf4d-a8b9-57786482ccc4"],
+
+Cell[BoxData[
+ RowBox[{"(*", 
+  RowBox[{
+   RowBox[{"regA", "=", 
+    RowBox[{"Cuboid", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"0", ",", "0", ",", "0"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"1000", ",", "1800", ",", "1500"}], "}"}]}], "]"}]}], ";", 
+   "\[IndentingNewLine]", 
+   RowBox[{"bo", "=", 
+    RowBox[{"BayesianMinimization", "[", 
+     RowBox[{"findminA", ",", "regA", ",", 
+      RowBox[{"Method", "->", "Automatic"}], 
+      RowBox[{"(*", 
+       RowBox[{",", 
+        RowBox[{"MaxIterations", "->", "100"}]}], "*)"}], ",", 
+      RowBox[{"RandomSeeding", "->", "1000"}], ",", 
+      RowBox[{"AssumeDeterministic", "->", "True"}]}], "]"}]}]}], 
+  "*)"}]], "Input",
+ CellChangeTimes->{{3.9281008537259445`*^9, 3.928100886346344*^9}, {
+   3.928100957374132*^9, 3.928101021616883*^9}, {3.928101057298699*^9, 
+   3.928101064460301*^9}, {3.9281011524338894`*^9, 3.9281011657715816`*^9}, {
+   3.928101567947014*^9, 3.928101575356169*^9}, {3.928101725583851*^9, 
+   3.92810178202479*^9}, {3.928101873208308*^9, 3.928101886881004*^9}, {
+   3.928102261811081*^9, 3.9281022618314056`*^9}, 3.928102350779898*^9, {
+   3.9281029008100243`*^9, 3.928102900953512*^9}, {3.928102966393408*^9, 
+   3.9281029687498894`*^9}, 3.928103082693651*^9, 3.928103651246231*^9, {
+   3.928104112602433*^9, 3.928104117670286*^9}, {3.928104395349964*^9, 
+   3.9281044121441097`*^9}, {3.928104446401119*^9, 3.9281044847191887`*^9}, {
+   3.9281045513242855`*^9, 3.928104556021591*^9}, {3.928104775822935*^9, 
+   3.9281048097148747`*^9}, {3.928104880530623*^9, 3.928104895257134*^9}, 
+   3.928104962874155*^9, {3.928105381196514*^9, 3.928105384615736*^9}, {
+   3.9281055837593746`*^9, 3.9281055993565693`*^9}, {3.928105772649102*^9, 
+   3.928105773114723*^9}, 3.928105904198852*^9, 3.9281060694847813`*^9, {
+   3.928106340616068*^9, 3.9281063481029*^9}, {3.928106533783481*^9, 
+   3.928106537708828*^9}, {3.9281129005239487`*^9, 3.92811290336705*^9}},
+ CellLabel->"In[15]:=",ExpressionUUID->"3b5f5b8d-219a-1f4f-95a2-1fe48c415e6a"],
+
+Cell[BoxData[
+ RowBox[{"(*", 
+  RowBox[{"Monitor", "[", 
+   RowBox[{
+    RowBox[{"NMinimize", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"findminA", "[", 
+         RowBox[{"power", ",", "energy", ",", "pv"}], "]"}], ",", 
+        RowBox[{
+         RowBox[{"0", "<=", "power", "<=", "1000"}], "&&", 
+         RowBox[{"0", "<=", "energy", "<=", "1800"}], "&&", 
+         RowBox[{"0", "<=", "pv", "<=", "1500"}]}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"power", ",", "energy", ",", "pv"}], "}"}], ",", 
+      RowBox[{"Method", "->", 
+       RowBox[{"{", 
+        RowBox[{"\"\<NelderMead\>\"", ",", 
+         RowBox[{"\"\<RandomSeed\>\"", "->", "100"}]}], "}"}]}], ",", 
+      RowBox[{"WorkingPrecision", "->", "4"}]}], "]"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"power", ",", "energy", ",", "pv"}], "}"}]}], "]"}], 
+  "*)"}]], "Input",
+ CellChangeTimes->{{3.925763018507115*^9, 3.9257630261305313`*^9}, {
+   3.925764659375625*^9, 3.92576471365802*^9}, 3.925764852345087*^9, {
+   3.925765033302147*^9, 3.925765037570284*^9}, {3.925765133824343*^9, 
+   3.925765148142765*^9}, {3.925765233294443*^9, 3.925765237230718*^9}, {
+   3.9257652915121098`*^9, 3.925765294068138*^9}, {3.925765457094633*^9, 
+   3.925765459035845*^9}, {3.925765497804746*^9, 3.925765527866379*^9}, {
+   3.925765592049179*^9, 3.925765594598753*^9}, {3.925765674614073*^9, 
+   3.925765719265682*^9}, {3.925765773811725*^9, 3.9257657762356014`*^9}, {
+   3.9257658964997463`*^9, 3.925765967175279*^9}, {3.925766082709196*^9, 
+   3.92576617336842*^9}, {3.925766494702364*^9, 3.9257665278158073`*^9}, {
+   3.925766714608393*^9, 3.925766724909759*^9}, {3.925766827869629*^9, 
+   3.925766839966408*^9}, {3.92576745539686*^9, 3.9257675294091034`*^9}, {
+   3.925767783175276*^9, 3.925767786072739*^9}, {3.925767816095484*^9, 
+   3.925767821087335*^9}, {3.925767856469147*^9, 3.925767882682131*^9}, {
+   3.9257679888899097`*^9, 3.925767995675283*^9}, 3.92576802588854*^9, {
+   3.925768059173887*^9, 3.925768066139721*^9}, {3.925768102887821*^9, 
+   3.925768106438523*^9}, {3.9257682435813255`*^9, 3.925768259492304*^9}, {
+   3.92576830578463*^9, 3.925768357848825*^9}, {3.9257685169924316`*^9, 
+   3.925768596409857*^9}, {3.925769288439884*^9, 3.925769296447954*^9}, {
+   3.92576934762311*^9, 3.925769349827452*^9}, {3.9257694592575397`*^9, 
+   3.925769485655443*^9}, {3.925769678504156*^9, 3.925769678727299*^9}, {
+   3.925798064107907*^9, 3.925798097597662*^9}, 3.925798368239668*^9, 
+   3.925800062246666*^9, {3.92580033944646*^9, 3.925800339523428*^9}, 
+   3.9258004428998375`*^9, 3.9258011651070824`*^9, {3.928100775154999*^9, 
+   3.928100777194344*^9}, {3.928105165966543*^9, 3.92810516694248*^9}, {
+   3.9281068134480705`*^9, 3.92810681586298*^9}},
+ CellLabel->"In[16]:=",ExpressionUUID->"afdac50e-c102-ed42-a82e-90015b5c93cf"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"moneyC", "=", 
+   RowBox[{"ebuynetC", "=", 
+    RowBox[{"ebuywindC", "=", 
+     RowBox[{"ebuylightC", "=", 
+      RowBox[{"wasteC", "=", 
+       RowBox[{"Table", "[", 
+        RowBox[{"i", ",", 
+         RowBox[{"{", 
+          RowBox[{"i", ",", "24"}], "}"}]}], "]"}]}]}]}]}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"daypriceC", "=", 
+   RowBox[{"Table", "[", 
+    RowBox[{"i", ",", 
+     RowBox[{"{", 
+      RowBox[{"i", ",", "1825"}], "}"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"saveC", "=", 
+   RowBox[{"Table", "[", 
+    RowBox[{"i", ",", 
+     RowBox[{"{", 
+      RowBox[{"i", ",", "25"}], "}"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"findminC", "[", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"power_", "?", "NumericQ"}], ",", 
+     RowBox[{"energy_", "?", "NumericQ"}], ",", 
+     RowBox[{"pv_", "?", "NumericQ"}], ",", 
+     RowBox[{"pw_", "?", "NumericQ"}]}], "}"}], "]"}], ":=", 
+  "\[IndentingNewLine]", 
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", "sumpriceC", "}"}], ",", "\[IndentingNewLine]", 
+    RowBox[{"(*", "C\:5730\:5149\:80fd\:53d1\:7535\:91cf", "*)"}], 
+    RowBox[{
+     RowBox[{"dataCproducelight", "=", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"pv", "*", "#4"}], "&"}], "@@@", "dataproduce"}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"(*", "C\:5730\:98ce\:80fd\:53d1\:7535\:91cf", "*)"}], 
+     RowBox[{"dataCproducewind", "=", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"pw", "*", "#5"}], "&"}], "@@@", "dataproduce"}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"saveC", "[", 
+       RowBox[{"[", "1", "]"}], "]"}], "=", 
+      RowBox[{"energy", "*", "0.1"}]}], ";", "\n", 
+     RowBox[{"Do", "[", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"Do", "[", "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"If", "[", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"dataCneed", "[", 
+               RowBox[{"[", "hour", "]"}], "]"}], "<", 
+              RowBox[{"dataCproducelight", "[", 
+               RowBox[{"[", "hour", "]"}], "]"}]}], ",", 
+             "\[IndentingNewLine]", 
+             RowBox[{
+              RowBox[{
+               RowBox[{"ebuylightC", "[", 
+                RowBox[{"[", "hour", "]"}], "]"}], "=", 
+               RowBox[{"dataCneed", "[", 
+                RowBox[{"[", "hour", "]"}], "]"}]}], ";", 
+              "\[IndentingNewLine]", 
+              RowBox[{
+               RowBox[{"ebuywindC", "[", 
+                RowBox[{"[", "hour", "]"}], "]"}], "=", "0"}], ";", 
+              "\[IndentingNewLine]", 
+              RowBox[{
+               RowBox[{"ebuynetC", "[", 
+                RowBox[{"[", "hour", "]"}], "]"}], "=", "0"}], ";", 
+              "\[IndentingNewLine]", 
+              RowBox[{
+               RowBox[{"wasteC", "[", 
+                RowBox[{"[", "hour", "]"}], "]"}], "=", 
+               RowBox[{
+                RowBox[{"dataCproducelight", "[", 
+                 RowBox[{"[", "hour", "]"}], "]"}], "+", 
+                RowBox[{"dataCproducewind", "[", 
+                 RowBox[{"[", "hour", "]"}], "]"}], "-", 
+                RowBox[{"dataCneed", "[", 
+                 RowBox[{"[", "hour", "]"}], "]"}], "-", 
+                RowBox[{"Min", "[", 
+                 RowBox[{"{", 
+                  RowBox[{
+                   RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"dataCproducelight", "[", 
+                    RowBox[{"[", "hour", "]"}], "]"}], "+", 
+                    RowBox[{"dataCproducewind", "[", 
+                    RowBox[{"[", "hour", "]"}], "]"}], "-", 
+                    RowBox[{"dataCneed", "[", 
+                    RowBox[{"[", "hour", "]"}], "]"}]}], ")"}], ",", 
+                   "power"}], "}"}], "]"}]}]}], ";", "\[IndentingNewLine]", 
+              RowBox[{
+               RowBox[{"moneyC", "[", 
+                RowBox[{"[", "hour", "]"}], "]"}], "=", 
+               RowBox[{
+                RowBox[{"0.4", "*", 
+                 RowBox[{"ebuylightC", "[", 
+                  RowBox[{"[", "hour", "]"}], "]"}]}], "+", 
+                RowBox[{"0.5", "*", 
+                 RowBox[{"ebuywindC", "[", 
+                  RowBox[{"[", "hour", "]"}], "]"}]}], "+", 
+                RowBox[{"1", "*", 
+                 RowBox[{"ebuynetC", "[", 
+                  RowBox[{"[", "hour", "]"}], "]"}]}]}]}], ";", 
+              "\[IndentingNewLine]", 
+              RowBox[{
+               RowBox[{"saveC", "[", 
+                RowBox[{"[", 
+                 RowBox[{"hour", "+", "1"}], "]"}], "]"}], "=", 
+               RowBox[{
+                RowBox[{"saveC", "[", 
+                 RowBox[{"[", "hour", "]"}], "]"}], "+", 
+                RowBox[{"Min", "[", 
+                 RowBox[{"{", 
+                  RowBox[{
+                   RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"dataCproducelight", "[", 
+                    RowBox[{"[", "hour", "]"}], "]"}], "+", 
+                    RowBox[{"dataCproducewind", "[", 
+                    RowBox[{"[", "hour", "]"}], "]"}], "-", 
+                    RowBox[{"dataCneed", "[", 
+                    RowBox[{"[", "hour", "]"}], "]"}]}], ")"}], ",", 
+                   "power"}], "}"}], "]"}]}]}]}]}], "]"}], ";", 
+           "\[IndentingNewLine]", 
+           RowBox[{"If", "[", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"dataCproducelight", "[", 
+               RowBox[{"[", "hour", "]"}], "]"}], "<=", 
+              RowBox[{"dataCneed", "[", 
+               RowBox[{"[", "hour", "]"}], "]"}], "<", 
+              RowBox[{
+               RowBox[{"dataCproducelight", "[", 
+                RowBox[{"[", "hour", "]"}], "]"}], "+", 
+               RowBox[{"dataCproducewind", "[", 
+                RowBox[{"[", "hour", "]"}], "]"}]}]}], ",", 
+             "\[IndentingNewLine]", 
+             RowBox[{
+              RowBox[{
+               RowBox[{"ebuylightC", "[", 
+                RowBox[{"[", "hour", "]"}], "]"}], "=", 
+               RowBox[{"dataCproducelight", "[", 
+                RowBox[{"[", "hour", "]"}], "]"}]}], ";", 
+              "\[IndentingNewLine]", 
+              RowBox[{
+               RowBox[{"ebuywindC", "[", 
+                RowBox[{"[", "hour", "]"}], "]"}], "=", 
+               RowBox[{
+                RowBox[{"dataCneed", "[", 
+                 RowBox[{"[", "hour", "]"}], "]"}], "-", 
+                RowBox[{"dataCproducelight", "[", 
+                 RowBox[{"[", "hour", "]"}], "]"}]}]}], ";", 
+              "\[IndentingNewLine]", 
+              RowBox[{
+               RowBox[{"ebuynetC", "[", 
+                RowBox[{"[", "hour", "]"}], "]"}], "=", "0"}], ";", 
+              "\[IndentingNewLine]", 
+              RowBox[{
+               RowBox[{"wasteC", "[", 
+                RowBox[{"[", "hour", "]"}], "]"}], "=", 
+               RowBox[{
+                RowBox[{"dataCproducelight", "[", 
+                 RowBox[{"[", "hour", "]"}], "]"}], "+", 
+                RowBox[{"dataCproducewind", "[", 
+                 RowBox[{"[", "hour", "]"}], "]"}], "-", 
+                RowBox[{"dataCneed", "[", 
+                 RowBox[{"[", "hour", "]"}], "]"}], "-", 
+                RowBox[{"Min", "[", 
+                 RowBox[{"{", 
+                  RowBox[{
+                   RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"dataCproducelight", "[", 
+                    RowBox[{"[", "hour", "]"}], "]"}], "+", 
+                    RowBox[{"dataCproducewind", "[", 
+                    RowBox[{"[", "hour", "]"}], "]"}], "-", 
+                    RowBox[{"dataCneed", "[", 
+                    RowBox[{"[", "hour", "]"}], "]"}]}], ")"}], ",", 
+                   "power"}], "}"}], "]"}]}]}], ";", "\[IndentingNewLine]", 
+              RowBox[{
+               RowBox[{"moneyC", "[", 
+                RowBox[{"[", "hour", "]"}], "]"}], "=", 
+               RowBox[{
+                RowBox[{"0.4", "*", 
+                 RowBox[{"ebuylightC", "[", 
+                  RowBox[{"[", "hour", "]"}], "]"}]}], "+", 
+                RowBox[{"0.5", "*", 
+                 RowBox[{"ebuywindC", "[", 
+                  RowBox[{"[", "hour", "]"}], "]"}]}], "+", 
+                RowBox[{"1", "*", 
+                 RowBox[{"ebuynetC", "[", 
+                  RowBox[{"[", "hour", "]"}], "]"}]}]}]}], ";", 
+              "\[IndentingNewLine]", 
+              RowBox[{
+               RowBox[{"saveC", "[", 
+                RowBox[{"[", 
+                 RowBox[{"hour", "+", "1"}], "]"}], "]"}], "=", 
+               RowBox[{
+                RowBox[{"saveC", "[", 
+                 RowBox[{"[", "hour", "]"}], "]"}], "+", 
+                RowBox[{"Min", "[", 
+                 RowBox[{"{", 
+                  RowBox[{
+                   RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"dataCproducelight", "[", 
+                    RowBox[{"[", "hour", "]"}], "]"}], "+", 
+                    RowBox[{"dataCproducewind", "[", 
+                    RowBox[{"[", "hour", "]"}], "]"}], "-", 
+                    RowBox[{"dataCneed", "[", 
+                    RowBox[{"[", "hour", "]"}], "]"}]}], ")"}], ",", 
+                   "power"}], "}"}], "]"}]}]}]}]}], "]"}], ";", 
+           "\[IndentingNewLine]", 
+           RowBox[{"If", "[", 
+            RowBox[{
+             RowBox[{
+              RowBox[{
+               RowBox[{"dataCproducelight", "[", 
+                RowBox[{"[", "hour", "]"}], "]"}], "+", 
+               RowBox[{"dataCproducewind", "[", 
+                RowBox[{"[", "hour", "]"}], "]"}]}], "<=", 
+              RowBox[{"dataCneed", "[", 
+               RowBox[{"[", "hour", "]"}], "]"}], "<", 
+              RowBox[{
+               RowBox[{"dataCproducelight", "[", 
+                RowBox[{"[", "hour", "]"}], "]"}], "+", 
+               RowBox[{"dataCproducewind", "[", 
+                RowBox[{"[", "hour", "]"}], "]"}], "+", 
+               RowBox[{
+                RowBox[{"(", 
+                 RowBox[{
+                  RowBox[{"saveC", "[", 
+                   RowBox[{"[", "hour", "]"}], "]"}], "-", 
+                  RowBox[{"energy", "*", "0.1"}]}], ")"}], "*", "0.95"}]}]}], 
+             ",", "\[IndentingNewLine]", 
+             RowBox[{
+              RowBox[{
+               RowBox[{"ebuylightC", "[", 
+                RowBox[{"[", "hour", "]"}], "]"}], "=", 
+               RowBox[{"dataCproducelight", "[", 
+                RowBox[{"[", "hour", "]"}], "]"}]}], ";", 
+              "\[IndentingNewLine]", 
+              RowBox[{
+               RowBox[{"ebuywindC", "[", 
+                RowBox[{"[", "hour", "]"}], "]"}], "=", 
+               RowBox[{"dataCproducewind", "[", 
+                RowBox[{"[", "hour", "]"}], "]"}]}], ";", 
+              "\[IndentingNewLine]", 
+              RowBox[{
+               RowBox[{"ebuynetC", "[", 
+                RowBox[{"[", "hour", "]"}], "]"}], "=", "0"}], ";", 
+              "\[IndentingNewLine]", 
+              RowBox[{
+               RowBox[{"wasteC", "[", 
+                RowBox[{"[", "hour", "]"}], "]"}], "=", "0"}], ";", 
+              "\[IndentingNewLine]", 
+              RowBox[{
+               RowBox[{"moneyC", "[", 
+                RowBox[{"[", "hour", "]"}], "]"}], "=", 
+               RowBox[{
+                RowBox[{"0.4", "*", 
+                 RowBox[{"ebuylightC", "[", 
+                  RowBox[{"[", "hour", "]"}], "]"}]}], "+", 
+                RowBox[{"0.5", "*", 
+                 RowBox[{"ebuywindC", "[", 
+                  RowBox[{"[", "hour", "]"}], "]"}]}], "+", 
+                RowBox[{"1", "*", 
+                 RowBox[{"ebuynetC", "[", 
+                  RowBox[{"[", "hour", "]"}], "]"}]}]}]}], ";", 
+              "\[IndentingNewLine]", 
+              RowBox[{
+               RowBox[{"saveC", "[", 
+                RowBox[{"[", 
+                 RowBox[{"hour", "+", "1"}], "]"}], "]"}], "=", 
+               RowBox[{
+                RowBox[{"saveC", "[", 
+                 RowBox[{"[", "hour", "]"}], "]"}], "-", 
+                RowBox[{
+                 RowBox[{"(", 
+                  RowBox[{
+                   RowBox[{"dataCneed", "[", 
+                    RowBox[{"[", "hour", "]"}], "]"}], "-", 
+                   RowBox[{"dataCproducelight", "[", 
+                    RowBox[{"[", "hour", "]"}], "]"}], "-", 
+                   RowBox[{"dataCproducewind", "[", 
+                    RowBox[{"[", "hour", "]"}], "]"}]}], ")"}], "/", 
+                 "0.95"}]}]}]}]}], "]"}], ";", "\[IndentingNewLine]", 
+           RowBox[{"If", "[", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"dataCneed", "[", 
+               RowBox[{"[", "hour", "]"}], "]"}], ">=", 
+              RowBox[{
+               RowBox[{"dataCproducelight", "[", 
+                RowBox[{"[", "hour", "]"}], "]"}], "+", 
+               RowBox[{"dataCproducewind", "[", 
+                RowBox[{"[", "hour", "]"}], "]"}], "+", 
+               RowBox[{
+                RowBox[{"(", 
+                 RowBox[{
+                  RowBox[{"saveC", "[", 
+                   RowBox[{"[", "hour", "]"}], "]"}], "-", 
+                  RowBox[{"energy", "*", "0.1"}]}], ")"}], "*", "0.95"}]}]}], 
+             ",", "\[IndentingNewLine]", 
+             RowBox[{
+              RowBox[{
+               RowBox[{"ebuylightC", "[", 
+                RowBox[{"[", "hour", "]"}], "]"}], "=", 
+               RowBox[{"dataCproducelight", "[", 
+                RowBox[{"[", "hour", "]"}], "]"}]}], ";", 
+              "\[IndentingNewLine]", 
+              RowBox[{
+               RowBox[{"ebuywindC", "[", 
+                RowBox[{"[", "hour", "]"}], "]"}], "=", 
+               RowBox[{"dataCproducewind", "[", 
+                RowBox[{"[", "hour", "]"}], "]"}]}], ";", 
+              "\[IndentingNewLine]", 
+              RowBox[{
+               RowBox[{"ebuynetC", "[", 
+                RowBox[{"[", "hour", "]"}], "]"}], "=", 
+               RowBox[{
+                RowBox[{"dataCneed", "[", 
+                 RowBox[{"[", "hour", "]"}], "]"}], "-", 
+                RowBox[{"dataCproducelight", "[", 
+                 RowBox[{"[", "hour", "]"}], "]"}], "-", 
+                RowBox[{"dataCproducewind", "[", 
+                 RowBox[{"[", "hour", "]"}], "]"}], "-", 
+                RowBox[{
+                 RowBox[{"(", 
+                  RowBox[{
+                   RowBox[{"saveC", "[", 
+                    RowBox[{"[", "hour", "]"}], "]"}], "-", 
+                   RowBox[{"energy", "*", "0.1"}]}], ")"}], "*", "0.95"}]}]}],
+               ";", "\[IndentingNewLine]", 
+              RowBox[{
+               RowBox[{"wasteC", "[", 
+                RowBox[{"[", "hour", "]"}], "]"}], "=", "0"}], ";", 
+              "\[IndentingNewLine]", 
+              RowBox[{
+               RowBox[{"moneyC", "[", 
+                RowBox[{"[", "hour", "]"}], "]"}], "=", 
+               RowBox[{
+                RowBox[{"0.4", "*", 
+                 RowBox[{"ebuylightC", "[", 
+                  RowBox[{"[", "hour", "]"}], "]"}]}], "+", 
+                RowBox[{"0.5", "*", 
+                 RowBox[{"ebuywindC", "[", 
+                  RowBox[{"[", "hour", "]"}], "]"}]}], "+", 
+                RowBox[{"1", "*", 
+                 RowBox[{"ebuynetC", "[", 
+                  RowBox[{"[", "hour", "]"}], "]"}]}]}]}], ";", 
+              "\[IndentingNewLine]", 
+              RowBox[{
+               RowBox[{"saveC", "[", 
+                RowBox[{"[", 
+                 RowBox[{"hour", "+", "1"}], "]"}], "]"}], "=", 
+               RowBox[{"energy", "*", "0.1"}]}]}]}], "]"}], ";", 
+           "\[IndentingNewLine]", 
+           RowBox[{"If", "[", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"saveC", "[", 
+               RowBox[{"[", 
+                RowBox[{"hour", "+", "1"}], "]"}], "]"}], ">", 
+              RowBox[{"energy", "*", "0.9"}]}], ",", 
+             RowBox[{
+              RowBox[{"saveC", "[", 
+               RowBox[{"[", 
+                RowBox[{"hour", "+", "1"}], "]"}], "]"}], "=", 
+              RowBox[{"energy", "*", "0.9"}]}]}], "]"}], ";"}], 
+          "\[IndentingNewLine]", ",", 
+          RowBox[{"{", 
+           RowBox[{"hour", ",", "1", ",", "24"}], "}"}]}], "]"}], ";", 
+        "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"daypriceC", "[", 
+          RowBox[{"[", "day", "]"}], "]"}], "=", 
+         RowBox[{"Sum", "[", 
+          RowBox[{
+           RowBox[{"moneyC", "[", 
+            RowBox[{"[", "hour", "]"}], "]"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"hour", ",", "1", ",", "24"}], "}"}]}], "]"}]}], ";", 
+        "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"saveC", "[", 
+          RowBox[{"[", "1", "]"}], "]"}], "=", 
+         RowBox[{"saveC", "[", 
+          RowBox[{"[", "25", "]"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+       ",", 
+       RowBox[{"{", 
+        RowBox[{"day", ",", "1", ",", "1825"}], "}"}]}], "]"}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{
+     "(*", "C\:5730\:4e94\:5e74\:8d2d\:7535\:603b\:6210\:672c", "*)"}], 
+     RowBox[{"sumpriceC", "=", 
+      RowBox[{"N", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"Sum", "[", 
+          RowBox[{
+           RowBox[{"daypriceC", "[", 
+            RowBox[{"[", "day", "]"}], "]"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"day", ",", "1", ",", "1825"}], "}"}]}], "]"}], "+", 
+         RowBox[{"800", "*", "power"}], "+", 
+         RowBox[{"1800", "*", "energy"}], "+", 
+         RowBox[{"2500", "*", "pv"}], "+", 
+         RowBox[{"3000", "*", "pw"}]}], ",", "16"}], "]"}]}]}]}], 
+   "\[IndentingNewLine]", "]"}]}]}], "Input",
+ CellChangeTimes->{{3.925546379626629*^9, 3.925546424274025*^9}, {
+   3.925546462474537*^9, 3.925546523886749*^9}, {3.925547021264038*^9, 
+   3.925547022499193*^9}, {3.925547231194631*^9, 3.9255472319746113`*^9}, {
+   3.9255479662407303`*^9, 3.9255479682428226`*^9}, {3.925548316825964*^9, 
+   3.925548317476185*^9}, {3.925548496248872*^9, 3.925548500463852*^9}, {
+   3.925548749353708*^9, 3.925548752472151*^9}, {3.925548846596615*^9, 
+   3.925548848862692*^9}, {3.9255490265239964`*^9, 3.9255490340279827`*^9}, {
+   3.9255514314566536`*^9, 3.9255514740045757`*^9}, {3.925551506336798*^9, 
+   3.925551510869419*^9}, {3.925553501245318*^9, 3.925553531353609*^9}, {
+   3.92555366317468*^9, 3.9255536644352264`*^9}, {3.925553709618667*^9, 
+   3.925553762566099*^9}, {3.925587776885589*^9, 3.925587821806982*^9}, 
+   3.9255894071846066`*^9, {3.925591240683975*^9, 3.925591244032122*^9}, {
+   3.925591384026484*^9, 3.925591387211731*^9}, {3.925591614672934*^9, 
+   3.925591790779505*^9}, {3.925591840431196*^9, 3.925591985330082*^9}, {
+   3.9255920198621635`*^9, 3.925592041276238*^9}, 3.925592102742399*^9, {
+   3.925592147909476*^9, 3.925592172337641*^9}, {3.925592250536743*^9, 
+   3.925592262585039*^9}, 3.925592297839354*^9, {3.925592401067929*^9, 
+   3.925592413898157*^9}, {3.925592933507189*^9, 3.92559302901*^9}, {
+   3.925593880144177*^9, 3.925593886533213*^9}, {3.925594896141098*^9, 
+   3.92559490753316*^9}, {3.925594994337925*^9, 3.9255950068597984`*^9}, {
+   3.9255951828008595`*^9, 3.925595185007952*^9}, {3.9255954079673996`*^9, 
+   3.925595410483143*^9}, {3.925595605939264*^9, 3.925595611432099*^9}, {
+   3.925595645999943*^9, 3.925595652359543*^9}, {3.9255956972072983`*^9, 
+   3.925595791042599*^9}, {3.9255958877138977`*^9, 3.925595897522236*^9}, 
+   3.9255959468761272`*^9, {3.9255959782277536`*^9, 3.9255959815664215`*^9}, {
+   3.925596018235041*^9, 3.92559621496991*^9}, {3.925596254828467*^9, 
+   3.9255962856269855`*^9}, {3.9255963910145226`*^9, 
+   3.9255965930384083`*^9}, {3.9255966316562653`*^9, 
+   3.9255967595826416`*^9}, {3.925596796819788*^9, 3.925596983452553*^9}, {
+   3.925597048787066*^9, 3.925597090267538*^9}, {3.925597285954542*^9, 
+   3.925597291702275*^9}, {3.925599942538265*^9, 3.925599988731777*^9}, {
+   3.9256000749711704`*^9, 3.925600161297499*^9}, {3.925600586511158*^9, 
+   3.925600588235073*^9}, {3.925607148368105*^9, 3.9256071823465385`*^9}, {
+   3.925610426304418*^9, 3.925610843468588*^9}, {3.9256111913586197`*^9, 
+   3.925611193988628*^9}, {3.925611746130974*^9, 3.9256118054545918`*^9}, {
+   3.925611841134533*^9, 3.925611974834287*^9}, {3.925612045642294*^9, 
+   3.925612046728489*^9}, {3.9256120770019608`*^9, 3.925612115298937*^9}, {
+   3.9256121652993164`*^9, 3.925612255452399*^9}, {3.925612347253371*^9, 
+   3.925612513071747*^9}, {3.925612566478189*^9, 3.925612915961401*^9}, {
+   3.925801023413053*^9, 3.925801025125519*^9}, {3.925801110498705*^9, 
+   3.925801125730905*^9}, {3.925801170291548*^9, 3.9258012038841305`*^9}, {
+   3.9258012363486*^9, 3.9258013394115734`*^9}, {3.9258014652261868`*^9, 
+   3.925801466156451*^9}, {3.9258032730949574`*^9, 3.925803274842605*^9}, {
+   3.928102165590835*^9, 3.928102184418951*^9}, {3.928102239178886*^9, 
+   3.9281022558172855`*^9}, {3.928102296118698*^9, 3.9281023217494545`*^9}, {
+   3.928102724800249*^9, 3.928102746385828*^9}, 3.9281028139367657`*^9, {
+   3.9281029575734005`*^9, 3.928102959905115*^9}, {3.928111966764138*^9, 
+   3.928112045217556*^9}, {3.9281121661024895`*^9, 3.928112166335488*^9}, {
+   3.928405714627704*^9, 3.928405716682448*^9}, {3.928406635295828*^9, 
+   3.928406639444353*^9}},
+ CellLabel->"In[17]:=",ExpressionUUID->"a7ecbf48-32a7-1e40-9106-3c8518ff9d62"],
+
+Cell[BoxData[
+ RowBox[{"(*", 
+  RowBox[{"Monitor", "[", 
+   RowBox[{
+    RowBox[{"NMinimize", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"findminC", "[", 
+         RowBox[{"power", ",", "energy", ",", "pv", ",", "pw"}], "]"}], ",", 
+        RowBox[{
+         RowBox[{"0", "<=", "power", "<=", "1000"}], "&&", 
+         RowBox[{"0", "<=", "energy", "<=", "1800"}], "&&", 
+         RowBox[{"0", "<=", "pv", "<=", "1500"}], "&&", 
+         RowBox[{"0", "<=", "pw", "<=", "2000"}]}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"power", ",", "energy", ",", "pv", ",", "pw"}], "}"}], ",", 
+      RowBox[{"Method", "->", 
+       RowBox[{"{", 
+        RowBox[{"\"\<NelderMead\>\"", ",", 
+         RowBox[{"\"\<RandomSeed\>\"", "->", "100"}]}], "}"}]}], ",", 
+      RowBox[{"WorkingPrecision", "->", "4"}]}], "]"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"power", ",", "energy", ",", "pv", ",", "pw"}], "}"}]}], "]"}], 
+  "*)"}]], "Input",
+ CellChangeTimes->{{3.9258013670447273`*^9, 3.925801399769293*^9}, {
+  3.925801591431116*^9, 3.925801591464121*^9}, {3.9281007692071686`*^9, 
+  3.928100771530239*^9}, {3.9281022097657375`*^9, 3.928102211250448*^9}, {
+  3.92810682109198*^9, 3.928106823446768*^9}, {3.9281249347076015`*^9, 
+  3.928124936136669*^9}, {3.9281250402518005`*^9, 3.928125043459427*^9}},
+ CellLabel->"In[21]:=",ExpressionUUID->"128ada24-ea6b-f54c-80b1-6fea083b7813"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+  "(*", "\:4f7f\:7528\:8d1d\:53f6\:65af\:6700\:5c0f\:5316\:51fd\:6570", 
+   "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"regC", "=", 
+     RowBox[{"Cuboid", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"0", ",", "0", ",", "0", ",", "0"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"1000", ",", "1800", ",", "1500", ",", "2000"}], "}"}]}], 
+      "]"}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{"bo", "=", 
+    RowBox[{"BayesianMinimization", "[", 
+     RowBox[{"findminC", ",", "regC", ",", 
+      RowBox[{"Method", "->", "Automatic"}], ",", 
+      RowBox[{"(*", 
+       RowBox[{
+        RowBox[{"MaxIterations", "->", "1000"}], ","}], "*)"}], 
+      RowBox[{"RandomSeeding", "->", "1234"}], ",", 
+      RowBox[{"AssumeDeterministic", "->", "False"}]}], "]"}]}]}]}]], "Input",
+ CellChangeTimes->{{3.9281008537259445`*^9, 3.928100886346344*^9}, {
+   3.928100957374132*^9, 3.928101021616883*^9}, {3.928101057298699*^9, 
+   3.928101064460301*^9}, {3.9281011524338894`*^9, 3.9281011657715816`*^9}, {
+   3.928101567947014*^9, 3.928101575356169*^9}, {3.928101725583851*^9, 
+   3.92810178202479*^9}, {3.928101873208308*^9, 3.928101886881004*^9}, {
+   3.928102261811081*^9, 3.9281022618314056`*^9}, 3.928102350779898*^9, {
+   3.9281029008100243`*^9, 3.928102900953512*^9}, {3.928102966393408*^9, 
+   3.9281029687498894`*^9}, 3.928103082693651*^9, 3.928103651246231*^9, {
+   3.928104112602433*^9, 3.928104117670286*^9}, {3.928104395349964*^9, 
+   3.9281044121441097`*^9}, {3.928104446401119*^9, 3.9281044847191887`*^9}, {
+   3.9281045513242855`*^9, 3.928104556021591*^9}, {3.928104775822935*^9, 
+   3.92810480179364*^9}, 3.928104897934914*^9, {3.928106843587799*^9, 
+   3.928106884583412*^9}, {3.928107685166441*^9, 3.928107692046068*^9}, {
+   3.928111118711008*^9, 3.928111130272589*^9}, {3.928111539876292*^9, 
+   3.928111550271254*^9}, 3.928111597884342*^9, 3.928111720786219*^9, 
+   3.928111815672775*^9, {3.9281122394889774`*^9, 3.928112242448622*^9}, {
+   3.928112377523035*^9, 3.928112378075306*^9}, {3.928112635203066*^9, 
+   3.92811263712953*^9}, {3.928112855217085*^9, 3.928112864497237*^9}, {
+   3.928112954449589*^9, 3.928112969309124*^9}, {3.9284043617536297`*^9, 
+   3.928404390359703*^9}, {3.928469483738098*^9, 
+   3.928469483765196*^9}},ExpressionUUID->"6d6b72d9-d048-ba4e-bcb5-\
+6924d844a6a4"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{
+   TagBox["BayesianMinimizationObject",
+    "SummaryHead"], "[", 
+   DynamicModuleBox[{Typeset`open$$ = False, Typeset`embedState$$ = "Ready"}, 
+    TemplateBox[{
+      PaneSelectorBox[{False -> GridBox[{{
+            PaneBox[
+             ButtonBox[
+              DynamicBox[
+               FEPrivate`FrontEndResource["FEBitmaps", "SummaryBoxOpener"], 
+               ImageSizeCache -> {
+                11.736460507009179`, {0., 11.736460507009179`}}], Appearance -> 
+              None, BaseStyle -> {}, 
+              ButtonFunction :> (Typeset`open$$ = True), Evaluator -> 
+              Automatic, Method -> "Preemptive"], 
+             Alignment -> {Center, Center}, ImageSize -> 
+             Dynamic[{
+               Automatic, 
+                3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                 Magnification])}]], 
+            GraphicsBox[{
+              Thickness[0.029411764705882353`], {
+               FaceForm[{
+                 RGBColor[0.929, 0.929, 0.929], 
+                 Opacity[1.]}], 
+               
+               FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}}}, {{{0., 
+                0.}, {34., 0.}, {34., 34.}, {0., 34.}}}]}, {
+               FaceForm[{
+                 RGBColor[
+                 0.8750000000000001, 0.8750000000000001, 0.8750000000000001], 
+                 Opacity[1.]}], 
+               
+               FilledCurveBox[{{{0, 2, 0}, {1, 3, 3}, {1, 3, 3}, {1, 3, 3}, {
+                1, 3, 3}, {1, 3, 3}, {0, 1, 0}, {1, 3, 3}, {1, 3, 3}, {1, 3, 
+                3}, {0, 1, 0}, {1, 3, 3}, {1, 3, 3}, {1, 3, 3}, {1, 3, 3}, {1,
+                 3, 3}, {0, 1, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 0}, {1, 3, 
+                3}, {0, 1, 0}}}, CompressedData["
+1:eJxTTMoPSmVmYGBgBGJjIGYC4v21shbpSwwd8o7+21RtJO6wxM9BOHExgn+R
+4R4Tp5aBQ/A0xb5SQ3GHqVc4M5RydB1EEg9f1l4q6qB2qG15OJe2Q8eX29cb
+Nws5zNSSACrRhujfJORQ99uq4ByHNkT/RiGHj8lnYr2BfMt0l8z8DUIO9x5w
+T17JpO0w00e0x2uVkANQ9gT7Xy0HoK1d8ouFHNyLfvK//K7loLLzT/uX2UIO
+Wb6f+4K/aDnsAnJvTxdykDoQreD4UcvBH+jsw5OFHE4ZHdmo907L4WnzvLOr
++oUcdqxnft7zQsvBNTP/Q2unkMNSHWeZ14+0HLrkk99FNQk5ADUnn7mr5XDh
+atgb/Wqoez2UHJp6dmZz/vxrL2J/7M5WFyWHvHuFXX1P/tqvbAr0nOug5BBl
+oLVS+MJfe5B0i42Sg0vTo+Mzdv+1B7vXXMnhiLhaMOviv/Z3t7bUXDBWctiU
+CTLgr/2TxIXXTPSVHObsnjaBv+qvvefcBrVDbgoOEhdcbnz48tn+3cnDTmtf
+SjvMYPsg5hHwzl7k9+l3J53F4fwjuSYN2x0Q/DJuFY06HmE4X+ZLTljtOl4H
+i1CQAz/bN7Ac7TcsZ3PY8ap4q+jvX/Zrum9nMOSzOfyQv5Qfz/7b/orQJ8fz
+aWwOZ2aAHPTbnmEWh/S8ODaHBYJL9x4U/22/pRdkMJuDQk2iUajBb/sF9/fx
+zTEGyj+TXf7C47d9xOU9j0Vk2RxkAm9J1yT+tgfp1jzN4PCed5/BzFUMDgzg
+hPHV3m526PzVukwOCm9BEo/gfKBngCF3A85n4C0EOvGEfWKZv5zYK0YHBgZg
+dJlp2ScDg+39DgSfwQHkQWP747t29LIxODqg81uA0dSwjNHh1ppfMbmtxg46
+qZKPIsLFHPi5ty6rfG7kwAOkjr8Uc1jww/DZOlcjeHoHJcNXSPkBPX8AAFks
+ZZ0=
+                "]]}, {
+               FaceForm[{
+                 RGBColor[0.769, 0.769, 0.769], 
+                 Opacity[1.]}], 
+               
+               FilledCurveBox[{{{1, 4, 3}, {0, 1, 0}, {1, 3, 3}, {1, 3, 3}, {
+                1, 3, 3}, {1, 3, 3}, {0, 1, 0}, {1, 3, 3}, {1, 3, 3}, {1, 3, 
+                3}, {1, 3, 3}, {1, 3, 3}, {0, 1, 0}, {1, 3, 3}, {1, 3, 3}, {1,
+                 3, 3}, {0, 1, 0}, {1, 3, 3}, {1, 3, 3}, {1, 3, 3}, {1, 3, 
+                3}, {1, 3, 3}, {0, 1, 0}, {0, 1, 0}, {1, 3, 3}, {0, 1, 0}, {0,
+                 1, 0}, {0, 1, 0}, {1, 3, 3}}}, CompressedData["
+1:eJxdlH9QVFUUx9+uywrCNvqEXV2QYIdhlrfQurskm2n3i6JtlpJhYbUZQxqQ
++KsINyJcmfBXqBiUthqSQMwWOogU5DhphArhMNJYQorJavxMgpCBdlvsvtfM
+o+nO3D8+d+6555zvOeeGp255bsM0hmEkdC+nW0r37qrkH4wVBjDCCsHYihd3
+mT/Wi9y05GTGrREdHl139qkAqRoym3+EdlIL3+qQl9Y/rkSq8fn5XEYYat5M
+P3QvV462mZfPNihCUZjZ63GOSOHwDS5d51SDsx5sHNNKEHuiLm5iiUrkrTtl
+Fw8aAkUuMmyPCX94FmQvPBRT+6kUd9eq6tsZBaizXxP3+yB9roue+KBi6+IZ
+18v90OGXrsm0uck7/ZEG32p/3H7rqyBPq0vkC939H9UGdIpsp6/dkrYQxyf8
+8qd5hgy6FiwkM9c+VtecPcUNoQWDqxskYEYKWtZ810y+HvVes/VTpulEtXaQ
+kjl8hFIwxxdFX3O4RLZHHH5QlDcmcu7lqIUftjKwCf4ZXNlhOf/ePDmano7b
+G5/iIYGFKwZksXJYunMCTz3pIVp6e4dFjubsb4+r9R6Cvs5qt1WOOuHAQ56h
+1uY0ObKKeQceEmZOS8jYIkeZWt8VIfeQ+zXPbnRsl+PKZ8toyG5SUjZh6Dml
+wO3E/Yc3s6OkRtBjNvpodX5cOUSYBPe9QahEXtV+yDq5dIq1ZXupSTAuCA6H
+yOt7Xnvl5vIwRO9WdraNjxLpyvcViXoNLIJAXuIuSzszYNLAKtTLS9bT29PM
+GtxsG0+6U+kl1tPnfy9dpMFwLqEt5SWXNsXa66GBTMc/6CUGzjn7aoIGczp5
+Ay852jOvqs+iwZGlH9CO8pLFVO2eLg7vUrW6c1g0qiKTfO5wWMD3Zz6Lnxy8
+AYfhqktUYRa9vPkQhy9oNqlFLOK+fCL55REOQbx5CYs95p8vbrrPwf7Guazi
+IyyEeCc4DPDlOsZiwPLIg3Avh33xKb9dPcHi79ahlu+lOiTw4ThZ7KxHvmu6
+DncrjzaF1bA4xrv31WGSdkvkaRZReYXfbPTTYa7Q0CwS6Dhtm6FDrImuMyxq
+eTkyY8BXu6siCCnZiaFKbv6/940qZNpyKqPLDSKvGj2QlFUxxTf2eTeM/4f1
+m8sl55YZRS61Rzbu6jWiXXPjr7wBJfhpySkw4Xo5HaBkJQ68vS1YwcTjF6E+
+EpEF+Sv9sSaLNvSwCZ/z6f2pRvXJjlez9Sbw0/lHVTACip35qzOM4n/x///k
+HzNc1Go=
+                "]]}, {
+               FaceForm[{
+                 RGBColor[0.8670000000000001, 0.067, 0.], 
+                 Opacity[1.]}], 
+               
+               FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}}}, {{{17.5533, 8.}, {
+                20.0003, 12.}, {15.0003, 12.}}}]}, {
+               FaceForm[{
+                 RGBColor[0.749, 0.749, 0.749], 
+                 Opacity[1.]}], 
+               
+               FilledCurveBox[{{{1, 4, 3}, {1, 3, 3}, {1, 3, 3}, {1, 3, 3}, {
+                 1, 3, 3}, {0, 1, 0}, {0, 1, 0}, {0, 1, 0}, {1, 3, 3}, {1, 3, 
+                 3}, {1, 3, 3}, {1, 3, 3}, {1, 3, 3}, {1, 3, 3}}, {{0, 2, 
+                 0}, {1, 3, 3}, {1, 3, 3}}}, {CompressedData["
+1:eJxTTMoPSmViYGBQBWIQvW5bUv3NvyYOX70i2yzEzB1kTz61X3LfyCHRKNRA
+66WNg8f+WlmLdH2HfQfF1YKX2jrE5B79t+m3usOl/Hj2czNtHFpPhhxcoaLs
+EHfHjbnitbVDw6PjM3ZP43OQCrwlXeNoicFfsBdkED/EPFdLBxH7Y3e2sgg4
+pHUkx95xs3To+Jv6/UmigMP7k4ed1npaOrz4JA+0iscBZDy3iqWDRwuv//op
+7A6r7cKjN/63cBAAmZvI5LB+SmpH8l0Lhwl3J7e3Rv20v3Y016Rhu4VDgtcr
+FhPBV/Y/F6RvfjXZwoGBQeb1IzOr/RJqwayLixB8kHdXGpvD+d7A4Limagrn
+2+pcmfXsrqFDQiPL0X5DqPnTTRwsgM7Y/4bTYVc2588Fz80cBEAeMhV04ARZ
+6GXhsOJGfJn/PCGH/4p/v5UesHB40qPxlnefsMPbeTY6V6QsHb7xv9y+vlnE
+IQXoe+YIoP8v3XvAPVke4l8XS4dPGwKyZ31XhoRHprkDKDZcMlUdVDTqenau
+NnHQ363Oz/1V3eHV1E08hWv0HYBE920PQwduN9VSpigdh/NpV59neZs6/DiU
+sirhio6DYbmuonyJpcM9UDAF6zoUAJVnONg4AENjkpWiEQZ/145etg/bzB3A
+4SNs6FDdrO+zTMvMYcur4q2it40d0NMPAML+/CU=
+                 "], {{33.9996, 27.2068}, {33.9996, 17.928800000000003`}, {
+                 31.130599999999998`, 17.8608}, {28.970599999999997`, 
+                 17.9438}, {28.427599999999998`, 18.110799999999998`}, {
+                 28.427599999999998`, 18.110799999999998`}, {
+                 31.495599999999996`, 22.3608}, {33.9996, 27.2068}}}]}, {
+               FaceForm[{
+                 RGBColor[0.392, 0.392, 0.392], 
+                 Opacity[1.]}], 
+               
+               FilledCurveBox[{{{1, 4, 3}, {1, 3, 3}, {0, 1, 0}, {1, 3, 3}, {
+                1, 3, 3}, {1, 3, 3}, {0, 1, 0}, {0, 1, 0}, {1, 3, 3}, {1, 3, 
+                3}, {1, 3, 3}, {0, 1, 0}, {1, 3, 3}, {1, 3, 3}, {0, 1, 0}, {0,
+                 1, 0}}}, CompressedData["
+1:eJxTTMoPSmVmYGBgBGJVIGYC4m2iv0+/M3Rw2NnL9kGsw9Th2vMs7W/P7SB0
+uLHDCi431VIjGwduIMX0y9ChLerynscqlg6rE0KC1B8YOryeuomnUMbMQfD4
+rh29xwwdzM9a+110NIao+2LkIHfyqf2SfkOHd68PWCpzmTponRY4vivDwGE/
+3xzjRSVmDt9uX28sVtN1uGVbGbFiq4XDscvaqZJO6g5dGx6+nCpk5SDEvXVZ
+5XIFh8MpqxJCjKwcZLJ8P/dNlnBouAnU4GHlsKYp0HOug4AD69F+w/Kzlg4c
+Sn+/lSYwOSjKf8kJu2vh8CHtKtAn3+01FnRueJhp4XCg8rim1aSn9lURK0zP
+3jZ3YGBQeP3ITMp+6f19QBch+Hsfi8ieVDV1EJhxd3J760f7ByBpJzOHA+Y/
+DqWs+m//yfF82lV1c4cb+fHs52ZyOPADvbPlurnDktVrb8SbCTo4AaWfe1k4
+bAByy/jFHNg/iHkE7LFwUMmpqFqaIw3x3ycLhyMg/zYpOHybDrTnqYXDlw0B
+2bPE1RxqmvV9lp2ycPgTk3v0n5C2Q0crMEAXmzuo9JUWSuvqOYDdv9sU4m9b
+A4f8Rpaj/YEmDs/tl9zfZ2fkEK8JDOhbhg5c0vPiNGebQuwrMnAw9FnG5WZq
+6XAP6KuoyQYOUsXXhT5dtHEwA8XbRgOHiy43PnxhcnBgBBnob+Tg2PTo+IzH
+Dg5e1UAHPTNxSIm948bM4OhwaWLMP2crUzgfHB7PzR0AynUF6A==
+                "]], 
+               
+               FilledCurveBox[{{{1, 4, 3}, {1, 3, 3}, {1, 3, 3}, {1, 3, 
+                3}}}, {{{9., 25.5}, {9., 24.119}, {7.881, 23.}, {6.5, 23.}, {
+                5.119, 23.}, {4., 24.119}, {4., 25.5}, {4., 26.881}, {5.119, 
+                28.}, {6.5, 28.}, {7.881, 28.}, {9., 26.881}, {9., 25.5}}}], 
+               
+               FilledCurveBox[{{{1, 4, 3}, {1, 3, 3}, {1, 3, 3}, {1, 3, 
+                3}}}, {{{30., 17.5}, {30., 16.119}, {28.881, 15.}, {27.5, 
+                15.}, {26.119, 15.}, {25., 16.119}, {25., 17.5}, {25., 
+                18.881}, {26.119, 20.}, {27.5, 20.}, {28.881, 20.}, {30., 
+                18.881}, {30., 17.5}}}]}}, AspectRatio -> Automatic, 
+             Axes -> {False, False}, AxesLabel -> {None, None}, 
+             AxesOrigin -> {0, 0}, BaseStyle -> {FontFamily -> "Arial", 
+               AbsoluteThickness[1.5]}, DisplayFunction -> Identity, 
+             Frame -> {{True, True}, {True, True}}, 
+             FrameLabel -> {{None, None}, {None, None}}, FrameStyle -> 
+             Directive[
+               Thickness[Tiny], 
+               GrayLevel[0.7]], FrameTicks -> {{None, None}, {None, None}}, 
+             GridLines -> {None, None}, ImagePadding -> None, ImageSize -> 
+             Dynamic[{
+               Automatic, 
+                3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                 Magnification])}], LabelStyle -> {FontFamily -> "Arial"}, 
+             Method -> {"ScalingFunctions" -> None}, PlotRange -> {All, All}, 
+             PlotRangeClipping -> True, PlotRangePadding -> None, 
+             Ticks -> {None, None}], 
+            GridBox[{{
+               RowBox[{
+                 TagBox[
+                 "\"Minimum configuration: \"", "SummaryItemAnnotation"], 
+                 "\[InvisibleSpace]", 
+                 TagBox[
+                  RowBox[{"{", 
+                    
+                    RowBox[{
+                    "158.75335507173483`", ",", "132.89541460757079`", ",", 
+                    "307.37956966329403`", ",", "1652.8571702393613`"}], 
+                    "}"}], "SummaryItem"]}]}, {
+               RowBox[{
+                 TagBox["\"Minimum value: \"", "SummaryItemAnnotation"], 
+                 "\[InvisibleSpace]", 
+                 TagBox["1.7534022315519627`*^7", "SummaryItem"]}]}}, 
+             AutoDelete -> False, 
+             BaseStyle -> {
+              ShowStringCharacters -> False, NumberMarks -> False, 
+               PrintPrecision -> 3, ShowSyntaxStyles -> False}, 
+             GridBoxAlignment -> {
+              "Columns" -> {{Left}}, "Rows" -> {{Automatic}}}, 
+             GridBoxItemSize -> {
+              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+             GridBoxSpacings -> {
+              "Columns" -> {{2}}, "Rows" -> {{Automatic}}}]}}, AutoDelete -> 
+          False, BaselinePosition -> {1, 1}, 
+          GridBoxAlignment -> {"Columns" -> {{Left}}, "Rows" -> {{Top}}}, 
+          GridBoxItemSize -> {
+           "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], True -> 
+        GridBox[{{
+            PaneBox[
+             ButtonBox[
+              DynamicBox[
+               FEPrivate`FrontEndResource["FEBitmaps", "SummaryBoxCloser"], 
+               ImageSizeCache -> {
+                11.736460507009179`, {0., 11.736460507009179`}}], Appearance -> 
+              None, BaseStyle -> {}, 
+              ButtonFunction :> (Typeset`open$$ = False), Evaluator -> 
+              Automatic, Method -> "Preemptive"], 
+             Alignment -> {Center, Center}, ImageSize -> 
+             Dynamic[{
+               Automatic, 
+                3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                 Magnification])}]], 
+            GraphicsBox[{
+              Thickness[0.029411764705882353`], {
+               FaceForm[{
+                 RGBColor[0.929, 0.929, 0.929], 
+                 Opacity[1.]}], 
+               
+               FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}}}, {{{0., 
+                0.}, {34., 0.}, {34., 34.}, {0., 34.}}}]}, {
+               FaceForm[{
+                 RGBColor[
+                 0.8750000000000001, 0.8750000000000001, 0.8750000000000001], 
+                 Opacity[1.]}], 
+               
+               FilledCurveBox[{{{0, 2, 0}, {1, 3, 3}, {1, 3, 3}, {1, 3, 3}, {
+                1, 3, 3}, {1, 3, 3}, {0, 1, 0}, {1, 3, 3}, {1, 3, 3}, {1, 3, 
+                3}, {0, 1, 0}, {1, 3, 3}, {1, 3, 3}, {1, 3, 3}, {1, 3, 3}, {1,
+                 3, 3}, {0, 1, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 0}, {1, 3, 
+                3}, {0, 1, 0}}}, CompressedData["
+1:eJxTTMoPSmVmYGBgBGJjIGYC4v21shbpSwwd8o7+21RtJO6wxM9BOHExgn+R
+4R4Tp5aBQ/A0xb5SQ3GHqVc4M5RydB1EEg9f1l4q6qB2qG15OJe2Q8eX29cb
+Nws5zNSSACrRhujfJORQ99uq4ByHNkT/RiGHj8lnYr2BfMt0l8z8DUIO9x5w
+T17JpO0w00e0x2uVkANQ9gT7Xy0HoK1d8ouFHNyLfvK//K7loLLzT/uX2UIO
+Wb6f+4K/aDnsAnJvTxdykDoQreD4UcvBH+jsw5OFHE4ZHdmo907L4WnzvLOr
++oUcdqxnft7zQsvBNTP/Q2unkMNSHWeZ14+0HLrkk99FNQk5ADUnn7mr5XDh
+atgb/Wqoez2UHJp6dmZz/vxrL2J/7M5WFyWHvHuFXX1P/tqvbAr0nOug5BBl
+oLVS+MJfe5B0i42Sg0vTo+Mzdv+1B7vXXMnhiLhaMOviv/Z3t7bUXDBWctiU
+CTLgr/2TxIXXTPSVHObsnjaBv+qvvefcBrVDbgoOEhdcbnz48tn+3cnDTmtf
+SjvMYPsg5hHwzl7k9+l3J53F4fwjuSYN2x0Q/DJuFY06HmE4X+ZLTljtOl4H
+i1CQAz/bN7Ac7TcsZ3PY8ap4q+jvX/Zrum9nMOSzOfyQv5Qfz/7b/orQJ8fz
+aWwOZ2aAHPTbnmEWh/S8ODaHBYJL9x4U/22/pRdkMJuDQk2iUajBb/sF9/fx
+zTEGyj+TXf7C47d9xOU9j0Vk2RxkAm9J1yT+tgfp1jzN4PCed5/BzFUMDgzg
+hPHV3m526PzVukwOCm9BEo/gfKBngCF3A85n4C0EOvGEfWKZv5zYK0YHBgZg
+dJlp2ScDg+39DgSfwQHkQWP747t29LIxODqg81uA0dSwjNHh1ppfMbmtxg46
+qZKPIsLFHPi5ty6rfG7kwAOkjr8Uc1jww/DZOlcjeHoHJcNXSPkBPX8AAFks
+ZZ0=
+                "]]}, {
+               FaceForm[{
+                 RGBColor[0.769, 0.769, 0.769], 
+                 Opacity[1.]}], 
+               
+               FilledCurveBox[{{{1, 4, 3}, {0, 1, 0}, {1, 3, 3}, {1, 3, 3}, {
+                1, 3, 3}, {1, 3, 3}, {0, 1, 0}, {1, 3, 3}, {1, 3, 3}, {1, 3, 
+                3}, {1, 3, 3}, {1, 3, 3}, {0, 1, 0}, {1, 3, 3}, {1, 3, 3}, {1,
+                 3, 3}, {0, 1, 0}, {1, 3, 3}, {1, 3, 3}, {1, 3, 3}, {1, 3, 
+                3}, {1, 3, 3}, {0, 1, 0}, {0, 1, 0}, {1, 3, 3}, {0, 1, 0}, {0,
+                 1, 0}, {0, 1, 0}, {1, 3, 3}}}, CompressedData["
+1:eJxdlH9QVFUUx9+uywrCNvqEXV2QYIdhlrfQurskm2n3i6JtlpJhYbUZQxqQ
++KsINyJcmfBXqBiUthqSQMwWOogU5DhphArhMNJYQorJavxMgpCBdlvsvtfM
+o+nO3D8+d+6555zvOeeGp255bsM0hmEkdC+nW0r37qrkH4wVBjDCCsHYihd3
+mT/Wi9y05GTGrREdHl139qkAqRoym3+EdlIL3+qQl9Y/rkSq8fn5XEYYat5M
+P3QvV462mZfPNihCUZjZ63GOSOHwDS5d51SDsx5sHNNKEHuiLm5iiUrkrTtl
+Fw8aAkUuMmyPCX94FmQvPBRT+6kUd9eq6tsZBaizXxP3+yB9roue+KBi6+IZ
+18v90OGXrsm0uck7/ZEG32p/3H7rqyBPq0vkC939H9UGdIpsp6/dkrYQxyf8
+8qd5hgy6FiwkM9c+VtecPcUNoQWDqxskYEYKWtZ810y+HvVes/VTpulEtXaQ
+kjl8hFIwxxdFX3O4RLZHHH5QlDcmcu7lqIUftjKwCf4ZXNlhOf/ePDmano7b
+G5/iIYGFKwZksXJYunMCTz3pIVp6e4dFjubsb4+r9R6Cvs5qt1WOOuHAQ56h
+1uY0ObKKeQceEmZOS8jYIkeZWt8VIfeQ+zXPbnRsl+PKZ8toyG5SUjZh6Dml
+wO3E/Yc3s6OkRtBjNvpodX5cOUSYBPe9QahEXtV+yDq5dIq1ZXupSTAuCA6H
+yOt7Xnvl5vIwRO9WdraNjxLpyvcViXoNLIJAXuIuSzszYNLAKtTLS9bT29PM
+GtxsG0+6U+kl1tPnfy9dpMFwLqEt5SWXNsXa66GBTMc/6CUGzjn7aoIGczp5
+Ay852jOvqs+iwZGlH9CO8pLFVO2eLg7vUrW6c1g0qiKTfO5wWMD3Zz6Lnxy8
+AYfhqktUYRa9vPkQhy9oNqlFLOK+fCL55REOQbx5CYs95p8vbrrPwf7Guazi
+IyyEeCc4DPDlOsZiwPLIg3Avh33xKb9dPcHi79ahlu+lOiTw4ThZ7KxHvmu6
+DncrjzaF1bA4xrv31WGSdkvkaRZReYXfbPTTYa7Q0CwS6Dhtm6FDrImuMyxq
+eTkyY8BXu6siCCnZiaFKbv6/940qZNpyKqPLDSKvGj2QlFUxxTf2eTeM/4f1
+m8sl55YZRS61Rzbu6jWiXXPjr7wBJfhpySkw4Xo5HaBkJQ68vS1YwcTjF6E+
+EpEF+Sv9sSaLNvSwCZ/z6f2pRvXJjlez9Sbw0/lHVTACip35qzOM4n/x///k
+HzNc1Go=
+                "]]}, {
+               FaceForm[{
+                 RGBColor[0.8670000000000001, 0.067, 0.], 
+                 Opacity[1.]}], 
+               
+               FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}}}, {{{17.5533, 8.}, {
+                20.0003, 12.}, {15.0003, 12.}}}]}, {
+               FaceForm[{
+                 RGBColor[0.749, 0.749, 0.749], 
+                 Opacity[1.]}], 
+               
+               FilledCurveBox[{{{1, 4, 3}, {1, 3, 3}, {1, 3, 3}, {1, 3, 3}, {
+                 1, 3, 3}, {0, 1, 0}, {0, 1, 0}, {0, 1, 0}, {1, 3, 3}, {1, 3, 
+                 3}, {1, 3, 3}, {1, 3, 3}, {1, 3, 3}, {1, 3, 3}}, {{0, 2, 
+                 0}, {1, 3, 3}, {1, 3, 3}}}, {CompressedData["
+1:eJxTTMoPSmViYGBQBWIQvW5bUv3NvyYOX70i2yzEzB1kTz61X3LfyCHRKNRA
+66WNg8f+WlmLdH2HfQfF1YKX2jrE5B79t+m3usOl/Hj2czNtHFpPhhxcoaLs
+EHfHjbnitbVDw6PjM3ZP43OQCrwlXeNoicFfsBdkED/EPFdLBxH7Y3e2sgg4
+pHUkx95xs3To+Jv6/UmigMP7k4ed1npaOrz4JA+0iscBZDy3iqWDRwuv//op
+7A6r7cKjN/63cBAAmZvI5LB+SmpH8l0Lhwl3J7e3Rv20v3Y016Rhu4VDgtcr
+FhPBV/Y/F6RvfjXZwoGBQeb1IzOr/RJqwayLixB8kHdXGpvD+d7A4Limagrn
+2+pcmfXsrqFDQiPL0X5DqPnTTRwsgM7Y/4bTYVc2588Fz80cBEAeMhV04ARZ
+6GXhsOJGfJn/PCGH/4p/v5UesHB40qPxlnefsMPbeTY6V6QsHb7xv9y+vlnE
+IQXoe+YIoP8v3XvAPVke4l8XS4dPGwKyZ31XhoRHprkDKDZcMlUdVDTqenau
+NnHQ363Oz/1V3eHV1E08hWv0HYBE920PQwduN9VSpigdh/NpV59neZs6/DiU
+sirhio6DYbmuonyJpcM9UDAF6zoUAJVnONg4AENjkpWiEQZ/145etg/bzB3A
+4SNs6FDdrO+zTMvMYcur4q2it40d0NMPAML+/CU=
+                 "], {{33.9996, 27.2068}, {33.9996, 17.928800000000003`}, {
+                 31.130599999999998`, 17.8608}, {28.970599999999997`, 
+                 17.9438}, {28.427599999999998`, 18.110799999999998`}, {
+                 28.427599999999998`, 18.110799999999998`}, {
+                 31.495599999999996`, 22.3608}, {33.9996, 27.2068}}}]}, {
+               FaceForm[{
+                 RGBColor[0.392, 0.392, 0.392], 
+                 Opacity[1.]}], 
+               
+               FilledCurveBox[{{{1, 4, 3}, {1, 3, 3}, {0, 1, 0}, {1, 3, 3}, {
+                1, 3, 3}, {1, 3, 3}, {0, 1, 0}, {0, 1, 0}, {1, 3, 3}, {1, 3, 
+                3}, {1, 3, 3}, {0, 1, 0}, {1, 3, 3}, {1, 3, 3}, {0, 1, 0}, {0,
+                 1, 0}}}, CompressedData["
+1:eJxTTMoPSmVmYGBgBGJVIGYC4m2iv0+/M3Rw2NnL9kGsw9Th2vMs7W/P7SB0
+uLHDCi431VIjGwduIMX0y9ChLerynscqlg6rE0KC1B8YOryeuomnUMbMQfD4
+rh29xwwdzM9a+110NIao+2LkIHfyqf2SfkOHd68PWCpzmTponRY4vivDwGE/
+3xzjRSVmDt9uX28sVtN1uGVbGbFiq4XDscvaqZJO6g5dGx6+nCpk5SDEvXVZ
+5XIFh8MpqxJCjKwcZLJ8P/dNlnBouAnU4GHlsKYp0HOug4AD69F+w/Kzlg4c
+Sn+/lSYwOSjKf8kJu2vh8CHtKtAn3+01FnRueJhp4XCg8rim1aSn9lURK0zP
+3jZ3YGBQeP3ITMp+6f19QBch+Hsfi8ieVDV1EJhxd3J760f7ByBpJzOHA+Y/
+DqWs+m//yfF82lV1c4cb+fHs52ZyOPADvbPlurnDktVrb8SbCTo4AaWfe1k4
+bAByy/jFHNg/iHkE7LFwUMmpqFqaIw3x3ycLhyMg/zYpOHybDrTnqYXDlw0B
+2bPE1RxqmvV9lp2ycPgTk3v0n5C2Q0crMEAXmzuo9JUWSuvqOYDdv9sU4m9b
+A4f8Rpaj/YEmDs/tl9zfZ2fkEK8JDOhbhg5c0vPiNGebQuwrMnAw9FnG5WZq
+6XAP6KuoyQYOUsXXhT5dtHEwA8XbRgOHiy43PnxhcnBgBBnob+Tg2PTo+IzH
+Dg5e1UAHPTNxSIm948bM4OhwaWLMP2crUzgfHB7PzR0AynUF6A==
+                "]], 
+               
+               FilledCurveBox[{{{1, 4, 3}, {1, 3, 3}, {1, 3, 3}, {1, 3, 
+                3}}}, {{{9., 25.5}, {9., 24.119}, {7.881, 23.}, {6.5, 23.}, {
+                5.119, 23.}, {4., 24.119}, {4., 25.5}, {4., 26.881}, {5.119, 
+                28.}, {6.5, 28.}, {7.881, 28.}, {9., 26.881}, {9., 25.5}}}], 
+               
+               FilledCurveBox[{{{1, 4, 3}, {1, 3, 3}, {1, 3, 3}, {1, 3, 
+                3}}}, {{{30., 17.5}, {30., 16.119}, {28.881, 15.}, {27.5, 
+                15.}, {26.119, 15.}, {25., 16.119}, {25., 17.5}, {25., 
+                18.881}, {26.119, 20.}, {27.5, 20.}, {28.881, 20.}, {30., 
+                18.881}, {30., 17.5}}}]}}, AspectRatio -> Automatic, 
+             Axes -> {False, False}, AxesLabel -> {None, None}, 
+             AxesOrigin -> {0, 0}, BaseStyle -> {FontFamily -> "Arial", 
+               AbsoluteThickness[1.5]}, DisplayFunction -> Identity, 
+             Frame -> {{True, True}, {True, True}}, 
+             FrameLabel -> {{None, None}, {None, None}}, FrameStyle -> 
+             Directive[
+               Thickness[Tiny], 
+               GrayLevel[0.7]], FrameTicks -> {{None, None}, {None, None}}, 
+             GridLines -> {None, None}, ImagePadding -> None, ImageSize -> 
+             Dynamic[{
+               Automatic, 
+                3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                 Magnification])}], LabelStyle -> {FontFamily -> "Arial"}, 
+             Method -> {"ScalingFunctions" -> None}, PlotRange -> {All, All}, 
+             PlotRangeClipping -> True, PlotRangePadding -> None, 
+             Ticks -> {None, None}], 
+            GridBox[{{
+               RowBox[{
+                 TagBox[
+                 "\"Minimum configuration: \"", "SummaryItemAnnotation"], 
+                 "\[InvisibleSpace]", 
+                 TagBox[
+                  RowBox[{"{", 
+                    
+                    RowBox[{
+                    "158.75335507173483`", ",", "132.89541460757079`", ",", 
+                    "307.37956966329403`", ",", "1652.8571702393613`"}], 
+                    "}"}], "SummaryItem"]}]}, {
+               RowBox[{
+                 TagBox["\"Minimum value: \"", "SummaryItemAnnotation"], 
+                 "\[InvisibleSpace]", 
+                 TagBox["1.7534022315519627`*^7", "SummaryItem"]}]}, {
+               RowBox[{
+                 TagBox[
+                 "\"Number of evaluations: \"", "SummaryItemAnnotation"], 
+                 "\[InvisibleSpace]", 
+                 TagBox["19", "SummaryItem"]}]}, {
+               RowBox[{
+                 TagBox["\"Prediction method: \"", "SummaryItemAnnotation"], 
+                 "\[InvisibleSpace]", 
+                 TagBox["\"GaussianProcess\"", "SummaryItem"]}]}}, AutoDelete -> 
+             False, BaseStyle -> {
+              ShowStringCharacters -> False, NumberMarks -> False, 
+               PrintPrecision -> 3, ShowSyntaxStyles -> False}, 
+             GridBoxAlignment -> {
+              "Columns" -> {{Left}}, "Rows" -> {{Automatic}}}, 
+             GridBoxItemSize -> {
+              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+             GridBoxSpacings -> {
+              "Columns" -> {{2}}, "Rows" -> {{Automatic}}}]}}, AutoDelete -> 
+          False, BaselinePosition -> {1, 1}, 
+          GridBoxAlignment -> {"Columns" -> {{Left}}, "Rows" -> {{Top}}}, 
+          GridBoxItemSize -> {
+           "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}]}, 
+       Dynamic[Typeset`open$$], ImageSize -> Automatic]},
+     "SummaryPanel"],
+    DynamicModuleValues:>{}], "]"}],
+  BayesianMinimizationObject[<|
+   "EvaluationHistory" -> 
+    Dataset[{<|
+       "Configuration" -> {11.644572969246703`, 1669.0790940158915`, 
+         815.6351504266022, 958.6633409448493}, "Value" -> 
+        2.076427681813661*^7|>, <|
+       "Configuration" -> {245.34922778070478`, 1367.812802810858, 
+         1477.4894963164566`, 434.0902431266773}, "Value" -> 
+        2.0149653470111225`*^7|>, <|
+       "Configuration" -> {401.5492268363294, 1138.934263713606, 
+         1236.5920813093264`, 211.07668428630566`}, "Value" -> 
+        2.0002209844597083`*^7|>, <|
+       "Configuration" -> {401.2085121443383, 496.49370156768197`, 
+         943.3549223238106, 598.733341841223}, "Value" -> 
+        1.8783714601571895`*^7|>, <|
+       "Configuration" -> {553.9805335018452, 572.6144120843998, 
+         737.9687311783377, 109.1320342511981}, "Value" -> 
+        1.964922807818211*^7|>, <|
+       "Configuration" -> {834.4528697437339, 67.70726227401403, 
+         1053.8689064770872`, 957.5924947883947}, "Value" -> 
+        1.8823178178243592`*^7|>, <|
+       "Configuration" -> {807.0603674101997, 957.3658214715668, 
+         705.5089243769767, 66.11561645919028}, "Value" -> 
+        2.084724479395003*^7|>, <|
+       "Configuration" -> {313.2871320344044, 16.644389655046552`, 
+         1006.7869695063946`, 710.6484157691746}, "Value" -> 
+        1.85070801555109*^7|>, <|
+       "Configuration" -> {849.0382763621199, 304.9730560261572, 
+         1046.84510223405, 1575.3594912752474`}, "Value" -> 
+        1.834837157809747*^7|>, <|
+       "Configuration" -> {970.5088833899846, 211.868088021982, 
+         878.0270969223255, 1234.3166318560814`}, "Value" -> 
+        1.837639247066637*^7|>, <|
+       "Configuration" -> {453.45464248425384`, 1085.0379741885906`, 
+         589.7671393125828, 1910.4262341715144`}, "Value" -> 
+        1.850136908691769*^7|>, <|
+       "Configuration" -> {869.9433768993321, 16.519228695885737`, 
+         402.75053579968824`, 1565.179836402649}, "Value" -> 
+        1.857834650678047*^7|>, <|
+       "Configuration" -> {301.6977601102475, 49.19464387497668, 
+         453.8612016310207, 1416.2935367315322`}, "Value" -> 
+        1.779795542830235*^7|>, <|
+       "Configuration" -> {158.75335507173483`, 132.89541460757079`, 
+         307.37956966329403`, 1652.8571702393613`}, "Value" -> 
+        1.750780281615584*^7|>, <|
+       "Configuration" -> {772.6937689690081, 947.7525697875383, 
+         857.6891270787654, 1751.1222391175422`}, "Value" -> 
+        1.8516783276725322`*^7|>, <|
+       "Configuration" -> {614.7029388890113, 264.66129384290724`, 
+         433.7559943946678, 1323.8896851436298`}, "Value" -> 
+        1.768095724284321*^7|>, <|
+       "Configuration" -> {204.2600750106285, 307.95279649600184`, 
+         128.83911773664337`, 1613.8449694769656`}, "Value" -> 
+        1.788628375360845*^7|>, <|
+       "Configuration" -> {27.438684969662617`, 136.402496969567, 
+         793.184155582364, 297.183304832501}, "Value" -> 
+        1.863264593060973*^7|>, <|
+       "Configuration" -> {27.12649126328559, 702.8529077927843, 
+         715.0994919308924, 1964.3396171891684`}, "Value" -> 
+        1.915233212969743*^7|>}, 
+      TypeSystem`Vector[
+       TypeSystem`Struct[{"Configuration", "Value"}, {
+         TypeSystem`Vector[
+          TypeSystem`Atom[Real], 4], 
+         TypeSystem`Atom[Real]}], 19], <||>], "OptimalValue" -> 
+    1.7534022315519627`*^7, "PredictorFunction" -> 
+    PredictorFunction[<|
+      "ExampleNumber" -> 19, 
+       "Input" -> <|
+        "Preprocessor" -> 
+         MachineLearning`MLProcessor[
+          "ToMLDataset", <|
+           "Input" -> <|
+             "f1" -> <|"Type" -> "NumericalVector", "Length" -> 4|>|>, 
+            "Output" -> <|
+             "f1" -> <|"Type" -> "NumericalVector", "Weight" -> 1|>|>, 
+            "Preprocessor" -> 
+            MachineLearning`MLProcessor["Sequence", <|"Processors" -> {
+                 MachineLearning`MLProcessor["List"], 
+                 MachineLearning`MLProcessor[
+                 "WrapMLDataset", <|
+                  "FeatureTypes" -> {"NumericalVector"}, 
+                   "FeatureKeys" -> {"f1"}, "FeatureWeights" -> Automatic, 
+                   "ExampleWeights" -> Automatic, "RawExample" -> 
+                   Missing["KeyAbsent", "RawExample"], "StructurePreserving" -> 
+                   False|>]}|>], "ScalarFeature" -> True, "Invertibility" -> 
+            "Perfect", "StructurePreserving" -> False, "Missing" -> 
+            "Allowed"|>], "Processor" -> 
+         MachineLearning`MLProcessor[
+          "Sequence", <|
+           "Input" -> <|
+             "f1" -> <|"Type" -> "NumericalVector", "Weight" -> 1|>|>, 
+            "Output" -> <|
+             "f1" -> <|"Type" -> "NumericalVector", "Weight" -> 1|>|>, 
+            "Processors" -> {
+              MachineLearning`MLProcessor[
+              "SynthesizeMissingValues", <|
+               "Invertibility" -> "Perfect", "Missing" -> "Imputed", 
+                "StructurePreserving" -> True, 
+                "Input" -> <|
+                 "f1" -> <|"Type" -> "NumericalVector", "Weight" -> 1|>|>, 
+                "Distribution" -> 
+                LearnedDistribution[<|
+                  "ExampleNumber" -> 19, "Preprocessor" -> 
+                   MachineLearning`MLProcessor[
+                    "ToMLDataset", <|
+                    "Input" -> <|
+                    "f1" -> <|"Type" -> "NumericalVector", "Length" -> 4|>|>, 
+                    "Output" -> <|
+                    "f1" -> <|"Type" -> "NumericalVector", "Weight" -> 1|>|>, 
+                    "Preprocessor" -> MachineLearning`MLProcessor["Identity"],
+                     "ScalarFeature" -> True, "Invertibility" -> "Perfect", 
+                    "StructurePreserving" -> False, "Missing" -> "Allowed"|>],
+                    "Processor" -> 
+                   MachineLearning`MLProcessor[
+                    "Standardize", <|
+                    "Invertibility" -> "Perfect", "Missing" -> "Allowed", 
+                    "StructurePreserving" -> True, 
+                    "Input" -> <|
+                    "f1" -> <|"Type" -> "NumericalVector", "Weight" -> 1|>|>, 
+                    "Mean" -> {464.11319451789836`, 549.8295904156331, 
+                    767.6001954842782, 1071.0981519949057`}, 
+                    "StandardDeviation" -> {307.9772381095369, 
+                    492.9532161680007, 324.2098199319033, 622.567215067727}, 
+                    "Output" -> <|
+                    "f1" -> <|"Type" -> "NumericalVector", "Weight" -> 1|>|>, 
+                    "Version" -> {14., 0}, "ID" -> 4057093986675772656|>], 
+                   "PerformanceGoal" -> "DirectTraining", "BatchProcessing" -> 
+                   Automatic, 
+                   "Model" -> <|
+                    "RotationMatrix" -> {{0.11029585704523104`, 
+                    0.8524093087952089}, {-0.5178999206074371, \
+-0.38909440257554434`}, {-0.6345049753844818, 0.27732660263004155`}, {
+                    0.5630434551309578, -0.2123531766593885}}, 
+                    "Precisions" -> {0.5675370597268117, 0.8839240190697131}, 
+                    "NoisePrecision" -> 1.8210052396981582`, "Processor" -> 
+                    MachineLearning`MLProcessor[
+                    "Center", <|
+                    "Invertibility" -> "Perfect", "Missing" -> "Allowed", 
+                    "StructurePreserving" -> True, 
+                    "Input" -> <|
+                    "f1" -> <|"Type" -> "NumericalVector", "Weight" -> 1|>|>, 
+                    "Mean" -> {-0.0014668810271246493`, \
+-0.00032564720794402363`, 0.00042489064533621657`, -0.0008663211598472877}, 
+                    "Output" -> <|
+                    "f1" -> <|"Type" -> "NumericalVector", "Weight" -> 1|>|>, 
+                    "Version" -> {14., 0}, "ID" -> 2405811348924213572|>], 
+                    "PostProcessor" -> 
+                    MachineLearning`MLProcessor[
+                    "FirstValues", <|
+                    "Info" -> <|"Type" -> "NumericalVector", "Weight" -> 1|>, 
+                    "Key" -> "f1", "Invertibility" -> "Perfect", 
+                    "StructurePreserving" -> False, "Missing" -> "Allowed"|>],
+                     "Method" -> "Multinormal", 
+                    "Options" -> <|
+                    "CovarianceType" -> <|
+                    "Value" -> "Full", "Options" -> <||>|>, 
+                    "IntrinsicDimension" -> <|
+                    "Value" -> 2, "Options" -> <||>|>|>|>, 
+                   "TrainingInformation" -> <|
+                    "Configurations" -> 
+                    Dataset[<|<|
+                    "Value" -> "Multinormal", 
+                    "Options" -> <|
+                    "CovarianceType" -> <|"Value" -> "Full"|>, 
+                    "IntrinsicDimension" -> <|"Value" -> "Heuristic"|>|>, 
+                    "NaiveImputer" -> 
+                    MachineLearning`MLProcessor[
+                    "ImputeMissing", <|
+                    "Invertibility" -> "Perfect", "Missing" -> "Imputed", 
+                    "StructurePreserving" -> True, 
+                    "Input" -> <|
+                    "f1" -> <|"Type" -> "NumericalVector", "Weight" -> 1|>|>, 
+                    "Mean" -> {-0.0014668810271246493`, -0.000325647207944047,
+                     0.00042489064533627355`, -0.000866321159847311}, 
+                    "StandardDeviation" -> {0.9991131871197475, 
+                    0.9989422276699127, 1.0005578708572298`, 
+                    0.9971881071957238}, "Method" -> "NaiveSampler", 
+                    "VectorLength" -> 4, 
+                    "Output" -> <|
+                    "f1" -> <|"Type" -> "NumericalVector", "Weight" -> 1|>|>, 
+                    "Type" -> "NumericalVector", "Version" -> {14., 0}, "ID" -> 
+                    556111927383614878|>], "EMIterations" -> 1|> -> <||>|>, 
+                    TypeSystem`Assoc[
+                    
+                    TypeSystem`Struct[{
+                    "Value", "Options", "NaiveImputer", "EMIterations"}, {
+                    TypeSystem`Atom[String], 
+                    TypeSystem`Assoc[
+                    TypeSystem`Atom[String], 
+                    TypeSystem`Struct[{"Value"}, {
+                    TypeSystem`Atom[String]}], 2], TypeSystem`AnyType, 
+                    TypeSystem`Atom[Integer]}], 
+                    TypeSystem`Assoc[
+                    TypeSystem`UnknownType, TypeSystem`UnknownType, 
+                    TypeSystem`AnyLength], 1], <||>], "BestModelInformation" -> 
+                    Dataset[<|
+                    "Configuration" -> {
+                    "Multinormal", "CovarianceType" -> "Full", 
+                    "IntrinsicDimension" -> "Heuristic"}, "ModelUtility" -> 
+                    Missing[]|>, 
+                    TypeSystem`Struct[{"Configuration", "ModelUtility"}, {
+                    TypeSystem`Tuple[{
+                    TypeSystem`Atom[String], TypeSystem`AnyType, 
+                    TypeSystem`AnyType}], TypeSystem`UnknownType}], <||>]|>, 
+                   "NaiveImputer" -> 
+                   MachineLearning`MLProcessor[
+                    "ImputeMissing", <|
+                    "Invertibility" -> "Perfect", "Missing" -> "Imputed", 
+                    "StructurePreserving" -> True, 
+                    "Input" -> <|
+                    "f1" -> <|"Type" -> "NumericalVector", "Weight" -> 1|>|>, 
+                    "Mean" -> {-0.0014668810271246493`, -0.000325647207944047,
+                     0.00042489064533627355`, -0.000866321159847311}, 
+                    "StandardDeviation" -> {0.9991131871197475, 
+                    0.9989422276699127, 1.0005578708572298`, 
+                    0.9971881071957238}, "Method" -> "NaiveSampler", 
+                    "VectorLength" -> 4, 
+                    "Output" -> <|
+                    "f1" -> <|"Type" -> "NumericalVector", "Weight" -> 1|>|>, 
+                    "Type" -> "NumericalVector", "Version" -> {14., 0}, "ID" -> 
+                    556111927383614878|>], "InputDimension" -> 0, 
+                   "OutputDimension" -> 4, 
+                   "Log" -> <|
+                    "Example" -> 
+                    MachineLearning`MLDataset[<|
+                    "f1" -> <|
+                    "Type" -> "NumericalVector", "Weight" -> 1, 
+                    "Values" -> {{772.6937689690081, 947.7525697875383, 
+                    857.6891270787654, 1751.1222391175422`}}, "ID" -> 
+                    9053905191859618315|>|>, <|
+                    "ExampleNumber" -> 1, "ExampleWeights" -> 1, 
+                    "LogDensityRatios" -> 0, "RawExample" -> False|>], 
+                    "TrainingTime" -> 0.0356242, "MaxTrainingMemory" -> 
+                    182984, "DataMemory" -> 2528, "FunctionMemory" -> 32896, 
+                    "LanguageVersion" -> {14., 0}, "Date" -> 
+                    DateObject[{
+                    2024, 6, 27, 16, 56, 16.2492334`8.963407822341871}, 
+                    "Instant", "Gregorian", 8.], "ProcessorCount" -> 24, 
+                    "ProcessorType" -> "x86-64", "OperatingSystem" -> 
+                    "Windows", "SystemWordLength" -> 64, 
+                    "Evaluations" -> {}|>, "LogPDFDistribution" -> 
+                   MachineLearning`TailedQuantileDistribution[<|
+                    "Quantiles" -> {-7.774722782107817, -7.774722782107817, \
+-7.507795124904122, -7.45936117781893, -7.216916584587788, \
+-7.162241891458517, -7.135895420010277, -7.103038922785016, \
+-7.091006216231022, -7.080621316769196, -7.047734339409583}, 
+                    "LeftBoundary" -> -7.507795124904122, "LeftScale" -> 
+                    0.13346382860184747`, "LeftTailNorm" -> 0.2|>], "Entropy" -> 
+                   Around[29.03173351043291, 0.3050065246391355], 
+                   "EntropySampleSize" -> 10|>], 
+                "Output" -> <|
+                 "f1" -> <|"Type" -> "NumericalVector", "Weight" -> 1|>|>, 
+                "EvaluationStrategy" -> "ModeFinding", "Version" -> {14., 0}, 
+                "ID" -> 4270897793735380344|>], 
+              MachineLearning`MLProcessor[
+              "Standardize", <|
+               "Invertibility" -> "Perfect", "Missing" -> "Allowed", 
+                "StructurePreserving" -> True, 
+                "Input" -> <|
+                 "f1" -> <|"Type" -> "NumericalVector", "Weight" -> 1|>|>, 
+                "Mean" -> {464.11319451789836`, 549.8295904156331, 
+                 767.6001954842782, 1071.0981519949057`}, 
+                "StandardDeviation" -> {307.9772381095369, 492.9532161680007, 
+                 324.2098199319033, 622.567215067727}, 
+                "Output" -> <|
+                 "f1" -> <|"Type" -> "NumericalVector", "Weight" -> 1|>|>, 
+                "Version" -> {14., 0}, "ID" -> 5090359690490706967|>]}, 
+            "Invertibility" -> "Perfect", "StructurePreserving" -> True, 
+            "Missing" -> "Imputed"|>]|>, 
+       "Output" -> <|
+        "Preprocessor" -> 
+         MachineLearning`MLProcessor[
+          "ToMLDataset", <|
+           "Input" -> <|"f1" -> <|"Type" -> "Numerical"|>|>, 
+            "Output" -> <|"f1" -> <|"Type" -> "Numerical", "Weight" -> 1|>|>, 
+            "Preprocessor" -> 
+            MachineLearning`MLProcessor["Sequence", <|"Processors" -> {
+                 MachineLearning`MLProcessor["List"], 
+                 MachineLearning`MLProcessor[
+                 "WrapMLDataset", <|
+                  "FeatureTypes" -> {"Numerical"}, "FeatureKeys" -> {"f1"}, 
+                   "FeatureWeights" -> Automatic, "ExampleWeights" -> 
+                   Automatic, "RawExample" -> 
+                   Missing["KeyAbsent", "RawExample"], "StructurePreserving" -> 
+                   False|>]}|>], "ScalarFeature" -> True, "Invertibility" -> 
+            "Perfect", "StructurePreserving" -> False, "Missing" -> 
+            "Allowed"|>], "Processor" -> 
+         MachineLearning`MLProcessor[
+          "Sequence", <|
+           "Input" -> <|"f1" -> <|"Type" -> "Numerical", "Weight" -> 1|>|>, 
+            "Output" -> <|"f1" -> <|"Type" -> "Numerical", "Weight" -> 1|>|>, 
+            "Processors" -> {
+              MachineLearning`MLProcessor[
+              "ToVector", <|
+               "Invertibility" -> "Perfect", "Missing" -> "Allowed", 
+                "StructurePreserving" -> True, 
+                "Input" -> <|
+                 "f1" -> <|"Type" -> "Numerical", "Weight" -> 1|>|>, 
+                "Output" -> <|
+                 "f1" -> <|"Type" -> "NumericalVector", "Weight" -> 1|>|>, 
+                "Version" -> {14., 0}, "ID" -> 2428928164149392780|>], 
+              MachineLearning`MLProcessor[
+              "Standardize", <|
+               "Invertibility" -> "Perfect", "Missing" -> "Allowed", 
+                "StructurePreserving" -> True, 
+                "Input" -> <|
+                 "f1" -> <|"Type" -> "NumericalVector", "Weight" -> 1|>|>, 
+                "Mean" -> {1.8868727692668837`*^7}, 
+                "StandardDeviation" -> {961073.8045669607}, 
+                "Output" -> <|
+                 "f1" -> <|"Type" -> "NumericalVector", "Weight" -> 1|>|>, 
+                "Version" -> {14., 0}, "ID" -> 6718882715712035104|>], 
+              MachineLearning`MLProcessor[
+              "FromVector", <|
+               "Invertibility" -> "Perfect", "Missing" -> "Allowed", 
+                "StructurePreserving" -> True, 
+                "Input" -> <|
+                 "f1" -> <|"Type" -> "NumericalVector", "Weight" -> 1|>|>, 
+                "Output" -> <|
+                 "f1" -> <|"Type" -> "Numerical", "Weight" -> 1|>|>, 
+                "Version" -> {14., 0}, "ID" -> 3251223153719707662|>], 
+              MachineLearning`MLProcessor[
+              "FirstValues", <|
+               "Info" -> <|"Type" -> "Numerical", "Weight" -> 1|>, "Key" -> 
+                "f1", "Invertibility" -> "Perfect", "StructurePreserving" -> 
+                False, "Missing" -> "Allowed"|>]}, "Invertibility" -> 
+            "Perfect", "StructurePreserving" -> False, "Missing" -> 
+            "Allowed"|>], "ProbabilityPostprocessor" -> Identity, 
+         "InverseProcessorFunction" -> (1.8868727692668837`*^7 + 
+          961073.8045669607 #& ), 
+         "ProcessorFunction" -> (-19.632964297857104` + 
+          1.0405028159627959`*^-6 #& ), "Name" -> "value", 
+         "Quantiles" -> {-1.4160461663255892`, 2.058652615313632}, "Mean" -> 
+         1.8868727692668837`*^7|>, "LabelSplitter" -> 
+       MachineLearning`MLProcessor[
+        "FeatureLabelSplit", <|
+         "Processor" -> MachineLearning`MLProcessor["RuleSplit"], 
+          "PreferLabeled" -> True, "KeepLabelsFormat" -> False|>], 
+       "RecalibrationFunction" -> None, "ImputationStrategy" -> Automatic, 
+       "Prior" -> Automatic, "Utility" -> (DiracDelta[#2 - #]& ), "Threshold" -> 
+       0, "PerformanceGoal" -> Automatic, "BatchProcessing" -> Automatic, 
+       "Model" -> <|
+        AssumeDeterministic -> False, "EstimationMethod" -> 
+         "MaximumPosterior", "NominalCovarianceType" -> "HammingDistance", 
+         "NumericalCovarianceType" -> "SquaredExponential", 
+         "OptimizationMethod" -> "SimulatedAnnealing", 
+         "TrainedGPModel" -> <|
+          "CovarianceFunction" -> <|
+            Method -> "SquaredExponential" + "WN", 
+             "HyperParameters" -> {<|
+               "NumericalLengthScale" -> 1.058019941575149, "SignalVariance" -> 
+                0.9153469916488638, "NoiseVariance" -> 
+                0.00027294900803268935`|>, <|
+               "NumericalLengthScale" -> 0.9929468300407777, "SignalVariance" -> 
+                15.155912797813077`, "NoiseVariance" -> 
+                0.07922443403421933|>}|>, "MeanFunction" -> <||>, 
+           "Purpose" -> <|"task" -> "FunctionOptimization"|>, 
+           "TrainingData" -> {CompressedData["
+1:eJwBcQKO/SFib1JlAgAAABMAAAAEAAAA4kA1Lqa68T8qSnMJGLzqP5eLtM4r
+AMm/kdPp5HnN+b9+Tj/fxK/gv6/XCZ5hNvC/qZytHRwe779wIKrnJxjiPzlL
+GNc+KMm/UAk11eMOvL8L+6fHZhLhP+TDbC2Pdui/5mAw95mM778C9eJ8XNPq
+vyo6MaIwhPa/WGRu1fw07j8gk9eNZmD6Pxuqs0h/HOa/rysYMEs/1j9L3wF1
+66LQPx1Lj1bf3t6/t/SKU6dW8b8bI9Rph+HnP6nZZW+yOuK/A92ln5K49r8b
+ksenSoTTP7zHWFSZKsW/M9l2l4Hc9j8eO1Znz9nKv53PGB2tOPM/zSMIdCoD
+9z+BbGcg5Sf2v+8eTh3TWtI/yRLBzEVLpT8vbxvZFDy5v5lFpulKrPi/S/M9
+pQcf9D9Y23DIxfzfv6trt/dA3Os/gUTX1B1B6j85XS6iYxLwPwfRL17Du+k/
+BvxEMpQS0j+5eKI+X2zxP/J5UXSgcfe/QwC8uN0kAkCs0Zr9mf7BP+hVjmUP
+uMe/fbd0PDlB8z8M61TUOVnvv6b49izTj+w/gEGpwgzJx79ju+PIHi/fP+9H
+oSVGOOK/MyQ7eoeU8L+mS1pQdTbaP0VQ7+KGdKa/go/32mtX8T/VNXeYP7jh
+v48AqHW2ffU/EjLbQEgd5785wHSsFZD6PwfRphIHfAFA8aPU+PiF8L8ucarI
+frj2v2tYCY9tDuu/qqzLjsw7tj985R+GxtHzvzSkQIME8Oq/jtz4gxGZ37+X
+r3hyVYn/vwfIqbGN1Os/dFb2xPcC9T9c+tj48jXxv3KNt0ns/PG/1FXuRKwn
+6T8fuUp8
+             "], {
+             2.058652615313632, -1.114141556328187, -0.08845636068006531, \
+-1.4160461663255892`, -0.5122761848912255, -0.3762952807988403, 
+             0.29509121534780347`, 1.179391370924917, 
+             0.8121128489866112, -0.541432002514962, -0.36619915585160445`, 
+             1.972324202845037, -0.04739439802520068, -1.2358784977609603`, \
+-0.3822376637522296, 
+             1.3328068784681422`, -0.2456437382199522, -1.0222356851179093`, \
+-0.302142441619452}}, 
+           "Nominal-Numerical" -> <|"NumericalVector" -> CompressedData["
+1:eJwBcQKO/SFib1JlAgAAABMAAAAEAAAA4kA1Lqa68T8qSnMJGLzqP5eLtM4r
+AMm/kdPp5HnN+b9+Tj/fxK/gv6/XCZ5hNvC/qZytHRwe779wIKrnJxjiPzlL
+GNc+KMm/UAk11eMOvL8L+6fHZhLhP+TDbC2Pdui/5mAw95mM778C9eJ8XNPq
+vyo6MaIwhPa/WGRu1fw07j8gk9eNZmD6Pxuqs0h/HOa/rysYMEs/1j9L3wF1
+66LQPx1Lj1bf3t6/t/SKU6dW8b8bI9Rph+HnP6nZZW+yOuK/A92ln5K49r8b
+ksenSoTTP7zHWFSZKsW/M9l2l4Hc9j8eO1Znz9nKv53PGB2tOPM/zSMIdCoD
+9z+BbGcg5Sf2v+8eTh3TWtI/yRLBzEVLpT8vbxvZFDy5v5lFpulKrPi/S/M9
+pQcf9D9Y23DIxfzfv6trt/dA3Os/gUTX1B1B6j85XS6iYxLwPwfRL17Du+k/
+BvxEMpQS0j+5eKI+X2zxP/J5UXSgcfe/QwC8uN0kAkCs0Zr9mf7BP+hVjmUP
+uMe/fbd0PDlB8z8M61TUOVnvv6b49izTj+w/gEGpwgzJx79ju+PIHi/fP+9H
+oSVGOOK/MyQ7eoeU8L+mS1pQdTbaP0VQ7+KGdKa/go/32mtX8T/VNXeYP7jh
+v48AqHW2ffU/EjLbQEgd5785wHSsFZD6PwfRphIHfAFA8aPU+PiF8L8ucarI
+frj2v2tYCY9tDuu/qqzLjsw7tj985R+GxtHzvzSkQIME8Oq/jtz4gxGZ37+X
+r3hyVYn/vwfIqbGN1Os/dFb2xPcC9T9c+tj48jXxv3KNt0ns/PG/1FXuRKwn
+6T8fuUp8
+              "]|>|>, "CholeskyTraining" -> CompressedData["
+1:eJzF0Xk4FHgcx3GrSeUopVy70bjFusOk8aUcjxKNs1blGuPoGDUNyS2pNOWo
+FJVjLqXD6KAYfo6kLBIdhNxX4+jcocjuH9k/7OPZq+P1PN//38/ni/UiO/gI
+CggISHy+/HhNWi53BAhrogVUK4IBWxNyBdtTCRwzylQNkwC3tBcqP829DBJz
+tn9q1kmFRMMjLlpkGzgdpKyJ90IQOajRwn/ZAaaG6ufe0ZPBRDFKDt+YCVed
+e8LEhCLh9So7qA7Ngcc4+53CfAbYB0l2ZwjGgq2F2S9k8TgwDNgcMecJDTKH
+34aU452AOOq72jj6IAh8FkeIrYv/o09KiM6D7YWgWJ0je4DWD9KyYftJ7RfB
+k3tMuG5dOdDS9aLMx+7Cbl6Ggu1WS1CkbjCwF2FCG7O/Sm8HG0QVGjSMNbJg
+L4bH2VniBW0LnxP4i1jQDnI2YxGdcNz3ksKz6ltgvmOlUo7HUlA/7MRXLysA
+GXnh8LnF7ZDcf62+ybD6z65p+BsNus/ER8D1E9ECsz0HDbArCpIF7gBWuD7F
+YFMXuDgCcVtLKlSz7DFJr+tgicWihPAlbaDqMDCPz78Dk3tM57zZxQFpi4wc
+buoFcM+3Jne61MByW0ZmWXsuRDEExg9NpcOZHnnZCuw1KHZy7RN71QgHenGd
+rg+ZyHavG8Fklz2a2TWttk7OwC+3G8Iww2HlLDoK2LRV+S2Fg8zf3Kxf4VwB
+UkXxgj6Kp2CvX/eqq3eokF+npSE4Nx01y7uNd+vSkFxL1YZKvj8wzxdNeIul
+oDPDQsrP1R6gDjwuxf1KOtBEMGH5PAosPft47RQlFa0ej4jSzuqG0HNNEuRN
+xbN2TVu2p9Y7NngEFBszxklpcSA9KX2faG2DWDQD6yuEs0gOu9zauCUCDRWK
+mHVa9ILcG9/At+uroW+Ho+W6l/5ogNZl9sPjHhhlU8JJR+/Boofb0s6lnYJx
+hxBBbXYwiq3d6kuSyUKenkoo70UoXHcaDZMKePSXP87mgiRngZHaABy5mGIr
+ouULlsR4R/n3xehTd2PevtpilI2xmvsx4AS0BBy5P+xIR6Ove+XLkpJRM9Xt
+6phsKTyYuifTeeAaKjKicYN+TkUfY2pOOFPSUfTSwYneJQ0QlX37J1LpTqB+
+MMeVqaT97V4ziQaaWep1D4OK60pjy+YQxC31iscMnEDRd34kZJMPgZfQYQ1q
+yiW4bPupLU4wB6qZVpq4o0GIxCpW0E0MRA5H8+TZ9Y+g4lZglfI8I6SNZPKa
+XuBgfFk5ntB5BRlFcqQW6sf8665pldGONY4mw9BMtNEOf0dHV4UWxK3pswOT
+mk2TF9aT0OL9FUP6ahzoiD4do733IGI49FR62CcjgqQ4QWIjBWXXy+zTCuqC
+xXO6Eu9GHkOlJWNm0Rt80MWek4V6CdR//MfZyCo8w4oU90BmolXya4UstKxW
+N0B9NxPp1JODDcWjkfSk4ua6w0RwjXAo4V4/D/Er1EROY48jzQCe+w6HLdB1
+9MzgAl4eDHjRK80FSRDcQpmadzfqf3dN07/5noVr6gU8g4VNPNcAdgVOHvZ5
+m9FQhtnBupW34Z2w3G6h1izETV69Nr2ACYPaTrz6WBxSMXbHXPdORnEFdJ3W
++ZIo1mft3ULI/89/nI3Hr2jisPMQaNvFGPg2RoCQwVOG7vHbyBM1+ZGp+ZDd
+5nWrUr8ZahaJsjipJEjKQGF0O39oxSUVrGkOAW5VEX9XHv2L7TVTko5Sdlna
+CFyydqql5Jgig8xdER1MfTQ4v/G9lBUTJAdvh6paZ8BTkQ/XvSUpMHjMj6iy
+aifw9PaEvPCT+Wpd08qoDSq42B7YqOvmuHmKjazM2FvXNzFASSyqanU6GVRd
+bnh3lxUiI/5kvr+eCzItlONgGSVf/I+zkTJqFRDf1g9io3hG26UC8HyEzw1W
+jYEDwTUTmu0sdBavf/NySDncHMKgrmUdX32vmXR1xqQT5F8CkDbuuWe8BT0R
+Tgs/Jk4Cv9A1xEnJdHAWS/Cj+TO/2V4zOTCx3hHUAQhU/9D8ITUI2Ka9pxmO
+gAZt2BM+VZHfrWtaFMOu8JU0D7i73RLif/MBmedCDwwI+775H2dzo8/7nWhJ
+ByxVGRc9lML57nvN5HfyZKtSex/8DnPr6xM=
+          "], "HyperparameterSample" -> {}, "GPModelSample" -> {}, 
+         "CholeskySample" -> {}, 
+         "FeatureType" -> {
+          "Numerical", "Numerical", "Numerical", "Numerical"}, 
+         "InputFeatures" -> {}, "Processor" -> 
+         MachineLearning`MLProcessor[
+          "Sequence", <|
+           "Input" -> <|
+             "f1" -> <|"Type" -> "NumericalVector", "Weight" -> 1|>|>, 
+            "Output" -> <|
+             "f1" -> <|"Type" -> "NumericalVector", "Weight" -> 1|>|>, 
+            "Processors" -> {
+              MachineLearning`MLProcessor[
+              "Standardize", <|
+               "Invertibility" -> "Perfect", "Missing" -> "Allowed", 
+                "StructurePreserving" -> True, 
+                "Input" -> <|
+                 "f1" -> <|"Type" -> "NumericalVector", "Weight" -> 1|>|>, 
+                "Mean" -> {0.0009692549732702492, 
+                 0.00017604164830314613`, -0.001067840629828401, \
+-0.0007455428913090787}, 
+                "StandardDeviation" -> {0.9976454402222372, 
+                 1.0007962530089403`, 1.0015764913507108`, 
+                 0.9984293694932915}, 
+                "Output" -> <|
+                 "f1" -> <|"Type" -> "NumericalVector", "Weight" -> 1|>|>, 
+                "Version" -> {14., 0}, "ID" -> 2541620674829328040|>], 
+              MachineLearning`MLProcessor[
+              "FirstValues", <|
+               "Info" -> <|"Type" -> "NumericalVector", "Weight" -> 1|>, 
+                "Key" -> "f1", "Invertibility" -> "Perfect", 
+                "StructurePreserving" -> False, "Missing" -> "Allowed"|>]}, 
+            "Invertibility" -> "Perfect", "StructurePreserving" -> False, 
+            "Missing" -> "Allowed"|>], "Calibrator" -> None, "Method" -> 
+         "GaussianProcess", "PostProcessor" -> 
+         MachineLearning`MLProcessor["Identity"], 
+         "Options" -> <|
+          AssumeDeterministic -> <|"Value" -> False, "Options" -> <||>|>, 
+           "CovarianceType" -> <|
+            "Value" -> <|
+              "Numerical" -> "SquaredExponential", "Nominal" -> 
+               "HammingDistance"|>, "Options" -> <||>|>, 
+           "EstimationMethod" -> <|
+            "Value" -> "MaximumPosterior", "Options" -> <||>|>, 
+           "OptimizationMethod" -> <|
+            "Value" -> "SimulatedAnnealing", "Options" -> <||>|>, 
+           "SearchMethod" -> <|
+            "Value" -> "SimulatedAnnealing", "Options" -> <||>|>, 
+           "InputFeatures" -> <|"Value" -> {}, "Options" -> <||>|>|>|>, 
+       "TrainingInformation" -> <|
+        "Configurations" -> 
+         Dataset[<|<|
+             "Value" -> "GaussianProcess", 
+              "Options" -> <|
+               AssumeDeterministic -> <|"Value" -> False|>, 
+                "CovarianceType" -> <|
+                 "Value" -> None, 
+                  "Options" -> <|
+                   "Numerical" -> <|"Value" -> "SquaredExponential"|>, 
+                    "Nominal" -> <|"Value" -> "HammingDistance"|>|>|>, 
+                "EstimationMethod" -> <|"Value" -> "MaximumPosterior"|>, 
+                "OptimizationMethod" -> <|"Value" -> "SimulatedAnnealing"|>, 
+                "SearchMethod" -> <|"Value" -> "SimulatedAnnealing"|>, 
+                "InputFeatures" -> <|"Value" -> {}|>|>, "NaiveImputer" -> 
+              Missing["KeyAbsent", "NaiveImputer"], "EMIterations" -> 
+              Missing["KeyAbsent", "EMIterations"]|> -> <||>|>, 
+           TypeSystem`Assoc[
+            
+            TypeSystem`Struct[{
+             "Value", "Options", "NaiveImputer", "EMIterations"}, {
+              TypeSystem`Atom[String], 
+              TypeSystem`Assoc[TypeSystem`AnyType, 
+               TypeSystem`Struct[{"Value", "Options"}, {TypeSystem`AnyType, 
+                 TypeSystem`Assoc[
+                  TypeSystem`Atom[String], 
+                  TypeSystem`Struct[{"Value"}, {
+                    TypeSystem`Atom[String]}], 2]}], 6], 
+              TypeSystem`UnknownType, TypeSystem`UnknownType}], 
+            TypeSystem`Assoc[
+            TypeSystem`UnknownType, TypeSystem`UnknownType, 
+             TypeSystem`AnyLength], 1], <||>], "BestModelInformation" -> 
+         Dataset[<|
+           "Configuration" -> {
+             "GaussianProcess", AssumeDeterministic -> False, 
+              "CovarianceType" -> {
+               None, "Numerical" -> "SquaredExponential", "Nominal" -> 
+                "HammingDistance"}, "EstimationMethod" -> "MaximumPosterior", 
+              "OptimizationMethod" -> "SimulatedAnnealing", "SearchMethod" -> 
+              "SimulatedAnnealing", "InputFeatures" -> {}}, "ModelUtility" -> 
+            Missing[]|>, 
+           TypeSystem`Struct[{"Configuration", "ModelUtility"}, {
+             TypeSystem`Tuple[{
+               TypeSystem`Atom[String], TypeSystem`AnyType, 
+               TypeSystem`AnyType, TypeSystem`AnyType, TypeSystem`AnyType, 
+               TypeSystem`AnyType, TypeSystem`AnyType}], 
+             TypeSystem`UnknownType}], <||>], "InputDimension" -> 4, 
+         "OutputDimension" -> 1|>, "AnomalyDetector" -> None, 
+       "Log" -> <|
+        "Example" -> 
+         MachineLearning`MLDataset[<|
+           "f1" -> <|
+             "Type" -> "NumericalVector", "Weight" -> 1, 
+              "Values" -> {{772.6937689690081, 947.7525697875383, 
+               857.6891270787654, 1751.1222391175422`}}, "ID" -> 
+              6205193393424750184|>|>, <|
+           "ExampleNumber" -> 1, "ExampleWeights" -> 1, "LogDensityRatios" -> 
+            0, "RawExample" -> False|>], "TrainingTime" -> 0.2940308, 
+         "MaxTrainingMemory" -> 313752, "DataMemory" -> 1304, 
+         "FunctionMemory" -> 116056, "LanguageVersion" -> {14., 0}, "Date" -> 
+         DateObject[{2024, 6, 27, 16, 56, 16.5052443`8.970196902380701}, 
+           "Instant", "Gregorian", 8.], "ProcessorCount" -> 24, 
+         "ProcessorType" -> "x86-64", "OperatingSystem" -> "Windows", 
+         "SystemWordLength" -> 64, "Evaluations" -> {}|>|>], 
+    "ObjectiveFunction" -> $CellContext`findminC, 
+    "Method" -> {
+     "MaxExpectedImprovement", "OptimizationMethod" -> 
+      "RandomRestartHillClimbing"}, "SpaceSpecification" -> {
+      Cuboid[{0, 0, 0, 0}, {1000, 1800, 1500, 2000}], 
+      MachineLearning`PackageScope`RegionSampler[
+       Cuboid[{0, 0, 0, 0}, {1000, 1800, 1500, 2000}]]}, 
+    "PredictMethod" -> {
+     "GaussianProcess", AssumeDeterministic -> False, "OptimizationMethod" -> 
+      "SimulatedAnnealing"}, "TimingPredictorFunction" -> 
+    PredictorFunction[<|
+      "ExampleNumber" -> 19, 
+       "Input" -> <|
+        "Preprocessor" -> 
+         MachineLearning`MLProcessor[
+          "ToMLDataset", <|
+           "Input" -> <|
+             "f1" -> <|"Type" -> "NumericalVector", "Length" -> 4|>|>, 
+            "Output" -> <|
+             "f1" -> <|"Type" -> "NumericalVector", "Weight" -> 1|>|>, 
+            "Preprocessor" -> 
+            MachineLearning`MLProcessor["Sequence", <|"Processors" -> {
+                 MachineLearning`MLProcessor["List"], 
+                 MachineLearning`MLProcessor[
+                 "WrapMLDataset", <|
+                  "FeatureTypes" -> {"NumericalVector"}, 
+                   "FeatureKeys" -> {"f1"}, "FeatureWeights" -> Automatic, 
+                   "ExampleWeights" -> Automatic, "RawExample" -> 
+                   Missing["KeyAbsent", "RawExample"], "StructurePreserving" -> 
+                   False|>]}|>], "ScalarFeature" -> True, "Invertibility" -> 
+            "Perfect", "StructurePreserving" -> False, "Missing" -> 
+            "Allowed"|>], "Processor" -> 
+         MachineLearning`MLProcessor[
+          "Sequence", <|
+           "Input" -> <|
+             "f1" -> <|"Type" -> "NumericalVector", "Weight" -> 1|>|>, 
+            "Output" -> <|
+             "f1" -> <|"Type" -> "NumericalVector", "Weight" -> 1|>|>, 
+            "Processors" -> {
+              MachineLearning`MLProcessor[
+              "SynthesizeMissingValues", <|
+               "Invertibility" -> "Perfect", "Missing" -> "Imputed", 
+                "StructurePreserving" -> True, 
+                "Input" -> <|
+                 "f1" -> <|"Type" -> "NumericalVector", "Weight" -> 1|>|>, 
+                "Distribution" -> 
+                LearnedDistribution[<|
+                  "ExampleNumber" -> 19, "Preprocessor" -> 
+                   MachineLearning`MLProcessor[
+                    "ToMLDataset", <|
+                    "Input" -> <|
+                    "f1" -> <|"Type" -> "NumericalVector", "Length" -> 4|>|>, 
+                    "Output" -> <|
+                    "f1" -> <|"Type" -> "NumericalVector", "Weight" -> 1|>|>, 
+                    "Preprocessor" -> MachineLearning`MLProcessor["Identity"],
+                     "ScalarFeature" -> True, "Invertibility" -> "Perfect", 
+                    "StructurePreserving" -> False, "Missing" -> "Allowed"|>],
+                    "Processor" -> 
+                   MachineLearning`MLProcessor[
+                    "Standardize", <|
+                    "Invertibility" -> "Perfect", "Missing" -> "Allowed", 
+                    "StructurePreserving" -> True, 
+                    "Input" -> <|
+                    "f1" -> <|"Type" -> "NumericalVector", "Weight" -> 1|>|>, 
+                    "Mean" -> {464.11319451789836`, 549.8295904156331, 
+                    767.6001954842782, 1071.0981519949057`}, 
+                    "StandardDeviation" -> {307.9772381095369, 
+                    492.9532161680007, 324.2098199319033, 622.567215067727}, 
+                    "Output" -> <|
+                    "f1" -> <|"Type" -> "NumericalVector", "Weight" -> 1|>|>, 
+                    "Version" -> {14., 0}, "ID" -> 4057093986675772656|>], 
+                   "PerformanceGoal" -> "DirectTraining", "BatchProcessing" -> 
+                   Automatic, 
+                   "Model" -> <|
+                    "RotationMatrix" -> {{0.11029585704523104`, 
+                    0.8524093087952089}, {-0.5178999206074371, \
+-0.38909440257554434`}, {-0.6345049753844818, 0.27732660263004155`}, {
+                    0.5630434551309578, -0.2123531766593885}}, 
+                    "Precisions" -> {0.5675370597268117, 0.8839240190697131}, 
+                    "NoisePrecision" -> 1.8210052396981582`, "Processor" -> 
+                    MachineLearning`MLProcessor[
+                    "Center", <|
+                    "Invertibility" -> "Perfect", "Missing" -> "Allowed", 
+                    "StructurePreserving" -> True, 
+                    "Input" -> <|
+                    "f1" -> <|"Type" -> "NumericalVector", "Weight" -> 1|>|>, 
+                    
+                    "Mean" -> {-0.0014668810271246493`, \
+-0.00032564720794402363`, 0.00042489064533621657`, -0.0008663211598472877}, 
+                    "Output" -> <|
+                    "f1" -> <|"Type" -> "NumericalVector", "Weight" -> 1|>|>, 
+                    "Version" -> {14., 0}, "ID" -> 2405811348924213572|>], 
+                    "PostProcessor" -> 
+                    MachineLearning`MLProcessor[
+                    "FirstValues", <|
+                    "Info" -> <|"Type" -> "NumericalVector", "Weight" -> 1|>, 
+                    "Key" -> "f1", "Invertibility" -> "Perfect", 
+                    "StructurePreserving" -> False, "Missing" -> "Allowed"|>],
+                     "Method" -> "Multinormal", 
+                    "Options" -> <|
+                    "CovarianceType" -> <|
+                    "Value" -> "Full", "Options" -> <||>|>, 
+                    "IntrinsicDimension" -> <|
+                    "Value" -> 2, "Options" -> <||>|>|>|>, 
+                   "TrainingInformation" -> <|
+                    "Configurations" -> 
+                    Dataset[<|<|
+                    "Value" -> "Multinormal", 
+                    "Options" -> <|
+                    "CovarianceType" -> <|"Value" -> "Full"|>, 
+                    "IntrinsicDimension" -> <|"Value" -> "Heuristic"|>|>, 
+                    "NaiveImputer" -> 
+                    MachineLearning`MLProcessor[
+                    "ImputeMissing", <|
+                    "Invertibility" -> "Perfect", "Missing" -> "Imputed", 
+                    "StructurePreserving" -> True, 
+                    "Input" -> <|
+                    "f1" -> <|"Type" -> "NumericalVector", "Weight" -> 1|>|>, 
+                    "Mean" -> {-0.0014668810271246493`, -0.000325647207944047,
+                     0.00042489064533627355`, -0.000866321159847311}, 
+                    "StandardDeviation" -> {0.9991131871197475, 
+                    0.9989422276699127, 1.0005578708572298`, 
+                    0.9971881071957238}, "Method" -> "NaiveSampler", 
+                    "VectorLength" -> 4, 
+                    "Output" -> <|
+                    "f1" -> <|"Type" -> "NumericalVector", "Weight" -> 1|>|>, 
+                    "Type" -> "NumericalVector", "Version" -> {14., 0}, "ID" -> 
+                    556111927383614878|>], "EMIterations" -> 1|> -> <||>|>, 
+                    TypeSystem`Assoc[
+                    
+                    TypeSystem`Struct[{
+                    "Value", "Options", "NaiveImputer", "EMIterations"}, {
+                    TypeSystem`Atom[String], 
+                    TypeSystem`Assoc[
+                    TypeSystem`Atom[String], 
+                    TypeSystem`Struct[{"Value"}, {
+                    TypeSystem`Atom[String]}], 2], TypeSystem`AnyType, 
+                    TypeSystem`Atom[Integer]}], 
+                    TypeSystem`Assoc[
+                    TypeSystem`UnknownType, TypeSystem`UnknownType, 
+                    TypeSystem`AnyLength], 1], <||>], "BestModelInformation" -> 
+                    Dataset[<|
+                    "Configuration" -> {
+                    "Multinormal", "CovarianceType" -> "Full", 
+                    "IntrinsicDimension" -> "Heuristic"}, "ModelUtility" -> 
+                    Missing[]|>, 
+                    TypeSystem`Struct[{"Configuration", "ModelUtility"}, {
+                    TypeSystem`Tuple[{
+                    TypeSystem`Atom[String], TypeSystem`AnyType, 
+                    TypeSystem`AnyType}], TypeSystem`UnknownType}], <||>]|>, 
+                   "NaiveImputer" -> 
+                   MachineLearning`MLProcessor[
+                    "ImputeMissing", <|
+                    "Invertibility" -> "Perfect", "Missing" -> "Imputed", 
+                    "StructurePreserving" -> True, 
+                    "Input" -> <|
+                    "f1" -> <|"Type" -> "NumericalVector", "Weight" -> 1|>|>, 
+                    "Mean" -> {-0.0014668810271246493`, -0.000325647207944047,
+                     0.00042489064533627355`, -0.000866321159847311}, 
+                    "StandardDeviation" -> {0.9991131871197475, 
+                    0.9989422276699127, 1.0005578708572298`, 
+                    0.9971881071957238}, "Method" -> "NaiveSampler", 
+                    "VectorLength" -> 4, 
+                    "Output" -> <|
+                    "f1" -> <|"Type" -> "NumericalVector", "Weight" -> 1|>|>, 
+                    "Type" -> "NumericalVector", "Version" -> {14., 0}, "ID" -> 
+                    556111927383614878|>], "InputDimension" -> 0, 
+                   "OutputDimension" -> 4, 
+                   "Log" -> <|
+                    "Example" -> 
+                    MachineLearning`MLDataset[<|
+                    "f1" -> <|
+                    "Type" -> "NumericalVector", "Weight" -> 1, 
+                    "Values" -> {{772.6937689690081, 947.7525697875383, 
+                    857.6891270787654, 1751.1222391175422`}}, "ID" -> 
+                    9053905191859618315|>|>, <|
+                    "ExampleNumber" -> 1, "ExampleWeights" -> 1, 
+                    "LogDensityRatios" -> 0, "RawExample" -> False|>], 
+                    "TrainingTime" -> 0.072846, "MaxTrainingMemory" -> 188008,
+                     "DataMemory" -> 2528, "FunctionMemory" -> 32896, 
+                    "LanguageVersion" -> {14., 0}, "Date" -> 
+                    DateObject[{
+                    2024, 6, 27, 16, 56, 16.5842308`8.972270278651889}, 
+                    "Instant", "Gregorian", 8.], "ProcessorCount" -> 24, 
+                    "ProcessorType" -> "x86-64", "OperatingSystem" -> 
+                    "Windows", "SystemWordLength" -> 64, 
+                    "Evaluations" -> {}|>, "LogPDFDistribution" -> 
+                   MachineLearning`TailedQuantileDistribution[<|
+                    "Quantiles" -> {-7.774722782107817, -7.774722782107817, \
+-7.507795124904122, -7.45936117781893, -7.216916584587788, \
+-7.162241891458517, -7.135895420010277, -7.103038922785016, \
+-7.091006216231022, -7.080621316769196, -7.047734339409583}, 
+                    "LeftBoundary" -> -7.507795124904122, "LeftScale" -> 
+                    0.13346382860184747`, "LeftTailNorm" -> 0.2|>], "Entropy" -> 
+                   Around[29.03173351043291, 0.3050065246391355], 
+                   "EntropySampleSize" -> 10|>], 
+                "Output" -> <|
+                 "f1" -> <|"Type" -> "NumericalVector", "Weight" -> 1|>|>, 
+                "EvaluationStrategy" -> "ModeFinding", "Version" -> {14., 0}, 
+                "ID" -> 4270897793735380344|>], 
+              MachineLearning`MLProcessor[
+              "Standardize", <|
+               "Invertibility" -> "Perfect", "Missing" -> "Allowed", 
+                "StructurePreserving" -> True, 
+                "Input" -> <|
+                 "f1" -> <|"Type" -> "NumericalVector", "Weight" -> 1|>|>, 
+                "Mean" -> {464.11319451789836`, 549.8295904156331, 
+                 767.6001954842782, 1071.0981519949057`}, 
+                "StandardDeviation" -> {307.9772381095369, 492.9532161680007, 
+                 324.2098199319033, 622.567215067727}, 
+                "Output" -> <|
+                 "f1" -> <|"Type" -> "NumericalVector", "Weight" -> 1|>|>, 
+                "Version" -> {14., 0}, "ID" -> 5090359690490706967|>]}, 
+            "Invertibility" -> "Perfect", "StructurePreserving" -> True, 
+            "Missing" -> "Imputed"|>]|>, 
+       "Output" -> <|
+        "Preprocessor" -> 
+         MachineLearning`MLProcessor[
+          "ToMLDataset", <|
+           "Input" -> <|"f1" -> <|"Type" -> "Numerical"|>|>, 
+            "Output" -> <|"f1" -> <|"Type" -> "Numerical", "Weight" -> 1|>|>, 
+            "Preprocessor" -> 
+            MachineLearning`MLProcessor["Sequence", <|"Processors" -> {
+                 MachineLearning`MLProcessor["List"], 
+                 MachineLearning`MLProcessor[
+                 "WrapMLDataset", <|
+                  "FeatureTypes" -> {"Numerical"}, "FeatureKeys" -> {"f1"}, 
+                   "FeatureWeights" -> Automatic, "ExampleWeights" -> 
+                   Automatic, "RawExample" -> 
+                   Missing["KeyAbsent", "RawExample"], "StructurePreserving" -> 
+                   False|>]}|>], "ScalarFeature" -> True, "Invertibility" -> 
+            "Perfect", "StructurePreserving" -> False, "Missing" -> 
+            "Allowed"|>], "Processor" -> 
+         MachineLearning`MLProcessor[
+          "Sequence", <|
+           "Input" -> <|"f1" -> <|"Type" -> "Numerical", "Weight" -> 1|>|>, 
+            "Output" -> <|"f1" -> <|"Type" -> "Numerical", "Weight" -> 1|>|>, 
+            "Processors" -> {
+              MachineLearning`MLProcessor[
+              "ToVector", <|
+               "Invertibility" -> "Perfect", "Missing" -> "Allowed", 
+                "StructurePreserving" -> True, 
+                "Input" -> <|
+                 "f1" -> <|"Type" -> "Numerical", "Weight" -> 1|>|>, 
+                "Output" -> <|
+                 "f1" -> <|"Type" -> "NumericalVector", "Weight" -> 1|>|>, 
+                "Version" -> {14., 0}, "ID" -> 2428928164149392780|>], 
+              MachineLearning`MLProcessor[
+              "Standardize", <|
+               "Invertibility" -> "Perfect", "Missing" -> "Allowed", 
+                "StructurePreserving" -> True, 
+                "Input" -> <|
+                 "f1" -> <|"Type" -> "NumericalVector", "Weight" -> 1|>|>, 
+                "Mean" -> {-0.7881505335669965}, 
+                "StandardDeviation" -> {0.03715944107038209}, 
+                "Output" -> <|
+                 "f1" -> <|"Type" -> "NumericalVector", "Weight" -> 1|>|>, 
+                "Version" -> {14., 0}, "ID" -> 6718882715712035104|>], 
+              MachineLearning`MLProcessor[
+              "FromVector", <|
+               "Invertibility" -> "Perfect", "Missing" -> "Allowed", 
+                "StructurePreserving" -> True, 
+                "Input" -> <|
+                 "f1" -> <|"Type" -> "NumericalVector", "Weight" -> 1|>|>, 
+                "Output" -> <|
+                 "f1" -> <|"Type" -> "Numerical", "Weight" -> 1|>|>, 
+                "Version" -> {14., 0}, "ID" -> 3251223153719707662|>], 
+              MachineLearning`MLProcessor[
+              "FirstValues", <|
+               "Info" -> <|"Type" -> "Numerical", "Weight" -> 1|>, "Key" -> 
+                "f1", "Invertibility" -> "Perfect", "StructurePreserving" -> 
+                False, "Missing" -> "Allowed"|>]}, "Invertibility" -> 
+            "Perfect", "StructurePreserving" -> False, "Missing" -> 
+            "Allowed"|>], "ProbabilityPostprocessor" -> Identity, 
+         "InverseProcessorFunction" -> (-0.7881505335669965 + 
+          0.03715944107038209 #& ), 
+         "ProcessorFunction" -> (21.2099673962855 + 26.911061393683056` #& ), 
+         "Name" -> "value", 
+         "Quantiles" -> {-1.7533289331873902`, 2.0523249768085274`}, 
+         "Mean" -> -0.7881505335669965|>, "LabelSplitter" -> 
+       MachineLearning`MLProcessor[
+        "FeatureLabelSplit", <|
+         "Processor" -> MachineLearning`MLProcessor["RuleSplit"], 
+          "PreferLabeled" -> True, "KeepLabelsFormat" -> False|>], 
+       "RecalibrationFunction" -> None, "ImputationStrategy" -> Automatic, 
+       "Prior" -> Automatic, "Utility" -> (DiracDelta[#2 - #]& ), "Threshold" -> 
+       0, "PerformanceGoal" -> "Speed", "BatchProcessing" -> Automatic, 
+       "Model" -> <|
+        "NeighborsFunction" -> 
+         MachineLearning`PackageScope`NeighborsFunction["Nearest", 
+           NearestFunction[
+            Hold[
+             Nearest[CompressedData["
+1:eJwBcQKO/SFib1JlAgAAABMAAAAEAAAAe5xQiIZf97/UO8vU7CgCQDsfRm/f
+4sE/VMhSAPTGx785PVAc3xb0P2tN6U40AOC/GV/C/b/e6z8jPu7gczDqP9YF
+SNdF+vQ/pQK3fbw48b/LKYt2jgjyv1Btz3pzF+k/QPfzD/Pnpb9mkilirVvx
+P3/ZVMQlyOG/A8SWkARy9T/8JqcqpF/SP8J1DfivZqU/4n+EaT+Mub98+NkB
+baX4vwRghtVoB+e/xQO1ZjiW+j/hP/mo5YABQAKw4u9hgvC/kg8gZWK83r+X
+iQmDd1nxv/XUV0xr4uc//A1Pj3k54r9bZrT6pHHvv5iNYyZj1+q/r57uqqaR
+9r+D9cAGvCLuP+bpzCTX1+q/6bR3BqCc3798XuBob5r/vwkY14ZBw+s/Cza+
+KzQs3z9GJei6izriv2ZkRjSYn/C/5JQ8IbQf2j+idLkrUvnIv4o/iYISCby/
+6S+UK4sQ4T89v7Ki1HLovw87R2Xdqcq/yk67vVA98z+xn/ROFAj3PwAjSFIK
+Iva/mWwKP+im9r/cH7t5J4vTPzs+r98hVsW/rhs6pkLQ9j+cahtmljnzP7Y5
+9YIsXu+/cgO/q5qS7D+KV6GI6tfHv3Xy6MN4VPo/nDUh8I8f5r85GUDbxjbW
+P6bDtv0DkNA/xH3JxO6z8T+g0BBU/MLqP0f+En9ALcm/J0mitifG+b9Ci6Xz
+qwzwPxZoomhzwuk/tqIVjWAI0j9t4bgNUGLxP9qYeVDFneC/JRKNCvc48L8I
+yVGEajPvvweWaOLFCuI/hXIEdNSm9r/oXtRCgBLrvxJVdUXK/rU/i18lNtzM
+878SN0gg
+               "] -> Automatic, Method -> "KDtree"]]]], "NeighborsNumber" -> 
+         5, "DistributionData" -> {NormalDistribution, 0.8216404202186929}, 
+         "TrainingOutput" -> 
+         RawArray["Real32",{-0.636471152305603, 1.135155200958252, 
+           0.5183737874031067, 
+           0.29121601581573486`, -1.2967041730880737`, -1.7533289194107056`, \
+-0.1570308804512024, 0.16073371469974518`, 1.004092812538147, 
+           0.35154762864112854`, -0.8423420786857605, -0.5021357536315918, 
+           2.0523250102996826`, 
+           0.5885138511657715, -0.6490370035171509, -0.32830217480659485`, 
+           1.4634932279586792`, 0.2601260244846344, -1.6602249145507812`}], 
+         "DistributionSmoothing" -> 0.5, "Processor" -> 
+         MachineLearning`MLProcessor[
+          "FirstValues", <|
+           "Info" -> <|"Type" -> "NumericalVector", "Weight" -> 1|>, "Key" -> 
+            "f1", "Invertibility" -> "Perfect", "StructurePreserving" -> 
+            False, "Missing" -> "Allowed"|>], "Calibrator" -> None, "Method" -> 
+         "NearestNeighbors", "PostProcessor" -> 
+         MachineLearning`MLProcessor["Identity"], 
+         "Options" -> <|
+          "NeighborsNumber" -> <|"Value" -> 5, "Options" -> <||>|>, 
+           "DistributionSmoothing" -> <|"Value" -> 0.5, "Options" -> <||>|>, 
+           "NearestMethod" -> <|"Value" -> "KDtree", "Options" -> <||>|>|>|>, 
+       "TrainingInformation" -> <|
+        "Reporting" -> None, "TrainingFunction" -> Predict, "EMIterations" -> 
+         Missing["KeyAbsent", "EMIterations"], 
+         "ProcessorEntropyShift" -> -3.292537406312641, "PreprocessingTime" -> 
+         0.1311134`6.569192073047717, "LossName" -> "StandardDeviation", 
+         "BestModelInformation" -> 
+         Dataset[<|
+           "MeanCrossEntropy" -> 
+            Around[-1.7444330520786675`, 0.25134547773385224`], 
+            "StandardDeviation" -> 
+            Around[0.03370996272836233, 0.0034958600684136297`], 
+            "EvaluationTime" -> 0.000038264130725415544`, "TestSize" -> 4., 
+            "ModelMemory" -> 6648., "ModelUtility" -> 4.324903485836514, 
+            "Round" -> 1, "Iteration" -> 41, 
+            "Time" -> {
+             0.5027898`7.152931452150606, 0.5067881`7.156371402065287}, 
+            "TrainingSize" -> 15, "TrainingTime" -> 0.002425782412086129, 
+            "TrainingMemory" -> 74638.66666666666, "ExperimentCount" -> 5, 
+            "MeanCrossEntropyHistory" -> {
+              Around[-1.8846541756694373`, 0.2732646841243882], 
+              Around[-1.9426046870534477`, 0.3314944941684788], 
+              Around[-2.1146912173043777`, 0.17302526181020456`], 
+              Around[-0.8603516759476038, 1.3259871861181065`], 
+              Around[-1.9198635044184709`, 0.21348962014908107`]}, 
+            "StandardDeviationHistory" -> {
+              Around[0.035229807970071865`, 0.006919634035690668], 
+              Around[0.030843574719367342`, 0.007955848889314797], 
+              Around[0.032564649591598785`, 0.006847312054479663], 
+              Around[0.036700803910317346`, 0.009327897640922445], 
+              Around[0.03321097745045633, 0.0070667065174763975`]}, 
+            "IterationHistory" -> {2, 12, 22, 31, 41}, 
+            "TimeHistory" -> {{
+              0.1555359`6.6433756400577, 0.1592899`6.653733233118031}, {
+              0.2300075`6.813286991059257, 0.2335877`6.819994963945036}, {
+              0.3172158`6.952899804177865, 0.3212169`6.958343379989492}, {
+              0.3998017`7.05338962994903, 0.4037695`7.057678503541992}, {
+              0.5027898`7.152931452150606, 0.5067881`7.156371402065287}}, 
+            "Configuration" -> {
+             "NearestNeighbors", "NeighborsNumber" -> Automatic, 
+              "DistributionSmoothing" -> 0.5, "NearestMethod" -> Automatic}, 
+            "FinalTrainingSize" -> 19|>, 
+           TypeSystem`Assoc[
+            TypeSystem`Atom[String], TypeSystem`AnyType, 19], <||>], 
+         "Configurations" -> 
+         Dataset[<|<|
+             "Value" -> "GradientBoostedTrees", 
+              "Options" -> <|
+               "BoostingMethod" -> <|"Value" -> "Gradient"|>, 
+                MaxTrainingRounds -> <|"Value" -> 50|>, 
+                "LeavesNumber" -> <|"Value" -> 110|>, 
+                "LearningRate" -> <|"Value" -> 0.1|>, 
+                ValidationSet -> <|"Value" -> Automatic|>, 
+                "MaxBinNumber" -> <|"Value" -> 255|>, 
+                "ThreadNumber" -> <|"Value" -> 24|>, 
+                "MaxDepth" -> <|"Value" -> 6|>, 
+                "LeafSize" -> <|"Value" -> 35|>, 
+                "FeatureFraction" -> <|"Value" -> 1|>, 
+                "BaggingFraction" -> <|"Value" -> 1|>, 
+                "BaggingFrequency" -> <|"Value" -> 0|>, 
+                "MinGainToSplit" -> <|"Value" -> 0|>, 
+                "L1Regularization" -> <|"Value" -> 0|>, 
+                "L2Regularization" -> <|"Value" -> 0|>, 
+                "LossFunction" -> <|"Value" -> "MeanSquaredError"|>|>|> -> <|
+             "Experiments" -> {<|
+                "MeanCrossEntropy" -> 
+                 Around[-1.82064511218476, 0.08328732259582665], 
+                 "StandardDeviation" -> 
+                 Around[0.03970520441980867, 0.0043674546036826705`], 
+                 "EvaluationTime" -> 0.0002571906355777502, "TestSize" -> 4., 
+                 "ModelMemory" -> 21336., "ModelUtility" -> 3.728954857307941,
+                  "Round" -> 1, "Iteration" -> 45, 
+                 "Time" -> {
+                  0.5317848`7.177280913233782, 0.5478661`7.190219422168648}, 
+                 "TrainingSize" -> 15, "TrainingTime" -> 
+                 0.015586990096302288`, "TrainingMemory" -> 74353.33333333333,
+                  "ExperimentCount" -> 5, "MeanCrossEntropyHistory" -> {
+                   Around[-1.7776578331767245`, 0.20811433369821858`], 
+                   Around[-1.841266997599042, 0.21144040318806204`], 
+                   Around[-1.9525200003274998`, 0.1003004324746028], 
+                   Around[-1.7204955325464701`, 0.31488275942724786`], 
+                   Around[-1.8112851972740618`, 0.18692359304918735`]}, 
+                 "StandardDeviationHistory" -> {
+                   Around[0.04177812291206625, 0.008641353608970143], 
+                   Around[0.03931628992944923, 0.009944157387738264], 
+                   Around[0.03325684428728621, 0.0075404120027128445`], 
+                   Around[0.04363720161569021, 0.011690973676342113`], 
+                   Around[0.04053756335455145, 0.008383988459152036]}, 
+                 "IterationHistory" -> {1, 15, 25, 35, 45}, 
+                 "TimeHistory" -> {{
+                   0.1318604`6.571659382342829, 
+                    0.1545549`6.6406277719617925}, {
+                   0.250593`6.850513928853893, 
+                    0.2674686`6.8788177979946665}, {
+                   0.3393561`6.982200653631767, 0.354862`7.001604489395005}, {
+                   0.4278084`7.082794301169146, 0.4438068`7.09873894569537}, {
+                   0.5317848`7.177280913233782, 
+                    0.5478661`7.190219422168648}}|>}, 
+              "PredictedPerformances" -> <|
+               "EvaluationTime" -> 0.0002571906355777502, "ModelMemory" -> 
+                21336., "StandardDeviation" -> 
+                Around[0.03970520441980867, 0.0043674546036826705`], 
+                "TrainingMemory" -> 74353.33333333333, "TrainingTime" -> 
+                0.018548518214599723`|>, "Index" -> 1|>, <|
+             "Value" -> "NearestNeighbors", 
+              "Options" -> <|
+               "NeighborsNumber" -> <|"Value" -> Automatic|>, 
+                "DistributionSmoothing" -> <|"Value" -> 0.5|>, 
+                "NearestMethod" -> <|"Value" -> Automatic|>|>|> -> <|
+             "Experiments" -> {<|
+                "MeanCrossEntropy" -> 
+                 Around[-1.7444330520786675`, 0.25134547773385224`], 
+                 "StandardDeviation" -> 
+                 Around[0.03370996272836233, 0.0034958600684136297`], 
+                 "EvaluationTime" -> 0.000038264130725415544`, "TestSize" -> 
+                 4., "ModelMemory" -> 6648., "ModelUtility" -> 
+                 4.324903485836514, "Round" -> 1, "Iteration" -> 41, 
+                 "Time" -> {
+                  0.5027898`7.152931452150606, 0.5067881`7.156371402065287}, 
+                 "TrainingSize" -> 15, "TrainingTime" -> 0.002425782412086129,
+                  "TrainingMemory" -> 74638.66666666666, "ExperimentCount" -> 
+                 5, "MeanCrossEntropyHistory" -> {
+                   Around[-1.8846541756694373`, 0.2732646841243882], 
+                   Around[-1.9426046870534477`, 0.3314944941684788], 
+                   Around[-2.1146912173043777`, 0.17302526181020456`], 
+                   Around[-0.8603516759476038, 1.3259871861181065`], 
+                   Around[-1.9198635044184709`, 0.21348962014908107`]}, 
+                 "StandardDeviationHistory" -> {
+                   Around[0.035229807970071865`, 0.006919634035690668], 
+                   Around[0.030843574719367342`, 0.007955848889314797], 
+                   Around[0.032564649591598785`, 0.006847312054479663], 
+                   Around[0.036700803910317346`, 0.009327897640922445], 
+                   Around[0.03321097745045633, 0.0070667065174763975`]}, 
+                 "IterationHistory" -> {2, 12, 22, 31, 41}, 
+                 "TimeHistory" -> {{
+                   0.1555359`6.6433756400577, 0.1592899`6.653733233118031}, {
+                   0.2300075`6.813286991059257, 
+                    0.2335877`6.819994963945036}, {
+                   0.3172158`6.952899804177865, 
+                    0.3212169`6.958343379989492}, {
+                   0.3998017`7.05338962994903, 0.4037695`7.057678503541992}, {
+                   0.5027898`7.152931452150606, 
+                    0.5067881`7.156371402065287}}|>}, 
+              "PredictedPerformances" -> <|
+               "EvaluationTime" -> 0.000038264130725415544`, "ModelMemory" -> 
+                6648., "StandardDeviation" -> 
+                Around[0.03370996272836233, 0.0034958600684136297`], 
+                "TrainingMemory" -> 74638.66666666666, "TrainingTime" -> 
+                0.0028866810703824936`|>, "Index" -> 2|>, <|
+             "Value" -> "DecisionTree", 
+              "Options" -> <|
+               "DistributionSmoothing" -> <|"Value" -> 1|>, 
+                "FeatureFraction" -> <|"Value" -> 1|>|>|> -> <|
+             "Experiments" -> {<|
+                "MeanCrossEntropy" -> 
+                 Around[-1.7026278422812902`, 0.35351950750012], 
+                 "StandardDeviation" -> 
+                 Around[0.03707942811155611, 0.00517570073837357], 
+                 "EvaluationTime" -> 0.000038264130725415544`, "TestSize" -> 
+                 4., "ModelMemory" -> 5896., "ModelUtility" -> 
+                 4.222629025507193, "Round" -> 1, "Iteration" -> 42, 
+                 "Time" -> {
+                  0.5087862`7.158080316763044, 0.5127108`7.161417459231679}, 
+                 "TrainingSize" -> 15, "TrainingTime" -> 
+                 0.0038861806407168298`, "TrainingMemory" -> 226680., 
+                 "ExperimentCount" -> 5, "MeanCrossEntropyHistory" -> {
+                   Around[-2.151969012160352, 0.19489712783590776`], 
+                   Around[-2.1040059798756383`, 0.2417076432429368], 
+                   Around[-0.434455463530663, 1.198475515115216], 
+                   Around[-1.6372077910049427`, 0.46590139417690024`], 
+                   Around[-2.185500964834853, 0.22344286482044706`]}, 
+                 "StandardDeviationHistory" -> {
+                   Around[0.032239381391750026`, 0.007569570318959923], 
+                   Around[0.032989240791666416`, 0.0077582876871082635`], 
+                   Around[0.05067716675590998, 0.012120998786795496`], 
+                   Around[0.03797253101734219, 0.007882176422888267], 
+                   Around[0.031518820601111906`, 0.008242265937709835]}, 
+                 "IterationHistory" -> {3, 11, 21, 32, 42}, 
+                 "TimeHistory" -> {{
+                   0.1603883`6.656717677701182, 
+                    0.1683543`6.677769206839166}, {
+                   0.2240001`6.801793205711558, 
+                    0.2279997`6.809479269055941}, {
+                   0.3112263`6.944621283170495, 
+                    0.3151856`6.950111360995602}, {
+                   0.4058057`7.059863136393303, 
+                    0.4098026`7.064119702959076}, {
+                   0.5087862`7.158080316763044, 
+                    0.5127108`7.161417459231679}}|>}, 
+              "PredictedPerformances" -> <|
+               "EvaluationTime" -> 0.000038264130725415544`, "ModelMemory" -> 
+                5896., "StandardDeviation" -> 
+                Around[0.03707942811155611, 0.00517570073837357], 
+                "TrainingMemory" -> 226680., "TrainingTime" -> 
+                0.004624554962453027|>, "Index" -> 3|>, <|
+             "Value" -> "RandomForest", 
+              "Options" -> <|
+               "FeatureFraction" -> <|"Value" -> Automatic|>, 
+                "LeafSize" -> <|"Value" -> Automatic|>, 
+                "TreeNumber" -> <|"Value" -> Automatic|>, 
+                "DistributionSmoothing" -> <|"Value" -> 0.5|>, 
+                "Implementation" -> <|"Value" -> Automatic|>|>|> -> <|
+             "Experiments" -> {<|
+                "MeanCrossEntropy" -> 
+                 Around[-1.9800761658312844`, 0.11658797240564524`], 
+                 "StandardDeviation" -> 
+                 Around[0.035118008377405065`, 0.004246922907683661], 
+                 "EvaluationTime" -> 0.000125296808406818, "TestSize" -> 4., 
+                 "ModelMemory" -> 44936., "ModelUtility" -> 4.014137350837093,
+                  "Round" -> 1, "Iteration" -> 43, 
+                 "Time" -> {
+                  0.5147863`7.163171974009647, 0.5207905`7.168208046945494}, 
+                 "TrainingSize" -> 15, "TrainingTime" -> 0.003981071705534969,
+                  "TrainingMemory" -> 84464., "ExperimentCount" -> 5, 
+                 "MeanCrossEntropyHistory" -> {
+                   Around[-2.0007439125038244`, 0.13358874723196473`], 
+                   Around[-2.010258220891652, 0.1907282717564883], 
+                   Around[-2.2083732414372714`, 0.1305883889009157], 
+                   Around[-1.6472425460097824`, 0.4654881378203409], 
+                   Around[-2.033762908313891, 0.15045665333138475`]}, 
+                 "StandardDeviationHistory" -> {
+                   Around[0.034396509862325474`, 0.007310860434131744], 
+                   Around[0.034429891211884785`, 0.008731099367408273], 
+                   Around[0.029956654592633, 0.008072236704135885], 
+                   Around[0.0428578001501428, 0.010778178176238397`], 
+                   Around[0.033949186070039265`, 0.007496327520973203]}, 
+                 "IterationHistory" -> {4, 13, 23, 33, 43}, 
+                 "TimeHistory" -> {{
+                   0.1693436`6.680313781502271, 
+                    0.1753438`6.695435407720385}, {
+                   0.2355879`6.823697974440498, 
+                    0.2415932`6.834629699752858}, {
+                   0.3222186`6.95969559985916, 0.3282154`6.967703947964765}, {
+                   0.4118056`7.066237241636561, 
+                    0.4178109`7.072524759317626}, {
+                   0.5147863`7.163171974009647, 
+                    0.5207905`7.168208046945494}}|>}, 
+              "PredictedPerformances" -> <|
+               "EvaluationTime" -> 0.000125296808406818, "ModelMemory" -> 
+                44936., "StandardDeviation" -> 
+                Around[0.035118008377405065`, 0.004246922907683661], 
+                "TrainingMemory" -> 84464., "TrainingTime" -> 
+                0.004737475329586613|>, "Index" -> 4|>, <|
+             "Value" -> "LinearRegression", 
+              "Options" -> <|
+               "L1Regularization" -> <|"Value" -> 0|>, 
+                "L2Regularization" -> <|"Value" -> 0.00001|>, 
+                "OptimizationMethod" -> <|"Value" -> Automatic|>, 
+                MaxIterations -> <|"Value" -> 30|>|>|> -> <|
+             "Experiments" -> {<|
+                "MeanCrossEntropy" -> 
+                 Around[-1.8395950546622644`, 0.19403606681310104`], 
+                 "StandardDeviation" -> 
+                 Around[0.03594699238442478, 0.004030732845348877], 
+                 "EvaluationTime" -> 0.0002607885588247569, "TestSize" -> 4., 
+                 "ModelMemory" -> 15568., "ModelUtility" -> 
+                 3.8247845330176427`, "Round" -> 1, "Iteration" -> 46, 
+                 "Time" -> {
+                  0.5487942`7.190954506323484, 0.5557944`7.196459160152237}, 
+                 "TrainingSize" -> 15, "TrainingTime" -> 0.004152871810657928,
+                  "TrainingMemory" -> 70485.33333333333, "ExperimentCount" -> 
+                 5, "MeanCrossEntropyHistory" -> {
+                   Around[-1.3798390815124844`, 0.4762482147643551], 
+                   Around[-1.959562035481057, 0.37574640028213513`], 
+                   Around[-2.006795169771091, 0.27677253654826606`], 
+                   Around[-1.5859309647900033`, 0.582505741289274], 
+                   Around[-2.2658480217566845`, 0.1393690520550951]}, 
+                 "StandardDeviationHistory" -> {
+                   Around[0.04178363002889774, 0.007033380660826697], 
+                   Around[0.035182319493359863`, 0.008372414974436724], 
+                   Around[0.03461394593331293, 0.007525881545556917], 
+                   Around[0.03844312121664832, 0.008293538131182839], 
+                   Around[0.029711945249905062`, 0.008033824014149498]}, 
+                 "IterationHistory" -> {5, 16, 26, 36, 46}, 
+                 "TimeHistory" -> {{
+                   0.1763538`6.69792981560127, 0.1823851`6.712534349132569}, {
+                   0.2704681`6.883661043674472, 
+                    0.2784681`6.896320445115353}, {
+                   0.3568622`7.004045542009713, 
+                    0.3628172`7.011232860880791}, {
+                   0.4458051`7.100690025987406, 
+                    0.4528033`7.107454576796697}, {
+                   0.5487942`7.190954506323484, 
+                    0.5557944`7.196459160152237}}|>}, 
+              "PredictedPerformances" -> <|
+               "EvaluationTime" -> 0.0002607885588247569, "ModelMemory" -> 
+                15568., "StandardDeviation" -> 
+                Around[0.03594699238442478, 0.004030732845348877], 
+                "TrainingMemory" -> 70485.33333333333, "TrainingTime" -> 
+                0.004941917454682934|>, "Index" -> 5|>, <|
+             "Value" -> "LinearRegression", 
+              "Options" -> <|
+               "L1Regularization" -> <|"Value" -> 0|>, 
+                "L2Regularization" -> <|"Value" -> 1.*^6|>, 
+                "OptimizationMethod" -> <|"Value" -> Automatic|>, 
+                MaxIterations -> <|"Value" -> 30|>|>|> -> <|
+             "Experiments" -> {<|
+                "MeanCrossEntropy" -> 
+                 Around[-1.8133670122798322`, 0.07673362923854808], 
+                 "StandardDeviation" -> 
+                 Around[0.039704872141370307`, 0.004367459326943749], 
+                 "EvaluationTime" -> 0.0002607885588247569, "TestSize" -> 4., 
+                 "ModelMemory" -> 15568., "ModelUtility" -> 
+                 3.7257731504042484`, "Round" -> 1, "Iteration" -> 48, 
+                 "Time" -> {
+                  0.5658006`7.20420839716228, 0.5717928`7.208783675927602}, 
+                 "TrainingSize" -> 15, "TrainingTime" -> 0.004152871810657927,
+                  "TrainingMemory" -> 70466.66666666666, "ExperimentCount" -> 
+                 5, "MeanCrossEntropyHistory" -> {
+                   Around[-1.776060041714941, 0.19169608446543626`], 
+                   Around[-1.8316349018181426`, 0.1945265222351472], 
+                   Around[-1.928235903835937, 0.09488329056785921], 
+                   Around[-1.7255637986245023`, 0.28794665792891877`], 
+                   Around[-1.805340415405638, 0.1725110444235934]}, 
+                 "StandardDeviationHistory" -> {
+                   Around[0.04177787430038758, 0.00864132840775504], 
+                   Around[0.039316332250395616`, 0.009944558001575865], 
+                   Around[0.033256339870572735`, 0.007540506773162763], 
+                   Around[0.04363647615690042, 0.011690434426844422`], 
+                   Around[0.040537338128595155`, 0.008383924590767474]}, 
+                 "IterationHistory" -> {6, 17, 28, 37, 48}, 
+                 "TimeHistory" -> {{
+                   0.184394`6.717291778926783, 
+                    0.1903933`6.7311966548541635}, {
+                   0.2794757`6.8978890460951705, 
+                    0.2862172`6.908240722293023}, {
+                   0.3718109`7.021867110885761, 0.377804`7.028811545199127}, {
+                   0.4548018`7.109367168351863, 
+                    0.4627912`7.116930085720853}, {
+                   0.5658006`7.20420839716228, 
+                    0.5717928`7.208783675927602}}|>}, 
+              "PredictedPerformances" -> <|
+               "EvaluationTime" -> 0.0002607885588247569, "ModelMemory" -> 
+                15568., "StandardDeviation" -> 
+                Around[0.039704872141370307`, 0.004367459326943749], 
+                "TrainingMemory" -> 70466.66666666666, "TrainingTime" -> 
+                0.004941917454682933|>, "Index" -> 6|>, <|
+             "Value" -> "LinearRegression", 
+              "Options" -> <|
+               "L1Regularization" -> <|"Value" -> 0|>, 
+                "L2Regularization" -> <|"Value" -> 0.1|>, 
+                "OptimizationMethod" -> <|"Value" -> Automatic|>, 
+                MaxIterations -> <|"Value" -> 30|>|>|> -> <|
+             "Experiments" -> {<|
+                "MeanCrossEntropy" -> 
+                 Around[-1.7425790883704706`, 0.2383166213033533], 
+                 "StandardDeviation" -> 
+                 Around[0.03738416917185651, 0.004174955323193735], 
+                 "EvaluationTime" -> 0.0004119998558664568, "TestSize" -> 4., 
+                 "ModelMemory" -> 15568., "ModelUtility" -> 
+                 3.6804942955968647`, "Round" -> 1, "Iteration" -> 38, 
+                 "Time" -> {
+                  0.463798`7.117873865027702, 0.4777883`7.130780504109386}, 
+                 "TrainingSize" -> 15, "TrainingTime" -> 
+                 0.0044467720533883605`, "TrainingMemory" -> 69355.2, 
+                 "ExperimentCount" -> 4, "MeanCrossEntropyHistory" -> {
+                   Around[-1.4065939829055554`, 0.4547372362542458], 
+                   Around[-1.9634839335142882`, 0.37376412115911817`], 
+                   Around[-2.0159244140132233`, 0.2705336625609627], 
+                   Around[-1.5843140230488149`, 0.5864118405420482]}, 
+                 "StandardDeviationHistory" -> {
+                   Around[0.04148710656806927, 0.006882745926872254], 
+                   Around[0.035123425967105985`, 0.008367542446546016], 
+                   Around[0.03446513329732549, 0.007499306796567478], 
+                   Around[0.038461010854925294`, 0.00832803762986061]}, 
+                 "IterationHistory" -> {10, 18, 27, 38}, 
+                 "TimeHistory" -> {{
+                   0.2170123`6.788029343338696, 
+                    0.2230008`6.799851414548448}, {
+                   0.2882114`6.911256148527644, 
+                    0.2942246`6.920223974591818}, {
+                   0.3648016`7.013601727948533, 
+                    0.3708075`7.020693503153097}, {
+                   0.463798`7.117873865027702, 
+                    0.4777883`7.130780504109386}}|>}, 
+              "PredictedPerformances" -> <|
+               "EvaluationTime" -> 0.0004119998558664568, "ModelMemory" -> 
+                15568., "StandardDeviation" -> 
+                Around[0.03738416917185651, 0.004174955323193735], 
+                "TrainingMemory" -> 69355.2, "TrainingTime" -> 
+                0.0052916587435321485`|>, "Index" -> 7|>, <|
+             "Value" -> "LinearRegression", 
+              "Options" -> <|
+               "L1Regularization" -> <|"Value" -> 0|>, 
+                "L2Regularization" -> <|"Value" -> 1000.|>, 
+                "OptimizationMethod" -> <|"Value" -> Automatic|>, 
+                MaxIterations -> <|"Value" -> 30|>|>|> -> <|
+             "Experiments" -> {<|
+                "MeanCrossEntropy" -> 
+                 Around[-1.8233288947704311`, 0.08837789081436113], 
+                 "StandardDeviation" -> 
+                 Around[0.039255821640759046`, 0.005090133684002354], 
+                 "EvaluationTime" -> 0.0002629462705897083, "TestSize" -> 4., 
+                 "ModelMemory" -> 15568., "ModelUtility" -> 
+                 3.7314135216221116`, "Round" -> 1, "Iteration" -> 39, 
+                 "Time" -> {
+                  0.4787948`7.131694418556225, 0.4928008`7.144216397675278}, 
+                 "TrainingSize" -> 15, "TrainingTime" -> 0.005184857364427975,
+                  "TrainingMemory" -> 70908.8, "ExperimentCount" -> 4, 
+                 "MeanCrossEntropyHistory" -> {
+                   Around[-1.7829790634048928`, 0.1951473147626302], 
+                   Around[-1.840820428868918, 0.19429436797017613`], 
+                   Around[-1.9392866683193355`, 0.09622016216632738], 
+                   Around[-1.730229418488579, 0.29544792680156085`]}, 
+                 "StandardDeviationHistory" -> {
+                   Around[0.04155237149929947, 0.008636860664982596], 
+                   Around[0.03902283675002705, 0.009864066895726619], 
+                   Around[0.03301271802609206, 0.0076257271243721225`], 
+                   Around[0.043435360287617596`, 0.011715290867045224`]}, 
+                 "IterationHistory" -> {9, 19, 29, 39}, 
+                 "TimeHistory" -> {{
+                   0.2090084`6.771708734154104, 
+                    0.2160008`6.786000353142007}, {
+                   0.296222`6.923162303332052, 0.3022254`6.931875954545581}, {
+                   0.3798074`7.031108415581693, 
+                    0.3858085`7.037916785135695}, {
+                   0.4787948`7.131694418556225, 
+                    0.4928008`7.144216397675278}}|>}, 
+              "PredictedPerformances" -> <|
+               "EvaluationTime" -> 0.0002629462705897083, "ModelMemory" -> 
+                15568., "StandardDeviation" -> 
+                Around[0.039255821640759046`, 0.005090133684002354], 
+                "TrainingMemory" -> 70908.8, "TrainingTime" -> 
+                0.00616998026366929|>, "Index" -> 8|>, <|
+             "Value" -> "LinearRegression", 
+              "Options" -> <|
+               "L1Regularization" -> <|"Value" -> 0|>, 
+                "L2Regularization" -> <|"Value" -> 10.|>, 
+                "OptimizationMethod" -> <|"Value" -> Automatic|>, 
+                MaxIterations -> <|"Value" -> 30|>|>|> -> <|
+             "Experiments" -> {<|
+                "MeanCrossEntropy" -> 
+                 Around[-1.9792287818013867`, 0.13193153020979878`], 
+                 "StandardDeviation" -> 
+                 Around[0.034885869313912, 0.003988775450136379], 
+                 "EvaluationTime" -> 0.00026078855882475695`, "TestSize" -> 
+                 4., "ModelMemory" -> 15568., "ModelUtility" -> 
+                 3.8543162853487583`, "Round" -> 1, "Iteration" -> 44, 
+                 "Time" -> {
+                  0.5227868`7.169869606911873, 0.5307889`7.176466825700515}, 
+                 "TrainingSize" -> 15, "TrainingTime" -> 0.004496472020903843,
+                  "TrainingMemory" -> 70456., "ExperimentCount" -> 5, 
+                 "MeanCrossEntropyHistory" -> {
+                   Around[-1.9040407137806463`, 0.25492866212566806`], 
+                   Around[-2.072153353340963, 0.2526734759102199], 
+                   Around[-2.240333298900617, 0.1266795464861137], 
+                   Around[-1.6656232063125336`, 0.61013294301753], 
+                   Around[-2.013993336672174, 0.20261009620145673`]}, 
+                 "StandardDeviationHistory" -> {
+                   Around[0.036867644973510236`, 0.007092697645928029], 
+                   Around[0.03368386187920986, 0.008504854888307949], 
+                   Around[0.029398778939716097`, 0.008193096925508288], 
+                   Around[0.039506874472391186`, 0.010335286410438453`], 
+                   Around[0.034972186304732616`, 0.007340407521260365]}, 
+                 "IterationHistory" -> {7, 14, 24, 34, 44}, 
+                 "TimeHistory" -> {{
+                   0.1913922`6.733469228054953, 
+                    0.1973917`6.746873880836765}, {
+                   0.2425944`6.836425764976366, 
+                    0.2495538`6.848709180827611}, {
+                   0.3292153`6.969025003970492, 
+                    0.3372602`6.979510086715313}, {
+                   0.4188086`7.073560584588252, 
+                    0.4258082`7.080759014103353}, {
+                   0.5227868`7.169869606911873, 
+                    0.5307889`7.176466825700515}}|>}, 
+              "PredictedPerformances" -> <|
+               "EvaluationTime" -> 0.00026078855882475695`, "ModelMemory" -> 
+                15568., "StandardDeviation" -> 
+                Around[0.034885869313912, 0.003988775450136379], 
+                "TrainingMemory" -> 70456., "TrainingTime" -> 
+                0.005350801704875573|>, "Index" -> 9|>, <|
+             "Value" -> "LinearRegression", 
+              "Options" -> <|
+               "L1Regularization" -> <|"Value" -> 0|>, 
+                "L2Regularization" -> <|"Value" -> 0.01|>, 
+                "OptimizationMethod" -> <|"Value" -> Automatic|>, 
+                MaxIterations -> <|"Value" -> 30|>|>|> -> <|
+             "Experiments" -> {<|
+                "MeanCrossEntropy" -> 
+                 Around[-1.8402723118954647`, 0.19369387922395284`], 
+                 "StandardDeviation" -> 
+                 Around[0.03593923632625312, 0.004026015462157023], 
+                 "EvaluationTime" -> 0.00029315423529902766`, "TestSize" -> 
+                 4., "ModelMemory" -> 15568., "ModelUtility" -> 
+                 3.798143536150775, "Round" -> 1, "Iteration" -> 47, 
+                 "Time" -> {
+                  0.5577936`7.198018520456069, 0.5637528`7.202633705404659}, 
+                 "TrainingSize" -> 15, "TrainingTime" -> 0.006133977131511849,
+                  "TrainingMemory" -> 70453.33333333333, "ExperimentCount" -> 
+                 5, "MeanCrossEntropyHistory" -> {
+                   Around[-1.3825788695414964`, 0.47403476020822327`], 
+                   Around[-1.9599578678147054`, 0.3755487278063836], 
+                   Around[-2.007718664050371, 0.2761428811675851], 
+                   Around[-1.5857623741691778`, 0.5829033498193409], 
+                   Around[-2.2653437839015718`, 0.13942568885343198`]}, 
+                 "StandardDeviationHistory" -> {
+                   Around[0.04175307488574237, 0.007017624756225702], 
+                   Around[0.035176338735501154`, 0.008371905314400893], 
+                   Around[0.034598890596280754`, 0.007523123347829868], 
+                   Around[0.0384449262236725, 0.008297003965832576], 
+                   Around[0.02972295119006882, 0.008029517531114496]}, 
+                 "IterationHistory" -> {8, 20, 30, 40, 47}, 
+                 "TimeHistory" -> {{
+                   0.1983921`6.749069367993991, 
+                    0.2080003`6.769608954844553}, {
+                   0.3032166`6.933297967141526, 
+                    0.3092191`6.941811305289522}, {
+                   0.3868112`7.039044033952895, 
+                    0.3977736`7.0511809493713935}, {
+                   0.4937953`7.145091945447133, 
+                    0.5008011`7.151210267618884}, {
+                   0.5577936`7.198018520456069, 
+                    0.5637528`7.202633705404659}}|>}, 
+              "PredictedPerformances" -> <|
+               "EvaluationTime" -> 0.00029315423529902766`, "ModelMemory" -> 
+                15568., "StandardDeviation" -> 
+                Around[0.03593923632625312, 0.004026015462157023], 
+                "TrainingMemory" -> 70453.33333333333, "TrainingTime" -> 
+                0.0072994327864991|>, "Index" -> 10|>|>, 
+           TypeSystem`Assoc[
+            TypeSystem`Struct[{"Value", "Options"}, {
+              TypeSystem`Atom[
+               TypeSystem`Enumeration[
+               "DecisionTree", "GradientBoostedTrees", "LinearRegression", 
+                "NearestNeighbors", "RandomForest"]], 
+              TypeSystem`Assoc[TypeSystem`AnyType, 
+               TypeSystem`Struct[{"Value"}, {TypeSystem`AnyType}], 
+               TypeSystem`AnyLength]}], 
+            
+            TypeSystem`Struct[{
+             "Experiments", "PredictedPerformances", "Index"}, {
+              TypeSystem`Vector[
+               
+               TypeSystem`Struct[{
+                "MeanCrossEntropy", "StandardDeviation", "EvaluationTime", 
+                 "TestSize", "ModelMemory", "ModelUtility", "Round", 
+                 "Iteration", "Time", "TrainingSize", "TrainingTime", 
+                 "TrainingMemory", "ExperimentCount", 
+                 "MeanCrossEntropyHistory", "StandardDeviationHistory", 
+                 "IterationHistory", "TimeHistory"}, {
+                TypeSystem`AnyType, TypeSystem`AnyType, 
+                 TypeSystem`Atom[Real], 
+                 TypeSystem`Atom[Real], 
+                 TypeSystem`Atom[Real], 
+                 TypeSystem`Atom[Real], 
+                 TypeSystem`Atom[Integer], 
+                 TypeSystem`Atom[Integer], 
+                 TypeSystem`Vector[
+                  TypeSystem`Atom[Real], 2], 
+                 TypeSystem`Atom[Integer], 
+                 TypeSystem`Atom[Real], 
+                 TypeSystem`Atom[Real], 
+                 TypeSystem`Atom[Integer], 
+                 TypeSystem`Vector[TypeSystem`AnyType, TypeSystem`AnyLength], 
+                 TypeSystem`Vector[TypeSystem`AnyType, TypeSystem`AnyLength], 
+                 TypeSystem`Vector[
+                  TypeSystem`Atom[Integer], TypeSystem`AnyLength], 
+                 TypeSystem`Vector[
+                  TypeSystem`Vector[
+                   TypeSystem`Atom[Real], 2], TypeSystem`AnyLength]}], 1], 
+              
+              TypeSystem`Struct[{
+               "EvaluationTime", "ModelMemory", "StandardDeviation", 
+                "TrainingMemory", "TrainingTime"}, {
+                TypeSystem`Atom[Real], 
+                TypeSystem`Atom[Real], TypeSystem`AnyType, 
+                TypeSystem`Atom[Real], 
+                TypeSystem`Atom[Real]}], 
+              TypeSystem`Atom[Integer]}], 10], <||>], "TrainingSizes" -> {15},
+          "MaxTrainingSize" -> 19, "PreprocessorEvaluationTime" -> 
+         1.963671875*^-6, "PreprocessorMemory" -> 47504, "InputDimension" -> 
+         4, "OutputDimension" -> 1, 
+         "BaselineLogProbability" -> -1.4189385332046727`, "VariableBudget" -> 
+         True, "CheckpointingInfo" -> <|"Checkpointing" -> False|>, 
+         "UserStop" -> False, "NaturalStop" -> True, "AbortStop" -> False, 
+         "RoundPartitioning" -> 
+         Dataset[{<|
+            "TrainingSizes" -> 15, "TimeBudgets" -> 0.4, "ElapsedTimes" -> 
+             0.39658669999999996`, "ExperimentCounts" -> 48|>}, 
+           TypeSystem`Vector[
+            
+            TypeSystem`Struct[{
+             "TrainingSizes", "TimeBudgets", "ElapsedTimes", 
+              "ExperimentCounts"}, {
+              TypeSystem`Atom[Integer], 
+              TypeSystem`Atom[Real], 
+              TypeSystem`Atom[Real], 
+              TypeSystem`Atom[Integer]}], 1], <||>]|>, "AnomalyDetector" -> 
+       None, "Log" -> <|
+        "Example" -> 
+         MachineLearning`MLDataset[<|
+           "f1" -> <|
+             "Type" -> "NumericalVector", "Weight" -> 1, 
+              "Values" -> {{772.6937689690081, 947.7525697875383, 
+               857.6891270787654, 1751.1222391175422`}}, "ID" -> 
+              6205193393424750184|>|>, <|
+           "ExampleNumber" -> 1, "ExampleWeights" -> 1, "LogDensityRatios" -> 
+            0, "RawExample" -> False|>], "TrainingTime" -> 0.5846663, 
+         "MaxTrainingMemory" -> 725336, "DataMemory" -> 1304, 
+         "FunctionMemory" -> 207264, "LanguageVersion" -> {14., 0}, "Date" -> 
+         DateObject[{2024, 6, 27, 16, 56, 17.0940396`8.985419648501505}, 
+           "Instant", "Gregorian", 8.], "ProcessorCount" -> 24, 
+         "ProcessorType" -> "x86-64", "OperatingSystem" -> "Windows", 
+         "SystemWordLength" -> 64, "Evaluations" -> {}|>|>], 
+    "TimingEvaluationHistory" -> 
+    Dataset[{<|
+       "Configuration" -> {11.644572969246703`, 1669.0790940158915`, 
+         815.6351504266022, 958.6633409448493}, 
+        "Value" -> -0.8118014456264789|>, <|
+       "Configuration" -> {245.34922778070478`, 1367.812802810858, 
+         1477.4894963164566`, 434.0902431266773}, 
+        "Value" -> -0.8533032567367692|>, <|
+       "Configuration" -> {401.5492268363294, 1138.934263713606, 
+         1236.5920813093264`, 211.07668428630566`}, 
+        "Value" -> -0.8068096175558478|>, <|
+       "Configuration" -> {401.2085121443383, 496.49370156768197`, 
+         943.3549223238106, 598.733341841223}, 
+        "Value" -> -0.8194514944018341|>, <|
+       "Configuration" -> {553.9805335018452, 572.6144120843998, 
+         737.9687311783377, 109.1320342511981}, 
+        "Value" -> -0.8363353357044647|>, <|
+       "Configuration" -> {834.4528697437339, 67.70726227401403, 
+         1053.8689064770872`, 957.5924947883947}, 
+        "Value" -> -0.7662816882224719|>, <|
+       "Configuration" -> {807.0603674101997, 957.3658214715668, 
+         705.5089243769767, 66.11561645919028}, 
+        "Value" -> -0.8003500589929603|>, <|
+       "Configuration" -> {313.2871320344044, 16.644389655046552`, 
+         1006.7869695063946`, 710.6484157691746}, 
+        "Value" -> -0.7939857135876044|>, <|
+       "Configuration" -> {849.0382763621199, 304.9730560261572, 
+         1046.84510223405, 1575.3594912752474`}, 
+        "Value" -> -0.7459688001364302|>, <|
+       "Configuration" -> {970.5088833899846, 211.868088021982, 
+         878.0270969223255, 1234.3166318560814`}, 
+        "Value" -> -0.8122683861664934|>, <|
+       "Configuration" -> {453.45464248425384`, 1085.0379741885906`, 
+         589.7671393125828, 1910.4262341715144`}, 
+        "Value" -> -0.7773291096697655|>, <|
+       "Configuration" -> {869.9433768993321, 16.519228695885737`, 
+         402.75053579968824`, 1565.179836402649}, 
+        "Value" -> -0.7688880544030433|>, <|
+       "Configuration" -> {301.6977601102475, 49.19464387497668, 
+         453.8612016310207, 1416.2935367315322`}, 
+        "Value" -> -0.7784843961038732|>, <|
+       "Configuration" -> {158.75335507173483`, 132.89541460757079`, 
+         307.37956966329403`, 1652.8571702393613`}, 
+        "Value" -> -0.7821777584005645|>, <|
+       "Configuration" -> {772.6937689690081, 947.7525697875383, 
+         857.6891270787654, 1751.1222391175422`}, 
+        "Value" -> -0.7337679453282652|>, <|
+       "Configuration" -> {614.7029388890113, 264.66129384290724`, 
+         433.7559943946678, 1323.8896851436298`}, 
+        "Value" -> -0.7750872203636029|>, <|
+       "Configuration" -> {204.2600750106285, 307.95279649600184`, 
+         128.83911773664337`, 1613.8449694769656`}, 
+        "Value" -> -0.7508390072274597|>, <|
+       "Configuration" -> {27.438684969662617`, 136.402496969567, 
+         793.184155582364, 297.183304832501}, 
+        "Value" -> -0.8498435646109974|>, <|
+       "Configuration" -> {27.12649126328559, 702.8529077927843, 
+         715.0994919308924, 1964.3396171891684`}, 
+        "Value" -> -0.7118872845340067|>}, 
+      TypeSystem`Vector[
+       TypeSystem`Struct[{"Configuration", "Value"}, {
+         TypeSystem`Vector[
+          TypeSystem`Atom[Real], 4], 
+         TypeSystem`Atom[Real]}], 19], <||>]|>],
+  Editable->False,
+  SelectWithContents->True,
+  Selectable->False]], "Output",
+ CellChangeTimes->{
+  3.9281029023733616`*^9, 3.928102973623636*^9, 3.928103086876978*^9, 
+   3.928103651745255*^9, 3.928104122887354*^9, 3.9281044144711494`*^9, 
+   3.928104485985415*^9, 3.928104558679966*^9, 3.928106876242634*^9, 
+   3.928107024677996*^9, 3.928111703545735*^9, 3.92811181130871*^9, 
+   3.9281119307402744`*^9, 3.9281121620943356`*^9, 3.928112234588867*^9, 
+   3.928112587952208*^9, 3.928112763106415*^9, {3.928112950794889*^9, 
+   3.92811296220196*^9}, 3.928115941223313*^9, 3.928404418018268*^9, 
+   3.928405679281847*^9, 3.928406122039076*^9, 3.9284073276562843`*^9, 
+   3.9284074588524323`*^9, 3.928467377147087*^9},
+ CellLabel->"Out[23]=",ExpressionUUID->"077bd586-f5e0-a445-b360-7e0b67cfff82"]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"initialseed", "=", 
+   RowBox[{"bo", "[", "\"\<MinimumConfiguration\>\"", "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.928404423693617*^9, 3.9284044580686264`*^9}, {
+  3.928404989529619*^9, 3.9284049915592117`*^9}},
+ CellLabel->"In[24]:=",ExpressionUUID->"793daaff-e1e0-7c4b-a1ec-f3cf0c231353"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+  "(*", "\:4ee5\:8d1d\:53f6\:65af\:4f18\:5316\:7684\:7ed3\:679c\:4f5c\:4e3a\
+neldermead\:65b9\:6cd5\:7684\:521d\:59cb\:79cd\:5b50", "*)"}], 
+  "\[IndentingNewLine]", 
+  RowBox[{"AbsoluteTiming", "[", 
+   RowBox[{"Monitor", "[", 
+    RowBox[{
+     RowBox[{"NMinimize", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"findminC", "[", 
+          RowBox[{"{", 
+           RowBox[{"power", ",", "energy", ",", "pv", ",", "pw"}], "}"}], 
+          "]"}], ",", 
+         RowBox[{
+          RowBox[{"0", "<=", "power", "<=", "1000"}], "&&", 
+          RowBox[{"0", "<=", "energy", "<=", "1800"}], "&&", 
+          RowBox[{"0", "<=", "pv", "<=", "1500"}], "&&", 
+          RowBox[{"0", "<=", "pw", "<=", "2000"}]}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"power", ",", "energy", ",", "pv", ",", "pw"}], "}"}], ",", 
+       RowBox[{"Method", "->", 
+        RowBox[{"{", 
+         RowBox[{"\"\<RandomSearch\>\"", ",", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"Method", "->", "\"\<NelderMead\>\""}], ",", 
+            RowBox[{"\"\<InitialPoints\>\"", "->", 
+             RowBox[{"{", "initialseed", "}"}]}], ",", 
+            RowBox[{"\"\<SearchPoints\>\"", "->", "1"}]}], "}"}]}], "}"}]}], 
+       ",", 
+       RowBox[{"WorkingPrecision", "->", "4"}]}], "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"power", ",", "energy", ",", "pv", ",", "pw"}], "}"}]}], "]"}], 
+   "]"}]}]], "Input",
+ CellChangeTimes->CompressedData["
+1:eJxTTMoPSmViYGAQA2IQfUBmS9U1l7eOO66b1YHoN58LW0A0j+P0NhC9wFp6
+AYie0DxpGYg+Ud+zA0T3/J90EETPSdp/FESrRN47DqJXBHmeAdEM+xovgeiO
+WQnPQXTM85JXIPrBizCm60D6xYt7YLrA5o4giP5QIyQEon04wmRAtIzkPnUQ
+/URmtjNY3awiHxB9JX5KAIg+I7sETDP8+5wIojf8C0gD0QIP5AtAtMnRbDDN
+cJajFGzOAn0w/WG/QCOIPrDxUgeI7nmQNhNEv9n9EUwvucC3EUTbPBUE0yeS
+3u0A27fqPZgW6Jqq9RVIR2jW6oFog0+Cy0C0hL7TChC95JXFdxC95sKcPyAa
+AKbdw5E=
+  "],ExpressionUUID->"3f51515a-f1dc-5741-9c24-c3d26f878ca7"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"86.8260133`", ",", 
+   RowBox[{"{", 
+    RowBox[{"1.68652947870872914791107178`4.*^7", ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"power", "\[Rule]", "214.5643841374150638582`4."}], ",", 
+       RowBox[{"energy", "\[Rule]", "431.37884891544923844`4."}], ",", 
+       RowBox[{"pv", "\[Rule]", "394.1907753964153174156`4."}], ",", 
+       RowBox[{"pw", "\[Rule]", "1616.9165262150327038958`4."}]}], "}"}]}], 
+    "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.9284052013666935`*^9, {3.928405279393982*^9, 3.92840530579393*^9}, 
+   3.9284054525320477`*^9, 3.928405488245886*^9, 3.928405558410956*^9, 
+   3.928405697539728*^9, {3.9284058144566135`*^9, 3.928405837569103*^9}, 
+   3.9284059344577036`*^9, 3.928406090333183*^9, {3.9284061294955177`*^9, 
+   3.928406152536474*^9}, 3.9284062376615148`*^9, {3.928406269727135*^9, 
+   3.9284063052235928`*^9}, 3.928406336854721*^9, {3.928406651633503*^9, 
+   3.9284066631360207`*^9}, 3.928406805186556*^9, 3.928406835260561*^9, {
+   3.928406949392027*^9, 3.9284069699607143`*^9}, 3.928407092905998*^9, 
+   3.9284072165372906`*^9, 3.928407418494669*^9, 3.928407492308618*^9, 
+   3.9284674638252773`*^9, 3.9284679646771717`*^9, 3.9284680799914665`*^9, 
+   3.9284681299792156`*^9, 3.9284683347576275`*^9, 3.9284684785098953`*^9, 
+   3.9284686692101955`*^9, 3.9284687903921204`*^9, 3.928468892367777*^9},
+ CellLabel->
+  "Out[115]=",ExpressionUUID->"bf24a1aa-e884-1d44-9c7f-0da67da95dd2"]
+}, Open  ]]
+},
+Evaluator->"para2",
+WindowSize->{865, 721},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+FrontEndVersion->"14.0 for Microsoft Windows (64-bit) (2023\:5e7412\:670812\
+\:65e5)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"53425426-2cea-fa4c-969c-1505d6052e24"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 217, 3, 43, "Input",ExpressionUUID->"8d0ad2f5-b965-f94f-8e09-8f90ffc90803"],
+Cell[778, 25, 3690, 96, 287, "Input",ExpressionUUID->"4c03d91e-d48d-9d44-a5d2-502eede01d14"],
+Cell[4471, 123, 13704, 316, 885, "Input",ExpressionUUID->"2340816a-a1aa-bf4d-a8b9-57786482ccc4"],
+Cell[18178, 441, 2036, 38, 48, "Input",ExpressionUUID->"3b5f5b8d-219a-1f4f-95a2-1fe48c415e6a"],
+Cell[20217, 481, 2832, 50, 48, "Input",ExpressionUUID->"afdac50e-c102-ed42-a82e-90015b5c93cf"],
+Cell[23052, 533, 21380, 476, 1335, "Input",ExpressionUUID->"a7ecbf48-32a7-1e40-9106-3c8518ff9d62"],
+Cell[44435, 1011, 1406, 30, 67, "Input",ExpressionUUID->"128ada24-ea6b-f54c-80b1-6fea083b7813"],
+Cell[CellGroupData[{
+Cell[45866, 1045, 2384, 45, 133, "Input",ExpressionUUID->"6d6b72d9-d048-ba4e-bcb5-6924d844a6a4"],
+Cell[48253, 1092, 109684, 1967, 71, "Output",ExpressionUUID->"077bd586-f5e0-a445-b360-7e0b67cfff82"]
+}, Open  ]],
+Cell[157952, 3062, 332, 6, 28, "Input",ExpressionUUID->"793daaff-e1e0-7c4b-a1ec-f3cf0c231353"],
+Cell[CellGroupData[{
+Cell[158309, 3072, 1949, 46, 222, "Input",ExpressionUUID->"3f51515a-f1dc-5741-9c24-c3d26f878ca7"],
+Cell[160261, 3120, 1478, 26, 35, "Output",ExpressionUUID->"bf24a1aa-e884-1d44-9c7f-0da67da95dd2"]
+}, Open  ]]
+}
+]
+*)
+
